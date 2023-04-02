@@ -50,7 +50,7 @@ public class PortioTestPage {
         loginPage.clickButtonAccept();
         loginPage.enterUsernameLogin(username);
         loginPage.enterPasswordLogin(password);
-        loginPage.runJS();
+        loginPage.runJSLogin();
         //loginPage.login();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         Assertions.assertEquals(url, driver.getCurrentUrl());
