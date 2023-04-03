@@ -1,6 +1,7 @@
 package org.example.portio;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,6 +13,8 @@ import java.time.Duration;
 
 public class PortioTestPage {
     WebDriver driver;
+    RegisterPage registerPage;
+    LoginPage loginPage;
 
     @BeforeEach
     public void init() {
@@ -29,34 +32,65 @@ public class PortioTestPage {
         options.addArguments("start-maximized");
 
         driver = new ChromeDriver(options);
+        registerPage = new RegisterPage(driver);
+        loginPage = new LoginPage(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @Test
     public void testRegistration() {
-        RegisterPage registerPage = new RegisterPage(driver);
-
-        registerPage.register();
+        registerPage.registration();
+        Assertions.assertTrue(registerPage.userRegistered());
         Assertions.assertEquals("User registered!", registerPage.registeredMessage());
     }
     @Test
-    public void testLogin() {
-        LoginPage loginPage = new LoginPage(driver);
-        String url = "https://lennertamas.github.io/portio/landing.html";
+    public void testRegistrationWithMissingPassword() {
+        String username = "teszteszter";
+        String missingPassword = "";
+        String email = "teszteszter5@gmail.com";
+        registerPage.wrongRegistration(username, missingPassword, email);
 
+        Assertions.assertFalse(registerPage.userRegistered());
+    }
+    @Test
+    public void testRegistrationWithWrongEmail() {
         String username = "teszteszter";
         String password = "teszt";
-        loginPage.navigate();
-        loginPage.clickButtonAccept();
-        loginPage.enterUsernameLogin(username);
-        loginPage.enterPasswordLogin(password);
-        loginPage.runJSLogin();
-        //loginPage.login();
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-        Assertions.assertEquals(url, driver.getCurrentUrl());
+        String wrongEmail = "tesztesztergmail";
+        registerPage.wrongRegistration(username, password, wrongEmail);
 
+        Assertions.assertFalse(registerPage.userRegistered());
     }
+    @Test
+    public void testLogin() {
+        String url = "https://lennertamas.github.io/portio/landing.html";
+        registerPage.registration();
+        loginPage.login();
+
+        Assertions.assertEquals(url, driver.getCurrentUrl());
+        Assertions.assertTrue(loginPage.isPortioLogoVisible());
+    }
+    @Test
+    public void testLoginWithMissingUsername() {
+        String missingUsername = "";
+        String password = "teszt";
+        registerPage.registration();
+        loginPage.wrongLogin(missingUsername, password);
+
+        Assertions.assertEquals(loginPage.getURL(), driver.getCurrentUrl());
+    }
+    @Test
+    public void testLoginWithWrongPassword() {
+        String username = "teszteszter";
+        String wrongPassword = "tesztelek";
+        registerPage.registration();
+        loginPage.wrongLogin(username, wrongPassword);
+
+        Assertions.assertTrue(loginPage.isAlertMessageDisplayed());
+        Assertions.assertEquals("Username or Password\nis not correct!", loginPage.getAlertMessage());
+    }
+    @AfterEach
     public void quitDriver() {
-        //driver.quit();
+        driver.quit();
     }
 }

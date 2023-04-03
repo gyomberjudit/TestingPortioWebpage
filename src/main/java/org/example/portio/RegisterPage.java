@@ -2,15 +2,11 @@ package org.example.portio;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class RegisterPage extends BasePage{
 
-    //private final By BUTTON_ACCEPT_TERMS = By.id("terms-and-conditions-button");
+//registration
+    private final By BUTTON_ACCEPT_TERMS = By.id("terms-and-conditions-button");
     private final By BUTTON_REGISTER = By.xpath("//*[@id=\"login\"]/button[1]");
     private final By INPUT_USERNAME_REGISTER = By.id("register-username");
     private final By INPUT_PASSWORD_REGISTER = By.id("register-password");
@@ -23,41 +19,32 @@ public class RegisterPage extends BasePage{
         super(driver);
     }
 
-//registration
-   /* public void clickButtonAccept() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        WebElement acceptButton = wait.until(ExpectedConditions.visibilityOfElementLocated(BUTTON_ACCEPT_TERMS));
-        acceptButton.click();
-    }*/
-    public void clickButtonRegister() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement registerButton = wait.until(ExpectedConditions.visibilityOfElementLocated(BUTTON_REGISTER));
-        registerButton.click();
-    }
-    public void enterUsername(String username) {
+//method for registration
+    public void registration() {
+        String username = "teszteszter";
+        String password = "teszt";
+        String email = "teszteszter5@gmail.com";
+        navigate();
+        driver.findElement(BUTTON_ACCEPT_TERMS).click();
+        driver.findElement(BUTTON_REGISTER).click();
         driver.findElement(INPUT_USERNAME_REGISTER).sendKeys(username);
-    }
-    public void enterPassword(String password) {
         driver.findElement(INPUT_PASSWORD_REGISTER).sendKeys(password);
-    } public void enterEmail(String email) {
         driver.findElement(INPUT_EMAIL_REGISTER).sendKeys(email);
+        driver.findElement(BUTTON_REGISTER2).click();
     }
-    public void clickButtonRegister2() {
+    public void wrongRegistration(String username, String password, String email) {
+        navigate();
+        driver.findElement(BUTTON_ACCEPT_TERMS).click();
+        driver.findElement(BUTTON_REGISTER).click();
+        driver.findElement(INPUT_USERNAME_REGISTER).sendKeys(username);
+        driver.findElement(INPUT_PASSWORD_REGISTER).sendKeys(password);
+        driver.findElement(INPUT_EMAIL_REGISTER).sendKeys(email);
         driver.findElement(BUTTON_REGISTER2).click();
     }
     public String registeredMessage() {
         return driver.findElement(MESSAGE_USER_REGISTERED).getText();
     }
-    public void register() {
-        String username = "teszteszter";
-        String password = "teszt";
-        String email = "teszeszter5@gmail.com";
-        navigate();
-        clickButtonAccept();
-        clickButtonRegister();
-        enterUsername(username);
-        enterPassword(password);
-        enterEmail(email);
-        clickButtonRegister2();
+    public boolean userRegistered() {
+        return driver.findElement(MESSAGE_USER_REGISTERED).isDisplayed();
     }
 }
