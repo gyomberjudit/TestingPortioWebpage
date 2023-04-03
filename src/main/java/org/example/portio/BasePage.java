@@ -3,19 +3,15 @@ package org.example.portio;
 import org.openqa.selenium.WebDriver;
 
 public class BasePage {
-    WebDriver driver;
+    protected final WebDriver driver;
+    private final String url;
 
-    public String getURL() {
-        return URL;
-    }
-
-    private final String URL = "https://lennertamas.github.io/portio/";
-
-    public BasePage(WebDriver driver) {
+    public BasePage(WebDriver driver, String url) {
         this.driver = driver;
+        this.url = url;
     }
 
     public void navigate() {
-        driver.navigate().to(URL);
+        driver.navigate().to(url);
     }
 }

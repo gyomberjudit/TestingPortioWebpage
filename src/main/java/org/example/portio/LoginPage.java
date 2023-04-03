@@ -1,6 +1,7 @@
 package org.example.portio;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,7 +20,7 @@ public class LoginPage extends BasePage{
     private final By PORTIO_LOGO = By.xpath("//*[@class=\"container\"]/a/img");
 
     public LoginPage(WebDriver driver) {
-        super(driver);
+        super(driver, Pages.LOGIN_PAGE.getUrl());
     }
 
 //method for login
@@ -37,6 +38,14 @@ public class LoginPage extends BasePage{
         driver.findElement(INPUT_PASSWORD_LOGIN).sendKeys(password);
         driver.findElement(BUTTON_LOGIN2).click();
     }
+    public void loginWithEnter() {
+        String username = "teszteszter";
+        String password = "teszt";
+        driver.findElement(BUTTON_LOGIN1).click();
+        driver.findElement(INPUT_USERNAME_LOGIN).sendKeys(username);
+        driver.findElement(INPUT_PASSWORD_LOGIN).sendKeys(password);
+        driver.findElement(BUTTON_LOGIN2).sendKeys(Keys.ENTER);
+    }
     public boolean isPortioLogoVisible() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement portioLogo = wait.until(ExpectedConditions.visibilityOfElementLocated(PORTIO_LOGO));
@@ -51,5 +60,10 @@ public class LoginPage extends BasePage{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement registerButton = wait.until(ExpectedConditions.visibilityOfElementLocated(MESSAGE_ALERT));
         return registerButton.isDisplayed();
+    }
+    public boolean isLoginButtonVisible() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement loginButton = wait.until(ExpectedConditions.visibilityOfElementLocated(BUTTON_LOGIN2));
+        return loginButton.isDisplayed();
     }
 }

@@ -63,11 +63,10 @@ public class PortioTestPage {
     }
     @Test
     public void testLogin() {
-        String url = "https://lennertamas.github.io/portio/landing.html";
         registerPage.registration();
         loginPage.login();
 
-        Assertions.assertEquals(url, driver.getCurrentUrl());
+        Assertions.assertEquals(Pages.LANDING_PAGE.getUrl(), driver.getCurrentUrl());
         Assertions.assertTrue(loginPage.isPortioLogoVisible());
     }
     @Test
@@ -77,17 +76,39 @@ public class PortioTestPage {
         registerPage.registration();
         loginPage.wrongLogin(missingUsername, password);
 
-        Assertions.assertEquals(loginPage.getURL(), driver.getCurrentUrl());
+        Assertions.assertEquals(Pages.LOGIN_PAGE.getUrl(), driver.getCurrentUrl());
     }
     @Test
     public void testLoginWithWrongPassword() {
         String username = "teszteszter";
         String wrongPassword = "tesztelek";
+        String message = "Username or Password\n" +
+                "is not correct!";
         registerPage.registration();
         loginPage.wrongLogin(username, wrongPassword);
 
         Assertions.assertTrue(loginPage.isAlertMessageDisplayed());
-        Assertions.assertEquals("Username or Password\nis not correct!", loginPage.getAlertMessage());
+        Assertions.assertEquals(message, loginPage.getAlertMessage());
+    }
+    @Test
+    public void testLoginWithEnter() {
+        registerPage.registration();
+        loginPage.loginWithEnter();
+
+        Assertions.assertEquals(Pages.LANDING_PAGE.getUrl(), driver.getCurrentUrl());
+        Assertions.assertTrue(loginPage.isPortioLogoVisible());
+    }
+    @Test
+    public void testLogout() {
+        HomePage homePage = new HomePage(driver);
+        registerPage.registration();
+        loginPage.login();
+        Assertions.assertEquals(Pages.LANDING_PAGE.getUrl(), driver.getCurrentUrl());
+        Assertions.assertTrue(loginPage.isPortioLogoVisible());
+        homePage.logout();
+
+        Assertions.assertEquals(Pages.LOGOUT_PAGE.getUrl(), driver.getCurrentUrl());
+        Assertions.assertTrue(loginPage.isLoginButtonVisible());
     }
     @AfterEach
     public void quitDriver() {

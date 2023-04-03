@@ -16,7 +16,7 @@ public class RegisterPage extends BasePage{
     private final By MESSAGE_USER_REGISTERED = By.xpath("//*[@id=\"register\"]//p");
 
     public RegisterPage(WebDriver driver) {
-        super(driver);
+        super(driver, Pages.LOGIN_PAGE.getUrl());
     }
 
 //method for registration
