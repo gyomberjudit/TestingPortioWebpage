@@ -14,7 +14,6 @@ public class LoginPage extends BasePage{
 //login
     private final By INPUT_USERNAME_LOGIN = By.id("email");
     private final By INPUT_PASSWORD_LOGIN = By.id("password");
-    private final By BUTTON_LOGIN1 = By.xpath("//*[@id=\"register\"]/button[2]");
     private final By BUTTON_LOGIN2 = By.xpath("//*[@id=\"login\"]/form//button");
     private final By MESSAGE_ALERT = By.xpath("//*[@id=\"login\"]//p");
     private final By PORTIO_LOGO = By.xpath("//*[@class=\"container\"]/a/img");
@@ -23,25 +22,28 @@ public class LoginPage extends BasePage{
         super(driver, Pages.LOGIN_PAGE.getUrl());
     }
 
-//method for login
+//methods for login
     public void login() {
-        String username = "teszteszter";
-        String password = "teszt";
-        driver.findElement(BUTTON_LOGIN1).click();
+        String username = "lovasia";
+        String password = "kispal123";
+        navigate();
+        acceptTerms();
         driver.findElement(INPUT_USERNAME_LOGIN).sendKeys(username);
         driver.findElement(INPUT_PASSWORD_LOGIN).sendKeys(password);
         driver.findElement(BUTTON_LOGIN2).click();
     }
     public void wrongLogin(String username, String password) {
-        driver.findElement(BUTTON_LOGIN1).click();
+        navigate();
+        acceptTerms();
         driver.findElement(INPUT_USERNAME_LOGIN).sendKeys(username);
         driver.findElement(INPUT_PASSWORD_LOGIN).sendKeys(password);
         driver.findElement(BUTTON_LOGIN2).click();
     }
     public void loginWithEnter() {
-        String username = "teszteszter";
-        String password = "teszt";
-        driver.findElement(BUTTON_LOGIN1).click();
+        String username = "lovasia";
+        String password = "kispal123";
+        navigate();
+        acceptTerms();
         driver.findElement(INPUT_USERNAME_LOGIN).sendKeys(username);
         driver.findElement(INPUT_PASSWORD_LOGIN).sendKeys(password);
         driver.findElement(BUTTON_LOGIN2).sendKeys(Keys.ENTER);

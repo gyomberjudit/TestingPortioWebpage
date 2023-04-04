@@ -49,7 +49,6 @@ public class PortioTestPage {
         String missingPassword = "";
         String email = "teszteszter5@gmail.com";
         registerPage.wrongRegistration(username, missingPassword, email);
-
         Assertions.assertFalse(registerPage.userRegistered());
     }
     @Test
@@ -58,55 +57,43 @@ public class PortioTestPage {
         String password = "teszt";
         String wrongEmail = "tesztesztergmail";
         registerPage.wrongRegistration(username, password, wrongEmail);
-
         Assertions.assertFalse(registerPage.userRegistered());
     }
     @Test
     public void testLogin() {
-        registerPage.registration();
         loginPage.login();
-
         Assertions.assertEquals(Pages.LANDING_PAGE.getUrl(), driver.getCurrentUrl());
         Assertions.assertTrue(loginPage.isPortioLogoVisible());
     }
     @Test
     public void testLoginWithMissingUsername() {
         String missingUsername = "";
-        String password = "teszt";
-        registerPage.registration();
+        String password = "kispal123";
         loginPage.wrongLogin(missingUsername, password);
-
         Assertions.assertEquals(Pages.LOGIN_PAGE.getUrl(), driver.getCurrentUrl());
     }
     @Test
     public void testLoginWithWrongPassword() {
-        String username = "teszteszter";
-        String wrongPassword = "tesztelek";
-        String message = "Username or Password\n" +
-                "is not correct!";
-        registerPage.registration();
+        String username = "lovasia";
+        String wrongPassword = "kispal";
+        String expectedMessage = "Username or Password\n" + "is not correct!";
         loginPage.wrongLogin(username, wrongPassword);
-
         Assertions.assertTrue(loginPage.isAlertMessageDisplayed());
-        Assertions.assertEquals(message, loginPage.getAlertMessage());
+        Assertions.assertEquals(expectedMessage, loginPage.getAlertMessage());
     }
     @Test
     public void testLoginWithEnter() {
-        registerPage.registration();
         loginPage.loginWithEnter();
-
         Assertions.assertEquals(Pages.LANDING_PAGE.getUrl(), driver.getCurrentUrl());
         Assertions.assertTrue(loginPage.isPortioLogoVisible());
     }
     @Test
     public void testLogout() {
         HomePage homePage = new HomePage(driver);
-        registerPage.registration();
         loginPage.login();
         Assertions.assertEquals(Pages.LANDING_PAGE.getUrl(), driver.getCurrentUrl());
         Assertions.assertTrue(loginPage.isPortioLogoVisible());
         homePage.logout();
-
         Assertions.assertEquals(Pages.LOGOUT_PAGE.getUrl(), driver.getCurrentUrl());
         Assertions.assertTrue(loginPage.isLoginButtonVisible());
     }

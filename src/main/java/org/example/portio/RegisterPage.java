@@ -6,12 +6,10 @@ import org.openqa.selenium.WebDriver;
 public class RegisterPage extends BasePage{
 
 //registration
-    private final By BUTTON_ACCEPT_TERMS = By.id("terms-and-conditions-button");
     private final By BUTTON_REGISTER = By.xpath("//*[@id=\"login\"]/button[1]");
     private final By INPUT_USERNAME_REGISTER = By.id("register-username");
     private final By INPUT_PASSWORD_REGISTER = By.id("register-password");
     private final By INPUT_EMAIL_REGISTER = By.id("register-email");
-    //private final By INPUT_DESCRIPTION = By.id("register-description");
     private final By BUTTON_REGISTER2 = By.xpath("//*[@id=\"register\"]/form//button");
     private final By MESSAGE_USER_REGISTERED = By.xpath("//*[@id=\"register\"]//p");
 
@@ -19,13 +17,13 @@ public class RegisterPage extends BasePage{
         super(driver, Pages.LOGIN_PAGE.getUrl());
     }
 
-//method for registration
+//methods for registration
     public void registration() {
         String username = "teszteszter";
         String password = "teszt";
         String email = "teszteszter5@gmail.com";
         navigate();
-        driver.findElement(BUTTON_ACCEPT_TERMS).click();
+        acceptTerms();
         driver.findElement(BUTTON_REGISTER).click();
         driver.findElement(INPUT_USERNAME_REGISTER).sendKeys(username);
         driver.findElement(INPUT_PASSWORD_REGISTER).sendKeys(password);
@@ -34,7 +32,7 @@ public class RegisterPage extends BasePage{
     }
     public void wrongRegistration(String username, String password, String email) {
         navigate();
-        driver.findElement(BUTTON_ACCEPT_TERMS).click();
+        acceptTerms();
         driver.findElement(BUTTON_REGISTER).click();
         driver.findElement(INPUT_USERNAME_REGISTER).sendKeys(username);
         driver.findElement(INPUT_PASSWORD_REGISTER).sendKeys(password);
