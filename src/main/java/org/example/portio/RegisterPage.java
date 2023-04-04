@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class RegisterPage extends BasePage{
 
-//registration
+//locate elements for registration
     private final By BUTTON_REGISTER = By.xpath("//*[@id=\"login\"]/button[1]");
     private final By INPUT_USERNAME_REGISTER = By.id("register-username");
     private final By INPUT_PASSWORD_REGISTER = By.id("register-password");
@@ -13,6 +13,7 @@ public class RegisterPage extends BasePage{
     private final By BUTTON_REGISTER2 = By.xpath("//*[@id=\"register\"]/form//button");
     private final By MESSAGE_USER_REGISTERED = By.xpath("//*[@id=\"register\"]//p");
 
+//constructor
     public RegisterPage(WebDriver driver) {
         super(driver, Pages.LOGIN_PAGE.getUrl());
     }
@@ -39,6 +40,8 @@ public class RegisterPage extends BasePage{
         driver.findElement(INPUT_EMAIL_REGISTER).sendKeys(email);
         driver.findElement(BUTTON_REGISTER2).click();
     }
+
+//methods for assertations
     public String registeredMessage() {
         return driver.findElement(MESSAGE_USER_REGISTERED).getText();
     }

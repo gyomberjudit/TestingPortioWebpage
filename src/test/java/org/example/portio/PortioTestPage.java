@@ -15,6 +15,7 @@ public class PortioTestPage {
     WebDriver driver;
     RegisterPage registerPage;
     LoginPage loginPage;
+    HomePage homePage;
 
     @BeforeEach
     public void init() {
@@ -34,6 +35,7 @@ public class PortioTestPage {
         driver = new ChromeDriver(options);
         registerPage = new RegisterPage(driver);
         loginPage = new LoginPage(driver);
+        homePage = new HomePage(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
@@ -83,7 +85,9 @@ public class PortioTestPage {
     }
     @Test
     public void testLoginWithEnter() {
-        loginPage.loginWithEnter();
+        String username = "lovasia";
+        String password = "kispal123";
+        loginPage.loginWithEnter(username, password);
         Assertions.assertEquals(Pages.LANDING_PAGE.getUrl(), driver.getCurrentUrl());
         Assertions.assertTrue(loginPage.isPortioLogoVisible());
     }
@@ -96,6 +100,46 @@ public class PortioTestPage {
         homePage.logout();
         Assertions.assertEquals(Pages.LOGOUT_PAGE.getUrl(), driver.getCurrentUrl());
         Assertions.assertTrue(loginPage.isLoginButtonVisible());
+    }
+    @Test
+    public void testSetProfile() {
+        String username = "teszteszter";
+        String password = "teszt";
+        String name ="Teszt Eszti";
+        String bio ="female";
+        String phone ="06301112233";
+        registerPage.registration();
+        loginPage.loginAfterRegistration(username, password);
+        homePage.setProfile(name, bio, phone);
+        Assertions.assertEquals("Profile Edited!", homePage.getProfileMessage());
+    }
+    @Test
+    public void testDeleteAccount() {
+        String username = "teszteszter";
+        String password = "teszt";
+        String expectedMessage = "Username or Password\n" + "is not correct!";
+        registerPage.registration();
+        loginPage.loginAfterRegistration(username, password);
+        homePage.deleteAccount();
+        loginPage.loginAfterDeletingAccount(username, password);
+        Assertions.assertTrue(loginPage.isAlertMessageDisplayed());
+        Assertions.assertEquals(expectedMessage, loginPage.getAlertMessage());
+    }
+    @Test
+    public void testNavigateToContactPageWithHireMeButton() {
+        //HomePage homePage = new HomePage(driver);
+        loginPage.login();
+        homePage.navigateToContactPageWithHireMeButton();
+        Assertions.assertEquals(Pages.CONTACT_PAGE.getUrl(), driver.getCurrentUrl());
+        Assertions.assertTrue(homePage.isContactMeTextVisible());
+    }
+    @Test
+    public void testNavigateToContactPageWithContactMeButton() {
+        //HomePage homePage = new HomePage(driver);
+        loginPage.login();
+        homePage.navigateToContactPageWithContactButton();
+        Assertions.assertEquals(Pages.CONTACT_PAGE.getUrl(), driver.getCurrentUrl());
+        Assertions.assertTrue(homePage.isContactMeTextVisible());
     }
     @AfterEach
     public void quitDriver() {
