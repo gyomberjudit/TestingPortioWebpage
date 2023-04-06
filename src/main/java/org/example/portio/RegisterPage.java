@@ -12,6 +12,7 @@ public class RegisterPage extends BasePage{
     private final By INPUT_EMAIL_REGISTER = By.id("register-email");
     private final By BUTTON_REGISTER2 = By.xpath("//*[@id=\"register\"]/form//button");
     private final By MESSAGE_USER_REGISTERED = By.xpath("//*[@id=\"register\"]//p");
+    private final By BUTTON_LOGIN = By.xpath("//*[@id=\"register\"]/button[2]");
 
 //constructor
     public RegisterPage(WebDriver driver) {
@@ -39,6 +40,9 @@ public class RegisterPage extends BasePage{
         driver.findElement(INPUT_PASSWORD_REGISTER).sendKeys(password);
         driver.findElement(INPUT_EMAIL_REGISTER).sendKeys(email);
         driver.findElement(BUTTON_REGISTER2).click();
+    }
+    public void clickLoginButton() {
+        driver.findElement(BUTTON_LOGIN).click();
     }
 
 //methods for assertations
