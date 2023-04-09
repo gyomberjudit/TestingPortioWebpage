@@ -17,6 +17,9 @@ public class TestEnvironment {
     HomePage homePage;
     ContactPage contactPage;
     ProfilePage profilePage;
+    WorkPage workPage;
+    CaseStudyPage caseStudyPage;
+    RecipeAppPage recipeAppPage;
     @BeforeAll
     public static void beforeAll() {
         WebDriverManager.chromedriver().setup();
@@ -40,6 +43,9 @@ public class TestEnvironment {
         homePage = new HomePage(driver);
         contactPage = new ContactPage(driver);
         profilePage = new ProfilePage(driver);
+        workPage = new WorkPage(driver);
+        caseStudyPage = new CaseStudyPage(driver);
+        recipeAppPage = new RecipeAppPage(driver);
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }

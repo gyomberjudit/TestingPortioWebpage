@@ -231,4 +231,64 @@ public class PortioTest extends TestEnvironment{
         contactPage.getBackToHomePage();
         Assertions.assertTrue(homePage.isPortioLogoVisible());
     }
+    @Epic("Technical functionalities")
+    @Story("Navigating")
+    @Test
+    public void testLinkWork() {
+        loginPage.login();
+        Assertions.assertTrue(homePage.isPortioLogoVisible());
+        homePage.clickOnWorkLink();
+        Assertions.assertTrue(workPage.isWorkPageTextVisible());
+    }
+    @Epic("Content functionalities")
+    @Story("Portfolio")
+    @Test
+    public void testQuantityOfPortfolio() {
+        testLinkWork();
+        Assertions.assertEquals(4, workPage.quantityOfPortfolio());
+    }
+    @Epic("Content functionalities")
+    @Story("Portfolio")
+    @Test
+    public void testContentOfPortfolio() {
+        String[] text = {"Case Study One", "Event App Case Study", "UX Case Study for Agriculture App", "Recipe App Ux Study"};
+        testLinkWork();
+        Allure.addAttachment("Content of portfolio", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+        Assertions.assertArrayEquals(text, workPage.contentOfPortfolio());
+    }
+    @Epic("Technical functionalities")
+    @Story("Navigation")
+    @Test
+    public void testCaseStudyOneLink() {
+        testLinkWork();
+        workPage.clickLinkCaseStudyOne();
+        Allure.addAttachment("Case Study One Page", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+        Assertions.assertTrue(caseStudyPage.isCaseStudyTextVisible());
+        Assertions.assertEquals(Pages.CASE_STUDY_PAGE.getUrl(), driver.getCurrentUrl());
+    }
+    @Epic("Technical functionalities")
+    @Story("Navigation")
+    @Test
+    public void testClickOnNextArrow() {
+        testLinkWork();
+        workPage.clickLinkCaseStudyOne();
+        Assertions.assertTrue(caseStudyPage.isCaseStudyTextVisible());
+        caseStudyPage.clickOnNextArrow();
+        Assertions.assertEquals(Pages.EVENT_APP_CASE_STUDY.getUrl(), driver.getCurrentUrl());
+    }
+    @Epic("Technical functionalities")
+    @Story("Navigation")
+    @Test
+    public void testClickOnNextCase() {
+        testLinkWork();
+        workPage.clickLinkCaseStudyOne();
+        Assertions.assertTrue(caseStudyPage.isCaseStudyTextVisible());
+        Allure.addAttachment("First Case", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+        do {
+            caseStudyPage.clickNextCaseLink();
+            Allure.addAttachment("Next Case", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+        } while (!caseStudyPage.isLinkNextCaseVisible());
+        Assertions.assertTrue(recipeAppPage.isRecipeAppTextVisible());
+    }
+
 }

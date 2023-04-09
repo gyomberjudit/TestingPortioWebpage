@@ -17,6 +17,7 @@ public class HomePage extends BasePage{
     private final By HIRE_ME_BUTTON = By.xpath("//*[@class=\"navbar-nav\"]/a");
     private final By CONTACT_BUTTON = By.xpath("//*[@class=\"hero_content\"]/a");
     private final By PORTIO_LOGO = By.xpath("//*[@class=\"container\"]/a/img");
+    private final By LINK_WORK = By.xpath("//*[text()=\"Work\"]");
 
 //constructor
     public HomePage(WebDriver driver) {
@@ -37,9 +38,12 @@ public class HomePage extends BasePage{
     public void navigateToContactPageWithContactButton() {
         driver.findElement(CONTACT_BUTTON).click();
     }
+    public void clickOnWorkLink() {
+        driver.findElement(LINK_WORK).click();
+    }
 
 //methods for assertions
-public boolean isPortioLogoVisible() {
+    public boolean isPortioLogoVisible() {
     return driver.findElement(PORTIO_LOGO).isDisplayed();
 }
     public String getProfileName() {
