@@ -10,11 +10,13 @@ public class BasePage {
     private final String url;
     private final By BUTTON_ACCEPT_TERMS = By.id("terms-and-conditions-button");
 
+
 //constructor
     public BasePage(WebDriver driver, String url) {
         this.driver = driver;
         this.url = url;
     }
+
 
 //global methods
     public void navigate() {
