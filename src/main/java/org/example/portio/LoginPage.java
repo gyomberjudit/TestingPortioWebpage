@@ -17,10 +17,13 @@ public class LoginPage extends BasePage{
     private final By BUTTON_LOGIN = By.xpath("//*[@id=\"login\"]/form//button");
     private final By MESSAGE_ALERT = By.id("alert");
 
+
 //constructor
     public LoginPage(WebDriver driver) {
         super(driver, Pages.LOGIN_PAGE.getUrl());
     }
+
+
 
 //methods for login
     public void login() {
@@ -56,7 +59,7 @@ public class LoginPage extends BasePage{
         WebElement registerButton = wait.until(ExpectedConditions.visibilityOfElementLocated(MESSAGE_ALERT));
         return registerButton.isDisplayed();
     }
-    public boolean isLoginButtonVisible() {
+    public boolean isLoginButtonDisplayed() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         WebElement loginButton = wait.until(ExpectedConditions.visibilityOfElementLocated(BUTTON_LOGIN));
         return loginButton.isDisplayed();
