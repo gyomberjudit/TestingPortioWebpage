@@ -22,12 +22,14 @@ public class WorkPage extends BasePage{
 //methods for workPage
     public int quantityOfPortfolio() {
         List<WebElement> works = driver.findElements(WORKS);
-
         int quantity = 0;
         for (int i=0; i< works.size(); i++) {
-            quantity ++;
+            quantity++;
         }
         return quantity;
+    } public int quantityOfPortfolio2() {
+        List<WebElement> works = driver.findElements(WORKS);
+        return works.size();
     }
     public String[] contentOfPortfolio() {
         List<WebElement> works = driver.findElements(WORK_TITLES);
@@ -47,7 +49,7 @@ public class WorkPage extends BasePage{
     }
 
 //methods for assertions
-    public boolean isWorkPageTextVisible() {
+    public boolean isWorkPageTextDisplayed() {
         return driver.findElement(WORKPAGE_TEXT).isDisplayed();
     }
 }
