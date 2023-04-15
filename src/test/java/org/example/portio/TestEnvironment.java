@@ -1,9 +1,7 @@
 package org.example.portio;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -20,10 +18,19 @@ public class TestEnvironment {
     WorkPage workPage;
     CaseStudyPage caseStudyPage;
     RecipeAppPage recipeAppPage;
+    AboutPage aboutPage;
+    ServicePage servicePage;
+    ResumePage resumePage;
+    SkillsPage skillsPage;
+    BlogPage blogPage;
+    BlogPage2 blogPage2;
+    FooterPage footerPage;
+
     @BeforeAll
     public static void beforeAll() {
         WebDriverManager.chromedriver().setup();
     }
+
     @BeforeEach
     public void init() {
         ChromeOptions options = new ChromeOptions();
@@ -46,6 +53,13 @@ public class TestEnvironment {
         workPage = new WorkPage(driver);
         caseStudyPage = new CaseStudyPage(driver);
         recipeAppPage = new RecipeAppPage(driver);
+        aboutPage = new AboutPage(driver);
+        servicePage = new ServicePage(driver);
+        resumePage = new ResumePage(driver);
+        skillsPage = new SkillsPage(driver);
+        blogPage = new BlogPage(driver);
+        blogPage2 = new BlogPage2(driver);
+        footerPage = new FooterPage(driver);
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
