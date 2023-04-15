@@ -35,7 +35,7 @@ public class CaseStudyPage extends BasePage{
         WebElement nextCase = driver.findElement(LINK_NEXT_CASE);
         actions.moveToElement(nextCase).click().build().perform();
     }
-    public boolean isLinkNextCaseVisible() {
+    public boolean isLinkNextCaseDisplayed() {
         return driver.findElement(LINK_NEXT_CASE).isDisplayed();
     }
 }
