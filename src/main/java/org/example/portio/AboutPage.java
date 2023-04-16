@@ -20,7 +20,8 @@ public class AboutPage extends BasePage{
 
 
 //methods for AboutPage
-    public void clickOnHireMe() {
+    public void clickOnHireMe() throws InterruptedException {
+        scrollToElement(BUTTON_HIRE_ME);
         driver.findElement(BUTTON_HIRE_ME).click();
     }
     public void clickDownloadCV() {
