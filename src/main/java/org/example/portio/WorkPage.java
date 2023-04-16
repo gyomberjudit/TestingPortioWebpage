@@ -27,7 +27,8 @@ public class WorkPage extends BasePage{
             quantity++;
         }
         return quantity;
-    } public int quantityOfPortfolio2() {
+    }
+    public int quantityOfPortfolio2() {
         List<WebElement> works = driver.findElements(WORKS);
         return works.size();
     }
