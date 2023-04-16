@@ -18,7 +18,7 @@ public class AboutPageTest extends BaseTest{
     @Epic("Technical functionalities")
     @Story("FileDownloading")
     @Test
-    public void testFileDownloaded() {
+    public void testFileDownload() {
         String filename = "CV";
         testLinkAbout();
         aboutPage.clickDownloadCV();
