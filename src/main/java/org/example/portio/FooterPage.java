@@ -35,19 +35,29 @@ public class FooterPage extends  BasePage{
 
 //methods
     public void clickGetINTouchButton() {
-        driver.findElement(BUTTON_GET_IN_TOUCH).click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+        WebElement button = wait.until(ExpectedConditions.elementToBeClickable(BUTTON_GET_IN_TOUCH));
+        button.click();
     }
     public void clickLinkAboutMe() {
-        driver.findElement(LINK_ABOUT_ME).click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+        WebElement aboutMeLink = wait.until(ExpectedConditions.elementToBeClickable(LINK_ABOUT_ME));
+        aboutMeLink.click();
     }
     public void clickLinkFAQ() {
-        driver.findElement(LINK_FAQ).click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+        WebElement faqLink = wait.until(ExpectedConditions.elementToBeClickable(LINK_FAQ));
+        faqLink.click();
     }
     public void clickLinkPrivacyAndPolicy() {
-        driver.findElement(LINK_PRIVACY_AND_POLICY).click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement link = wait.until(ExpectedConditions.elementToBeClickable(LINK_PRIVACY_AND_POLICY));
+        link.click();
     }
     public void clickLatestArticle() {
-        driver.findElement(LINK_LATEST_ARTICLE).click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement link = wait.until(ExpectedConditions.elementToBeClickable(LINK_LATEST_ARTICLE));
+        link.click();
     }
     public void clickTermsAndConditions() throws InterruptedException {
         scrollToElement(LINK_TERMS_AND_CONDITIONS);
