@@ -14,20 +14,8 @@ public class CaseStudyPageTest extends BaseTest{
     @Epic("Technical functionalities")
     @Story("Navigation")
     @Test
-    public void testCaseStudyOneLink() {
-        testLinkWork();
-        workPage.clickLinkCaseStudyOne();
-        Allure.addAttachment("Case Study One Page", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
-        Assertions.assertTrue(caseStudyPage.isCaseStudyTextVisible());
-        Assertions.assertEquals(Pages.CASE_STUDY_PAGE.getUrl(), driver.getCurrentUrl());
-    }
-    @Epic("Technical functionalities")
-    @Story("Navigation")
-    @Test
     public void testClickOnNextArrow() {
-        testLinkWork();
-        workPage.clickLinkCaseStudyOne();
-        Assertions.assertTrue(caseStudyPage.isCaseStudyTextVisible());
+        testLinkCaseStudyOne();
         caseStudyPage.clickOnNextArrow();
         Assertions.assertEquals(Pages.EVENT_APP_CASE_STUDY.getUrl(), driver.getCurrentUrl());
     }
@@ -35,9 +23,7 @@ public class CaseStudyPageTest extends BaseTest{
     @Story("Navigation")
     @Test
     public void testClickOnNextCase() {
-        testLinkWork();
-        workPage.clickLinkCaseStudyOne();
-        Assertions.assertTrue(caseStudyPage.isCaseStudyTextVisible());
+        testLinkCaseStudyOne();
         Allure.addAttachment("First Case", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         do {
             caseStudyPage.clickNextCaseLink();
