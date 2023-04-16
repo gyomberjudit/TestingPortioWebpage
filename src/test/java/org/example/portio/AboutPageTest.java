@@ -9,7 +9,7 @@ public class AboutPageTest extends BaseTest{
     @Epic("Technical functionalities")
     @Story("Navigation")
     @Test
-    public void testButtonHireMe() {
+    public void testButtonHireMe() throws InterruptedException {
         testLinkAbout();
         aboutPage.clickOnHireMe();
         Assertions.assertTrue(contactPage.isContactMeTextDisplayed());
