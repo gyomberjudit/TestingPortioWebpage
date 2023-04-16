@@ -12,9 +12,10 @@ public enum Pages {
     EVENT_APP_CASE_STUDY("https://lennertamas.github.io/portio/portfolio/event-app-case-study/"),
     RECIPE_APP_PAGE("https://lennertamas.github.io/portio/portfolio/recipe-app-ux-study/"),
     BLOG_PAGE("https://lennertamas.github.io/portio/blog/"),
+    TERMS_AND_CONDITIONS("https://lennertamas.github.io/portio/tc.html"),
     FACEBOOK("https://www.facebook.com/"),
-    LINKEDIN("https://www.linkedin.com/feed/"),
-    PINTEREST("https://hu.pinterest.com/"),
+    LINKEDIN("https://www.linkedin.com/"),
+    PINTEREST("https://www.pinterest.com/"),
     TWITTER("https://twitter.com/");
 
     private final String url;
