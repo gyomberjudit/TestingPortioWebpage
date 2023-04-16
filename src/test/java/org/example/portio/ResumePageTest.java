@@ -50,7 +50,7 @@ public class ResumePageTest extends BaseTest{
     @Epic("Content functionalities")
     @Story("Resume")
     @Test
-    public void testEducation() {
+    public void testEducation() throws InterruptedException {
         String education = "2008-2010, Master in Arts";
         testLinkResume();
         resumePage.clickEducation();
