@@ -1,12 +1,12 @@
 package org.example.portio;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import io.qameta.allure.Allure;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -67,6 +67,7 @@ public class BlogPage2 extends BasePage{
                     item.click();
                     WebElement tagName = driver.findElement(TAG);
                     String value = tagName.getText();
+                    Allure.addAttachment("Tag names", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
                     map.put(key, value);
                     driver.navigate().back();
                 }

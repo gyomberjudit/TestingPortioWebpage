@@ -15,7 +15,7 @@ public class HomePage extends BasePage{
     private final By PROFILE_LINK = By.xpath("//*[@class=\"nav-link\"]");
     private final By PROFILE_TEXT = By.id("profile-btn");
     private final By HIRE_ME_NOW_BUTTON = By.xpath("//*[@class=\"navbar-nav\"]/a");
-    private final By CONTACT_BUTTON = By.xpath("//*[@class=\"hero_content\"]/a");
+    private final By CONTACT_ME_BUTTON = By.xpath("//*[@class=\"hero_content\"]/a");
     private final By PORTIO_LOGO = By.xpath("//*[@class=\"container\"]/a/img");
     private final By LINK_ABOUT = By.xpath("//*[@id=\"navbarCollapse\"]//li[2]/a");
     private final By LINK_SERVICE = By.xpath("//*[@id=\"navbarCollapse\"]//li[3]/a");
@@ -44,8 +44,8 @@ public class HomePage extends BasePage{
     public void navigateToContactPageWithHireMeNowButton() {
         driver.findElement(HIRE_ME_NOW_BUTTON).click();
     }
-    public void navigateToContactPageWithContactButton() {
-        driver.findElement(CONTACT_BUTTON).click();
+    public void navigateToContactPageWithContactMeButton() {
+        driver.findElement(CONTACT_ME_BUTTON).click();
     }
     public void clickOnLinkAbout() {
         driver.findElement(LINK_ABOUT).click();
@@ -71,10 +71,9 @@ public class HomePage extends BasePage{
 
 //methods for assertions
     public boolean isPortioLogoDisplayed() {
-    return driver.findElement(PORTIO_LOGO).isDisplayed();
-}
-    public boolean isHomePageTextDisplayed() {
-    return driver.findElement(PORTIO_LOGO).isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement logo = wait.until(ExpectedConditions.visibilityOfElementLocated(PORTIO_LOGO));
+        return logo.isDisplayed();
 }
     public String getProfileName() {
         return driver.findElement(PROFILE_TEXT).getText();
