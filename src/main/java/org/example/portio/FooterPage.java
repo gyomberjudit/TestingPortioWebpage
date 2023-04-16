@@ -2,7 +2,11 @@ package org.example.portio;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.Set;
 
 public class FooterPage extends  BasePage{
@@ -20,7 +24,7 @@ public class FooterPage extends  BasePage{
     private final By ICON_LINKEDIN = By.xpath("//*[@class=\"unstyle-list\"]/li[2]/a");
     private final By ICON_PINTEREST = By.xpath("//*[@class=\"unstyle-list\"]/li[3]/a");
     private final By ICON_TWITTER = By.xpath("//*[@class=\"unstyle-list\"]/li[4]/a");
-    private final By TEXT_TERMS_AND_CONDITION = By.xpath("/html/body/div/h1");
+    private final By TEXT_TERMS_AND_CONDITIONS = By.xpath("/html/body/div/h1");
 
 
 //constructor
@@ -87,7 +91,9 @@ public class FooterPage extends  BasePage{
         return driver.findElement(FOOTER_PAGE_TEXT).isDisplayed();
     }
     public boolean isTermsAndConditionsTextDisplayed() {
-        return driver.findElement(TEXT_TERMS_AND_CONDITION).isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement text = wait.until(ExpectedConditions.elementToBeClickable(TEXT_TERMS_AND_CONDITIONS));
+        return text.isDisplayed();
     }
     public boolean isFileNotFound() {
         return driver.findElement(FILE_NOT_FOUND).isDisplayed();

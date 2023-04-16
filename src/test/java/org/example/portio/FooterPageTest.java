@@ -14,12 +14,11 @@ public class FooterPageTest extends TestEnvironment{
     @Epic("Technical functionalities")
     @Story("Navigating")
     @Test
-    public void testGetInTouchButton() throws InterruptedException {
+    public void testGetInTouchButton() {
         loginPage.login();
         homePage.clickOnLinkContact();
         footerPage.clickGetINTouchButton();
-        Thread.sleep(2000);
-        Assertions.assertTrue(contactPage.isContactMeTextDisplayed());
+        Assertions.assertEquals(Pages.CONTACT_PAGE.getUrl(), driver.getCurrentUrl());
     }
     @Epic("Technical functionalities")
     @Story("Navigating")
@@ -58,7 +57,7 @@ public class FooterPageTest extends TestEnvironment{
         loginPage.login();
         homePage.clickOnLinkContact();
         footerPage.clickLatestArticle();
-        Assertions.assertFalse(loginPage.isLoginButtonDisplayed());
+        Assertions.assertNotEquals(Pages.LOGIN_PAGE.getUrl(), driver.getCurrentUrl());
         Allure.addAttachment("Failed navigation to Latest Article", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
     }
     @Epic("Technical functionalities")
