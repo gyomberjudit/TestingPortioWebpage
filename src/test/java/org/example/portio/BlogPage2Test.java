@@ -1,10 +1,14 @@
 package org.example.portio;
 
+import io.qameta.allure.Allure;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.LinkedHashMap;
 
@@ -15,7 +19,8 @@ public class BlogPage2Test extends BaseTest{
     public void testHomeLink() {
         testButtonSeeAllPosts();
         blogPage2.clickOnHomeLink();
-        Assertions.assertTrue(homePage.isHomePageTextDisplayed());
+        Assertions.assertEquals(Pages.LANDING_PAGE.getUrl(), driver.getCurrentUrl());
+        Allure.addAttachment("Failed navigation back to HomePage", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
     }
     @Epic("Content functionalities")
     @Story("CountItems")
