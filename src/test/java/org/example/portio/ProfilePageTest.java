@@ -10,12 +10,39 @@ import org.openqa.selenium.TakesScreenshot;
 
 import java.io.ByteArrayInputStream;
 
-public class ProfilePageTest extends BaseTest{
+public class ProfilePageTest extends TestEnvironment{
+    @Epic("Technical functionalities")
+    @Story("Profile")
+    @Test
+    public void testSetProfile() {
+        String username = "teszteszter";
+        String password = "teszt";
+        String name ="Teszt Eszti";
+        String bio ="female";
+        String phone ="06301112233";
+        registerPage.registration();
+        registerPage.clickLoginButton();
+        loginPage.login2(username, password);
+        Assertions.assertTrue(homePage.isPortioLogoDisplayed());
+        homePage.clickProfile();
+        profilePage.setProfile(name, bio, phone);
+        Assertions.assertEquals("Profile Edited!", profilePage.getProfileMessage());
+    }
     @Epic("Technical functionalities")
     @Story("Profile")
     @Test
     public void testProfileUsername() {
-        testSetProfile();
+        String username = "teszteszter";
+        String password = "teszt";
+        String name ="Teszt Eszti";
+        String bio ="female";
+        String phone ="06301112233";
+        registerPage.registration();
+        registerPage.clickLoginButton();
+        loginPage.login2(username, password);
+        Assertions.assertTrue(homePage.isPortioLogoDisplayed());
+        homePage.clickProfile();
+        profilePage.setProfile(name, bio, phone);
         Assertions.assertEquals("Profile Edited!", profilePage.getProfileMessage());
         homePage.navigate();
         Allure.addAttachment("Username is not displayed after profile edited", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));

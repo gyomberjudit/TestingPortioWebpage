@@ -5,12 +5,13 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class AboutPageTest extends BaseTest{
+public class AboutPageTest extends TestEnvironment{
     @Epic("Technical functionalities")
     @Story("Navigation")
     @Test
     public void testButtonHireMe() throws InterruptedException {
-        testLinkAbout();
+        loginPage.login();
+        homePage.clickOnLinkAbout();
         aboutPage.clickOnHireMe();
         Assertions.assertTrue(contactPage.isContactMeTextDisplayed());
         Assertions.assertEquals(Pages.CONTACT_PAGE.getUrl(), driver.getCurrentUrl());
@@ -20,7 +21,8 @@ public class AboutPageTest extends BaseTest{
     @Test
     public void testFileDownload() {
         String filename = "CV";
-        testLinkAbout();
+        loginPage.login();
+        homePage.clickOnLinkAbout();
         aboutPage.clickDownloadCV();
         Assertions.assertTrue(aboutPage.isFileExist(filename));
     }

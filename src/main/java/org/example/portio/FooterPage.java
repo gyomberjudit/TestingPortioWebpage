@@ -20,7 +20,6 @@ public class FooterPage extends  BasePage{
     private final By ICON_LINKEDIN = By.xpath("//*[@class=\"unstyle-list\"]/li[2]/a");
     private final By ICON_PINTEREST = By.xpath("//*[@class=\"unstyle-list\"]/li[3]/a");
     private final By ICON_TWITTER = By.xpath("//*[@class=\"unstyle-list\"]/li[4]/a");
-    //private final By TEXT_TERMS_AND_CONDITION = By.xpath("//*[@class=\"container terms-and-conditions\"]/h1");
     private final By TEXT_TERMS_AND_CONDITION = By.xpath("/html/body/div/h1");
 
 
@@ -83,7 +82,7 @@ public class FooterPage extends  BasePage{
         driver.findElement(ICON_TWITTER).click();
     }
 
-
+//methods for assertion
     public boolean isFooterPageTextDisplayed() {
         return driver.findElement(FOOTER_PAGE_TEXT).isDisplayed();
     }

@@ -10,12 +10,25 @@ import org.openqa.selenium.TakesScreenshot;
 
 import java.io.ByteArrayInputStream;
 
-public class CaseStudyPageTest extends BaseTest{
+public class CaseStudyPageTest extends TestEnvironment{
+    @Epic("Technical functionalities")
+    @Story("Navigation")
+    @Test
+    public void testLinkCaseStudyOne() {
+        loginPage.login();
+        homePage.clickOnLinkWork();
+        workPage.clickLinkCaseStudyOne();
+        Allure.addAttachment("Case Study One Page", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+        Assertions.assertTrue(caseStudyPage.isCaseStudyTextVisible());
+        Assertions.assertEquals(Pages.CASE_STUDY_PAGE.getUrl(), driver.getCurrentUrl());
+    }
     @Epic("Technical functionalities")
     @Story("Navigation")
     @Test
     public void testClickOnNextArrow() {
-        testLinkCaseStudyOne();
+        loginPage.login();
+        homePage.clickOnLinkWork();
+        workPage.clickLinkCaseStudyOne();
         caseStudyPage.clickOnNextArrow();
         Assertions.assertEquals(Pages.EVENT_APP_CASE_STUDY.getUrl(), driver.getCurrentUrl());
     }
@@ -23,7 +36,9 @@ public class CaseStudyPageTest extends BaseTest{
     @Story("Navigation")
     @Test
     public void testClickOnNextCase() {
-        testLinkCaseStudyOne();
+        loginPage.login();
+        homePage.clickOnLinkWork();
+        workPage.clickLinkCaseStudyOne();
         Allure.addAttachment("First Case", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         do {
             caseStudyPage.clickNextCaseLink();

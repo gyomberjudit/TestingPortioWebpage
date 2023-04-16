@@ -12,12 +12,25 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.LinkedHashMap;
 
-public class BlogPage2Test extends BaseTest{
+public class BlogPage2Test extends TestEnvironment{
+    @Epic("Technical functionalities")
+    @Story("Navigating")
+    @Test
+    public void
+    testButtonSeeAllPosts() {
+        loginPage.login();
+        homePage.clickOnLinkBlog();
+        blogPage.clickButtonSeeAllPosts();
+        Assertions.assertTrue(blogPage2.isBlogPage2TextDisplayed());
+        Assertions.assertEquals(Pages.BLOG_PAGE.getUrl(), driver.getCurrentUrl());
+    }
     @Epic("Technical functionalities")
     @Story("Navigating")
     @Test
     public void testHomeLink() {
-        testButtonSeeAllPosts();
+        loginPage.login();
+        homePage.clickOnLinkBlog();
+        blogPage.clickButtonSeeAllPosts();
         blogPage2.clickOnHomeLink();
         Assertions.assertEquals(Pages.LANDING_PAGE.getUrl(), driver.getCurrentUrl());
         Allure.addAttachment("Failed navigation back to HomePage", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
@@ -26,7 +39,9 @@ public class BlogPage2Test extends BaseTest{
     @Story("CountItems")
     @Test
     public void testGetTotalItems() {
-        testButtonSeeAllPosts();
+        loginPage.login();
+        homePage.clickOnLinkBlog();
+        blogPage.clickButtonSeeAllPosts();
         int actual = blogPage2.getTotalItems();
         Assertions.assertEquals(9, actual);
     }
@@ -34,7 +49,9 @@ public class BlogPage2Test extends BaseTest{
     @Story("GetData")
     @Test
     public void testGetTags() {
-        testButtonSeeAllPosts();
+        loginPage.login();
+        homePage.clickOnLinkBlog();
+        blogPage.clickButtonSeeAllPosts();
         LinkedHashMap<String, String> expected = new LinkedHashMap<>();
         expected.put("Markdown Formatting Demo", "Website");
         expected.put("Designer Conference at Florida 2020", "Mobile");
@@ -53,21 +70,27 @@ public class BlogPage2Test extends BaseTest{
     @Story("Filewriting")
     @Test
     public void testSavePicture() throws IOException {
-        testButtonSeeAllPosts();
+        loginPage.login();
+        homePage.clickOnLinkBlog();
+        blogPage.clickButtonSeeAllPosts();
         blogPage2.savePicture();
     }
     @Epic("Technical functionalities")
     @Story("Filewriting")
     @Test
     public void testSavePicture2() {
-        testButtonSeeAllPosts();
+        loginPage.login();
+        homePage.clickOnLinkBlog();
+        blogPage.clickButtonSeeAllPosts();
         blogPage2.savePicture2();
     }
     @Epic("Technical functionalities")
     @Story("Filewriting")
     @Test
     public void testWriteBlogThemesFile() {
-        testButtonSeeAllPosts();
+        loginPage.login();
+        homePage.clickOnLinkBlog();
+        blogPage.clickButtonSeeAllPosts();
         blogPage2.writeBlogThemesFile();
 
         String expected = """              

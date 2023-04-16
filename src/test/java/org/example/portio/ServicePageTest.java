@@ -6,12 +6,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-public class ServicePageTest extends BaseTest{
+public class ServicePageTest extends TestEnvironment{
     @Epic("Content functionalities")
     @Story("Slider")
     @Test
     public void testMoveSlider() throws InterruptedException {
-        testLinkService();
+        loginPage.login();
+        homePage.clickOnLinkService();
         servicePage.moveSliderWithRightArrow();
         Assertions.assertTrue(servicePage.isLastSlideDisplayed());
     }
@@ -19,7 +20,8 @@ public class ServicePageTest extends BaseTest{
     @Story("Slider")
     @Test
     public void testSlider() {
-        testLinkService();
+        loginPage.login();
+        homePage.clickOnLinkService();
         servicePage.moveSliderWithDragAndDrop();
         Assertions.assertTrue(servicePage.isLastSlideDisplayed());
     }
@@ -28,7 +30,8 @@ public class ServicePageTest extends BaseTest{
     @Story("Slider")
     @Test
     public void testQuantityOfSlides2() {
-        testLinkService();
+        loginPage.login();
+        homePage.clickOnLinkService();
         Assertions.assertEquals(6, servicePage.quantityOfSlides());
     }
 }

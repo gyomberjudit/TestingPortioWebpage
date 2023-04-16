@@ -10,12 +10,13 @@ import org.openqa.selenium.TakesScreenshot;
 
 import java.io.ByteArrayInputStream;
 
-public class ResumePageTest extends BaseTest{
+public class ResumePageTest extends TestEnvironment{
     @Epic("Content functionalities")
     @Story("Resume")
     @Test
     public void testQuantityOfExperiences() {
-        testLinkResume();
+        loginPage.login();
+        homePage.clickOnLinkResume();
         resumePage.clickExperiences();
         Assertions.assertEquals(4, resumePage.quantityOfExperiences());
     }
@@ -23,7 +24,8 @@ public class ResumePageTest extends BaseTest{
     @Story("Resume")
     @Test
     public void testQuantityOfExperiences2() {
-        testLinkResume();
+        loginPage.login();
+        homePage.clickOnLinkResume();
         resumePage.clickExperiences();
         Assertions.assertEquals(4, resumePage.quantityOfExperiences2());
     }
@@ -32,7 +34,8 @@ public class ResumePageTest extends BaseTest{
     @Test
     public void testYearsOfExperience() {
         String[] years = {"2016-Present", "2010-2016", "2005-2010", "2001-2005"};
-        testLinkResume();
+        loginPage.login();
+        homePage.clickOnLinkResume();
         resumePage.clickExperiences();
         Allure.addAttachment("Years of experience", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         Assertions.assertArrayEquals(years, resumePage.getYearsOfExperience());
@@ -42,7 +45,8 @@ public class ResumePageTest extends BaseTest{
     @Test
     public void testExperience() {
         String[] firms = {"Umbrella co.", "Aperture Science", "ACME Inc.", "LexCorp"};
-        testLinkResume();
+        loginPage.login();
+        homePage.clickOnLinkResume();
         resumePage.clickExperiences();
         Allure.addAttachment("Firms to get experience", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         Assertions.assertArrayEquals(firms, resumePage.getFirmsOfExperience());
@@ -52,7 +56,8 @@ public class ResumePageTest extends BaseTest{
     @Test
     public void testEducation() throws InterruptedException {
         String education = "2008-2010, Master in Arts";
-        testLinkResume();
+        loginPage.login();
+        homePage.clickOnLinkResume();
         resumePage.clickEducation();
         Allure.addAttachment("Education", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         Assertions.assertEquals(education, resumePage.getEducation());
