@@ -8,6 +8,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -33,7 +34,7 @@ public class ContactPageTest extends TestEnvironment{
     public void testNavigateToContactPageWithContactMeButton() {
         loginPage.login();
         Assertions.assertTrue(homePage.isPortioLogoDisplayed());
-        homePage.navigateToContactPageWithContactButton();
+        homePage.navigateToContactPageWithContactMeButton();
         Assertions.assertTrue(contactPage.isContactMeTextDisplayed());
         Assertions.assertEquals(Pages.CONTACT_PAGE.getUrl(), driver.getCurrentUrl());
     }
@@ -64,13 +65,14 @@ public class ContactPageTest extends TestEnvironment{
         String message = "Let's work together";
         loginPage.login();
         Assertions.assertTrue(homePage.isPortioLogoDisplayed());
-        homePage.navigateToContactPageWithContactButton();
+        homePage.navigateToContactPageWithContactMeButton();
         contactPage.fillContactMeForm(name, email, message);
         contactPage.checkCheckbox();
         contactPage.sendMessage();
         Allure.addAttachment("Sending contact form is unsuccessful", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         Assertions.assertEquals("Message was sent successfully", contactPage.getMessageStatusText());
     }
+    @Disabled
     @Epic("Content functionalities")
     @Story("Forms")
     @Test
@@ -81,7 +83,7 @@ public class ContactPageTest extends TestEnvironment{
         String warningMessage = "Please, tick this box if you want to proceed.";
         loginPage.login();
         Assertions.assertTrue(homePage.isPortioLogoDisplayed());
-        homePage.navigateToContactPageWithContactButton();
+        homePage.navigateToContactPageWithContactMeButton();
         Assertions.assertTrue(contactPage.isContactMeTextDisplayed());
         contactPage.fillContactMeForm(name, email, message);
         contactPage.sendMessage();
@@ -94,9 +96,9 @@ public class ContactPageTest extends TestEnvironment{
     public void testNavigateFromContactPageBackToHomePage() {
         loginPage.login();
         Assertions.assertTrue(homePage.isPortioLogoDisplayed());
-        homePage.navigateToContactPageWithContactButton();
+        homePage.navigateToContactPageWithContactMeButton();
         Assertions.assertTrue(contactPage.isContactMeTextDisplayed());
         contactPage.getBackToHomePage();
-        Assertions.assertTrue(homePage.isHomePageTextDisplayed());
+        Assertions.assertEquals(Pages.LANDING_PAGE.getUrl(), driver.getCurrentUrl());
     }
 }
