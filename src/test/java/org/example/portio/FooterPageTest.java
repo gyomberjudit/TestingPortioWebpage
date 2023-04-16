@@ -38,7 +38,7 @@ public class FooterPageTest extends TestEnvironment{
         homePage.clickOnLinkContact();
         footerPage.clickLinkFAQ();
         Allure.addAttachment("Failed navigation to FAQ", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
-        Assertions.assertFalse(loginPage.isLoginButtonDisplayed());
+        Assertions.assertNotEquals(Pages.LOGIN_PAGE.getUrl(), driver.getCurrentUrl());
     }
     @Epic("Technical functionalities")
     @Story("Navigating")
@@ -48,7 +48,7 @@ public class FooterPageTest extends TestEnvironment{
         homePage.clickOnLinkContact();
         footerPage.clickLinkPrivacyAndPolicy();
         Allure.addAttachment("Failed navigation to Privacy and Policy", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
-        Assertions.assertFalse(loginPage.isLoginButtonDisplayed());
+        Assertions.assertNotEquals(Pages.LOGIN_PAGE.getUrl(), driver.getCurrentUrl());
     }
     @Epic("Technical functionalities")
     @Story("Navigating")
@@ -63,7 +63,7 @@ public class FooterPageTest extends TestEnvironment{
     @Epic("Technical functionalities")
     @Story("Navigating")
     @Test
-    public void testTermsAndConditionsLink() throws InterruptedException {
+    public void testTermsAndConditionsLink() {
         loginPage.login();
         homePage.clickOnLinkContact();
         footerPage.clickTermsAndConditions();

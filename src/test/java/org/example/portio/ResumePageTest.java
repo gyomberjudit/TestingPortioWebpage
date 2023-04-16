@@ -54,7 +54,7 @@ public class ResumePageTest extends TestEnvironment{
     @Epic("Content functionalities")
     @Story("Resume")
     @Test
-    public void testEducation() throws InterruptedException {
+    public void testEducation() {
         String education = "2008-2010, Master in Arts";
         loginPage.login();
         homePage.clickOnLinkResume();

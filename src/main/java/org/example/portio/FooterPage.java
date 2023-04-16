@@ -35,37 +35,25 @@ public class FooterPage extends  BasePage{
 
 //methods
     public void clickGetINTouchButton() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-        WebElement button = wait.until(ExpectedConditions.elementToBeClickable(BUTTON_GET_IN_TOUCH));
-        button.click();
+        moveToElement(BUTTON_GET_IN_TOUCH);
     }
     public void clickLinkAboutMe() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-        WebElement aboutMeLink = wait.until(ExpectedConditions.elementToBeClickable(LINK_ABOUT_ME));
-        aboutMeLink.click();
+        moveToElement(LINK_ABOUT_ME);
     }
     public void clickLinkFAQ() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-        WebElement faqLink = wait.until(ExpectedConditions.elementToBeClickable(LINK_FAQ));
-        faqLink.click();
+        moveToElement(LINK_FAQ);
     }
     public void clickLinkPrivacyAndPolicy() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement link = wait.until(ExpectedConditions.elementToBeClickable(LINK_PRIVACY_AND_POLICY));
-        link.click();
+        moveToElement(LINK_PRIVACY_AND_POLICY);
     }
     public void clickLatestArticle() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement link = wait.until(ExpectedConditions.elementToBeClickable(LINK_LATEST_ARTICLE));
-        link.click();
+        moveToElement(LINK_LATEST_ARTICLE);
     }
-    public void clickTermsAndConditions() throws InterruptedException {
-        scrollToElement(LINK_TERMS_AND_CONDITIONS);
-        driver.findElement(LINK_TERMS_AND_CONDITIONS).click();
+    public void clickTermsAndConditions() {
+        moveToElement(LINK_TERMS_AND_CONDITIONS);
     }
-    public void clickIconFacebbok() throws InterruptedException {
-        scrollToElement(ICON_FACEBOOK);
-        driver.findElement(ICON_FACEBOOK).click();
+    public void clickIconFacebbok() {
+       moveToElement(ICON_FACEBOOK);
     }
     public String getChildWindowUrl() throws InterruptedException {
         String parentWindow = driver.getWindowHandle();
@@ -83,17 +71,14 @@ public class FooterPage extends  BasePage{
         driver.switchTo().window(parentWindow);
         return url.toString();
     }
-    public void clickIconLinkedin() throws InterruptedException {
-        scrollToElement(ICON_LINKEDIN);
-        driver.findElement(ICON_LINKEDIN).click();
+    public void clickIconLinkedin() {
+        moveToElement(ICON_LINKEDIN);
     }
-    public void clickIconPinterest() throws InterruptedException {
-        scrollToElement(ICON_PINTEREST);
-        driver.findElement(ICON_PINTEREST).click();
+    public void clickIconPinterest() {
+        moveToElement(ICON_PINTEREST);
     }
-    public void clickIconTwitter() throws InterruptedException {
-        scrollToElement(ICON_TWITTER);
-        driver.findElement(ICON_TWITTER).click();
+    public void clickIconTwitter() {
+        moveToElement(ICON_TWITTER);
     }
 
 //methods for assertion
@@ -106,6 +91,8 @@ public class FooterPage extends  BasePage{
         return text.isDisplayed();
     }
     public boolean isFileNotFound() {
-        return driver.findElement(FILE_NOT_FOUND).isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement text = wait.until(ExpectedConditions.elementToBeClickable(FILE_NOT_FOUND));
+        return text.isDisplayed();
     }
 }
