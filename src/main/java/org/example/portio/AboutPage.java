@@ -19,7 +19,6 @@ public class AboutPage extends BasePage{
     }
 
 
-
 //methods for AboutPage
     public void clickOnHireMe() {
         driver.findElement(BUTTON_HIRE_ME).click();
