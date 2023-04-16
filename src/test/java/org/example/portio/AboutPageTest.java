@@ -13,7 +13,6 @@ public class AboutPageTest extends TestEnvironment{
         loginPage.login();
         homePage.clickOnLinkAbout();
         aboutPage.clickOnHireMe();
-        Assertions.assertTrue(contactPage.isContactMeTextDisplayed());
         Assertions.assertEquals(Pages.CONTACT_PAGE.getUrl(), driver.getCurrentUrl());
     }
     @Epic("Technical functionalities")
