@@ -27,7 +27,8 @@ public class ResumePage extends BasePage{
     public void clickExperiences() {
         driver.findElement(BUTTON_EXPERIENCES).click();
     }
-    public void clickEducation() {
+    public void clickEducation() throws InterruptedException {
+        scrollToElement(BUTTON_EDUCATION);
         driver.findElement(BUTTON_EDUCATION).click();
     }
     public int quantityOfExperiences() {
