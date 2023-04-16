@@ -12,6 +12,7 @@ public enum Pages {
     EVENT_APP_CASE_STUDY("https://lennertamas.github.io/portio/portfolio/event-app-case-study/"),
     RECIPE_APP_PAGE("https://lennertamas.github.io/portio/portfolio/recipe-app-ux-study/"),
     BLOG_PAGE("https://lennertamas.github.io/portio/blog/"),
+    ABOUT_ME("https://lennertamas.github.io/portio/about"),
     TERMS_AND_CONDITIONS("https://lennertamas.github.io/portio/tc.html"),
     FACEBOOK("https://www.facebook.com/"),
     LINKEDIN("https://www.linkedin.com/"),

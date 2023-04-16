@@ -23,11 +23,14 @@ public class FooterPageTest extends TestEnvironment{
     @Epic("Technical functionalities")
     @Story("Navigating")
     @Test
-    public void testAboutMeLink() {
+    public void testAboutMeLink() throws InterruptedException {
         loginPage.login();
         homePage.clickOnLinkContact();
         footerPage.clickLinkAboutMe();
+        String actual = footerPage.getChildWindowUrl();
         Allure.addAttachment("Failed navigation to About Me", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+        Assertions.assertEquals(Pages.ABOUT_ME.getUrl(), actual);
+        driver.navigate().to(Pages.ABOUT_ME.getUrl());
         Assertions.assertFalse(footerPage.isFileNotFound());
     }
     @Epic("Technical functionalities")
@@ -63,13 +66,15 @@ public class FooterPageTest extends TestEnvironment{
     @Epic("Technical functionalities")
     @Story("Navigating")
     @Test
-    public void testTermsAndConditionsLink() {
+    public void testTermsAndConditionsLink() throws InterruptedException {
         loginPage.login();
         homePage.clickOnLinkContact();
         footerPage.clickTermsAndConditions();
+        String actual = footerPage.getChildWindowUrl();
         Allure.addAttachment("Successful navigation to Terms and Conditions", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+        Assertions.assertEquals(Pages.TERMS_AND_CONDITIONS.getUrl(), actual);
+        driver.navigate().to(Pages.TERMS_AND_CONDITIONS.getUrl());
         Assertions.assertTrue(footerPage.isTermsAndConditionsTextDisplayed());
-        Assertions.assertEquals(Pages.TERMS_AND_CONDITIONS.getUrl(), driver.getCurrentUrl());
     }
     @Epic("Technical functionalities")
     @Story("Navigating")
