@@ -31,6 +31,18 @@ Tesztelt funkciók:
 - menu validálása
 - profil beállítása
 - üzenetküldés (contact form)
-- referenciák funkciói
-- resume funkciói
-- blog funkciói
+- tartalmak közti navigálás 
+- tartalom validálása
+
+
+
+Programozási módok:
+- Lista bejárása
+- Lista elemeinek mentése HahMap-be
+- Fájl írása
+- Fájl olvasása
+- Fájl létrehozása
+- WindowHandling
+- Waits
+- Actions 
+- JavaScriptExecutor
