@@ -4,14 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26794f44-258f-49a9-b97f-0314055cd4a0" name="Changes" comment="" />
+    <list default="true" id="26794f44-258f-49a9-b97f-0314055cd4a0" name="Changes" comment="add test_case_template.xlsx">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/expected.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Portio weboldal tesztelése.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/portio/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/portio/MenuPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/portio/WorkPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/portio/WorkPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/portio/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/portio/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/portio/CaseStudyPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/portio/CaseStudyPageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/portio/PortioTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/portio/ProfilePageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/portio/ProfilePageTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -21,17 +43,142 @@
     </option>
   </component>
   <component name="ProjectId" id="2NrbDttqVTarFPBRgLQB4h5dfFg" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/Gyömbér Judit/.1tester/AUTOMATA TESZTELŐ/VIZSGAREMEK/TestingPortioWebpage"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Gyömbér Judit\IdeaProjects\TestingPortioWebpage" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.CaseStudyPageTest.testClickOnNextCase">
+    <configuration name="CaseStudyPageTest.testClickOnNextCase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TestingPortioWebpage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.portio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.portio" />
+      <option name="MAIN_CLASS_NAME" value="org.example.portio.CaseStudyPageTest" />
+      <option name="METHOD_NAME" value="testClickOnNextCase" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FooterPageTest.testLinkedinLink" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TestingPortioWebpage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.portio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.portio" />
+      <option name="MAIN_CLASS_NAME" value="org.example.portio.FooterPageTest" />
+      <option name="METHOD_NAME" value="testLinkedinLink" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FooterPageTest.testPinterestLink" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TestingPortioWebpage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.portio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.portio" />
+      <option name="MAIN_CLASS_NAME" value="org.example.portio.FooterPageTest" />
+      <option name="METHOD_NAME" value="testPinterestLink" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PortioTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="TestingPortioWebpage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.portio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.portio" />
+      <option name="MAIN_CLASS_NAME" value="org.example.portio.PortioTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProfilePageTest.testProfileUsername" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TestingPortioWebpage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.portio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.portio" />
+      <option name="MAIN_CLASS_NAME" value="org.example.portio.ProfilePageTest" />
+      <option name="METHOD_NAME" value="testProfileUsername" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProfilePageTest.testSetProfile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TestingPortioWebpage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.portio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.portio" />
+      <option name="MAIN_CLASS_NAME" value="org.example.portio.ProfilePageTest" />
+      <option name="METHOD_NAME" value="testSetProfile" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.PortioTest" />
+      <item itemvalue="JUnit.CaseStudyPageTest.testClickOnNextCase" />
+      <item itemvalue="JUnit.FooterPageTest.testLinkedinLink" />
+      <item itemvalue="JUnit.FooterPageTest.testPinterestLink" />
+      <item itemvalue="JUnit.ProfilePageTest.testProfileUsername" />
+      <item itemvalue="JUnit.ProfilePageTest.testSetProfile" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CaseStudyPageTest.testClickOnNextCase" />
+        <item itemvalue="JUnit.ProfilePageTest.testProfileUsername" />
+        <item itemvalue="JUnit.ProfilePageTest.testSetProfile" />
+        <item itemvalue="JUnit.FooterPageTest.testPinterestLink" />
+        <item itemvalue="JUnit.FooterPageTest.testLinkedinLink" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -41,6 +188,390 @@
       <option name="presentableId" value="Default" />
       <updated>1680425033780</updated>
     </task>
+    <task id="LOCAL-00001" summary="add RegisterPage and LoginPage">
+      <created>1680537755404</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680537755405</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add Excel">
+      <created>1680538585473</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680538585473</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add enum Pages">
+      <created>1680551526084</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680551526084</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add login with built-in credentials">
+      <created>1680627376918</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680627376918</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add homePage">
+      <created>1680640103698</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1680640103698</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add ContactPage">
+      <created>1680811253363</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1680811253363</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add CaseStudyPage">
+      <created>1681061912687</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681061912688</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add AboutPage">
+      <created>1681587512516</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1681587512516</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add AboutPageTest">
+      <created>1681587659355</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1681587659355</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add TestEnvironment.java">
+      <created>1681588529553</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1681588529553</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add BasePage.java">
+      <created>1681588554261</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1681588554261</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add BasePageTest.java">
+      <created>1681588565695</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1681588565695</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add BlogPage.java">
+      <created>1681588585854</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1681588585854</updated>
+    </task>
+    <task id="LOCAL-00014" summary="add BlogPage2.java">
+      <created>1681588905010</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1681588905010</updated>
+    </task>
+    <task id="LOCAL-00015" summary="add BlogPage2Test.java">
+      <created>1681589115391</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1681589115391</updated>
+    </task>
+    <task id="LOCAL-00016" summary="add blogThemes.txt">
+      <created>1681589157174</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1681589157174</updated>
+    </task>
+    <task id="LOCAL-00017" summary="add CaseStudyPage.java">
+      <created>1681589182106</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1681589182106</updated>
+    </task>
+    <task id="LOCAL-00018" summary="add CaseStudyPageTest.java">
+      <created>1681589249631</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1681589249631</updated>
+    </task>
+    <task id="LOCAL-00019" summary="add contactInfo.json">
+      <created>1681589269915</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1681589269915</updated>
+    </task>
+    <task id="LOCAL-00020" summary="add ContactPage.java">
+      <created>1681589366339</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1681589366339</updated>
+    </task>
+    <task id="LOCAL-00021" summary="add ContactPageTest.java">
+      <created>1681589421643</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1681589421643</updated>
+    </task>
+    <task id="LOCAL-00022" summary="add HomePage.java">
+      <created>1681589531549</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1681589531549</updated>
+    </task>
+    <task id="LOCAL-00023" summary="add LoginPage.java">
+      <created>1681589643474</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1681589643474</updated>
+    </task>
+    <task id="LOCAL-00024" summary="add LoginPageTest.java">
+      <created>1681589655441</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1681589655441</updated>
+    </task>
+    <task id="LOCAL-00025" summary="add Pages.java">
+      <created>1681589742526</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1681589742526</updated>
+    </task>
+    <task id="LOCAL-00026" summary="add pom.xml">
+      <created>1681589762740</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1681589762740</updated>
+    </task>
+    <task id="LOCAL-00027" summary="add test_case_template.xlsx">
+      <created>1681590612062</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1681590612062</updated>
+    </task>
+    <task id="LOCAL-00028" summary="add ProfilePageTest.java">
+      <created>1681590649491</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1681590649491</updated>
+    </task>
+    <task id="LOCAL-00029" summary="add RecipeAppPage.java">
+      <created>1681590668774</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1681590668774</updated>
+    </task>
+    <task id="LOCAL-00030" summary="add RegisterPageTest.java">
+      <created>1681590685639</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1681590685639</updated>
+    </task>
+    <task id="LOCAL-00031" summary="add ResumePage.java">
+      <created>1681590765290</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1681590765290</updated>
+    </task>
+    <task id="LOCAL-00032" summary="add ResumePageTest.java">
+      <created>1681590777770</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1681590777770</updated>
+    </task>
+    <task id="LOCAL-00033" summary="add SkillsPage.java">
+      <created>1681590922052</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1681590922052</updated>
+    </task>
+    <task id="LOCAL-00034" summary="add SkillsPageTest.java">
+      <created>1681590936189</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1681590936189</updated>
+    </task>
+    <task id="LOCAL-00035" summary="add WorkPage.java">
+      <created>1681591049608</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1681591049608</updated>
+    </task>
+    <task id="LOCAL-00036" summary="add WorkPageTest.java">
+      <created>1681591074227</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1681591074227</updated>
+    </task>
+    <task id="LOCAL-00037" summary="add image.jpg">
+      <created>1681591118206</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1681591118206</updated>
+    </task>
+    <task id="LOCAL-00038" summary="add image2.jpg">
+      <created>1681591132292</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1681591132292</updated>
+    </task>
+    <task id="LOCAL-00039" summary="add pom.xml refresh">
+      <created>1681595467155</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1681595467155</updated>
+    </task>
+    <task id="LOCAL-00040" summary="add AboutPage.java">
+      <created>1681603862218</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1681603862218</updated>
+    </task>
+    <task id="LOCAL-00041" summary="add AboutPageTest.java">
+      <created>1681603872683</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1681603872683</updated>
+    </task>
+    <task id="LOCAL-00042" summary="add BasePage.java">
+      <created>1681603895189</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1681603895189</updated>
+    </task>
+    <task id="LOCAL-00043" summary="add FooterPage.java">
+      <created>1681603912832</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1681603912832</updated>
+    </task>
+    <task id="LOCAL-00044" summary="add FooterPageTest.java">
+      <created>1681603930256</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1681603930256</updated>
+    </task>
+    <task id="LOCAL-00045" summary="add Pages.java">
+      <created>1681603981810</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1681603981810</updated>
+    </task>
+    <task id="LOCAL-00046" summary="add ServicePage.java">
+      <created>1681604275045</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1681604275045</updated>
+    </task>
+    <task id="LOCAL-00047" summary="add ServicePageTest.java">
+      <created>1681604288984</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1681604288984</updated>
+    </task>
+    <task id="LOCAL-00048" summary="add test_case_template.xlsx">
+      <created>1681653317835</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1681653317835</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add HomePage.java" />
+    <MESSAGE value="add LoginPage.java" />
+    <MESSAGE value="add LoginPageTest.java" />
+    <MESSAGE value="add pom.xml" />
+    <MESSAGE value="add ProfilePageTest.java" />
+    <MESSAGE value="add RecipeAppPage.java" />
+    <MESSAGE value="add RegisterPageTest.java" />
+    <MESSAGE value="add ResumePage.java" />
+    <MESSAGE value="add ResumePageTest.java" />
+    <MESSAGE value="add SkillsPage.java" />
+    <MESSAGE value="add SkillsPageTest.java" />
+    <MESSAGE value="add WorkPage.java" />
+    <MESSAGE value="add WorkPageTest.java" />
+    <MESSAGE value="add image.jpg" />
+    <MESSAGE value="add image2.jpg" />
+    <MESSAGE value="add pom.xml refresh" />
+    <MESSAGE value="add AboutPage.java" />
+    <MESSAGE value="add AboutPageTest.java" />
+    <MESSAGE value="add BasePage.java" />
+    <MESSAGE value="add FooterPage.java" />
+    <MESSAGE value="add FooterPageTest.java" />
+    <MESSAGE value="add Pages.java" />
+    <MESSAGE value="add ServicePage.java" />
+    <MESSAGE value="add ServicePageTest.java" />
+    <MESSAGE value="add test_case_template.xlsx" />
+    <option name="LAST_COMMIT_MESSAGE" value="add test_case_template.xlsx" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/TestingPortioWebpage$SkillsPageTest.ic" NAME="SkillsPageTest Coverage Results" MODIFIED="1681204969440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.portio.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/TestingPortioWebpage$PortioTest.ic" NAME="PortioTest Coverage Results" MODIFIED="1680853852471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.portio.*</FILTER>
+    </SUITE>
   </component>
 </project>
