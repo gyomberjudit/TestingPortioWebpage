@@ -4,19 +4,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class ResumePage extends BasePage{
 
 //locate elements for ServicePAge
-    private final By RESUME_PAGE_TEXT = By.id("my-expertises");
     private final By BUTTON_EXPERIENCES = By.xpath("//*[@href=\"#experience\"]");
-    private final By BUTTON_EDUCATION = By.xpath("//*[@href=\"#education\"]");
     private final By EXPERIENCES_ITEMS = By.xpath("//*[@id=\"experience\"]/div");
     private final By EXPERIENCE_YEARS = By.xpath("//*[@id=\"experience\"]/div/span");
     private final By EXPERIENCES = By.xpath("//*[@id=\"experience\"]/div/h4");
-    private final By EDUCATION_YEAR = By.xpath("//*[@id=\"education\"]/div[1]/span");
-    private final By EDUCATION = By.xpath("//*[@id=\"education\"]/div[1]/h4");
 
 //constructor
     public ResumePage(WebDriver driver) {
@@ -24,21 +23,11 @@ public class ResumePage extends BasePage{
     }
 
 //methods for ResumePage
-    public void clickExperiences() {
-        moveToElement(BUTTON_EXPERIENCES);
-    }
-    public void clickEducation() {
-        moveToElement(BUTTON_EDUCATION);
+    public void clickExperiences() throws InterruptedException {
+        scrollToElement(BUTTON_EXPERIENCES);
+        driver.findElement(BUTTON_EXPERIENCES).click();
     }
     public int quantityOfExperiences() {
-        List<WebElement> experiences = driver.findElements(EXPERIENCES_ITEMS);
-        int quantity = 0;
-        for (int i=0; i< experiences.size(); i++) {
-            quantity++;
-        }
-        return quantity;
-    }
-    public int quantityOfExperiences2() {
         List<WebElement> experiences = driver.findElements(EXPERIENCES_ITEMS);
         return experiences.size();
     }
@@ -62,13 +51,19 @@ public class ResumePage extends BasePage{
         }
         return items;
     }
-    public String getEducation() {
-        String year = driver.findElement(EDUCATION_YEAR).getText();
-        String education = driver.findElement(EDUCATION).getText();
-        return year + ", " + education;
-    }
-
-    public boolean isResumePageTextDisplayed() {
-        return driver.findElement(RESUME_PAGE_TEXT).isDisplayed();
+    public String[] readFile() {
+        List<String> firms = new ArrayList<>();
+        try {
+            File text = new File("firms.txt");
+            Scanner sc = new Scanner(text);
+            while (sc.hasNextLine()) {
+                String firm = sc.nextLine();
+                firms.add(firm);
+            }
+        } catch (Exception e) {
+            System.out.println("File not found");
+            e.printStackTrace();
+        }
+        return firms.toArray(new String[0]);
     }
 }
