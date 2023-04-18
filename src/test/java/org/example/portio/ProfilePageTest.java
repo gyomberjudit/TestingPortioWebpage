@@ -1,9 +1,9 @@
 package org.example.portio;
 
 import io.qameta.allure.Allure;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Story;
+import io.qameta.allure.Description;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -11,8 +11,8 @@ import org.openqa.selenium.TakesScreenshot;
 import java.io.ByteArrayInputStream;
 
 public class ProfilePageTest extends TestEnvironment{
-    @Epic("Technical functionalities")
-    @Story("Profile")
+    @DisplayName("Set Profile")
+    @Description("Set profile by giving credentials")
     @Test
     public void testSetProfile() {
         String username = "teszteszter";
@@ -28,8 +28,8 @@ public class ProfilePageTest extends TestEnvironment{
         profilePage.setProfile(name, bio, phone);
         Assertions.assertEquals("Profile Edited!", profilePage.getProfileMessage());
     }
-    @Epic("Technical functionalities")
-    @Story("Profile")
+    @DisplayName("Test profile name")
+    @Description("Test is profile name visible after setting account")
     @Test
     public void testProfileUsername() {
         String username = "teszteszter";
@@ -48,8 +48,8 @@ public class ProfilePageTest extends TestEnvironment{
         Allure.addAttachment("Username is not displayed after profile edited", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         Assertions.assertEquals("Teszt Eszti", homePage.getProfileName());
     }
-    @Epic("Technical functionalities")
-    @Story("Profile")
+    @DisplayName("Delete Account")
+    @Description("Click profile and delete account")
     @Test
     public void testDeleteAccount() {
         String username = "teszteszter";
