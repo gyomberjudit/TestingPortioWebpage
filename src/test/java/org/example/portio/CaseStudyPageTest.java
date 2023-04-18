@@ -30,10 +30,10 @@ public class CaseStudyPageTest extends TestEnvironment{
         loginPage.login();
         homePage.clickOnLinkWork();
         workPage.clickLinkCaseStudyOne();
-        Allure.addAttachment("First Case", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+        Allure.addAttachment("First Case: Case Study One", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         do {
             caseStudyPage.clickNextCaseLink();
-            Allure.addAttachment("Next Case", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+            Allure.addAttachment("Next Case: Event App Case Study", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         } while (!caseStudyPage.isLinkNextCaseDisplayed());
         Assertions.assertTrue(recipeAppPage.isRecipeAppTextDisplayed());
     }
