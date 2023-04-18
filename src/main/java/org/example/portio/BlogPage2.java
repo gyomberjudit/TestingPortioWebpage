@@ -53,7 +53,7 @@ public class BlogPage2 extends BasePage{
         BufferedImage image = ImageIO.read(url);
         ImageIO.write(image, "jpg", file);
     }
-    public void savePicture2() {
+   /* public void savePicture2() {
         try {
             File file = new File("image2.jpg");
             URL url = new URL("https://lennertamas.github.io/portio/images/allpost/allPost-5.jpg");
@@ -66,7 +66,34 @@ public class BlogPage2 extends BasePage{
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }*/
+    public void savePicture2() {
+        try {
+            File file = new File("image2.jpg");
+            URL url = new URL("https://lennertamas.github.io/portio/images/allpost/allPost-5.jpg");
+            BufferedImage image = ImageIO.read(url);
+            if (file.createNewFile()) {
+                ImageIO.write(image, "jpg", file);
+            } else {
+                file.deleteOnExit();
+                //ImageIO.write(image, "jpg", file);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
+
+  /*  File obj = new File("fájlnév.txt");
+    if (obj.exists()) {
+        System.out.pritnln("..." + obj.getName());
+        vagy lehet törölni is
+    } else {
+        System.out.println("The file doesn't exist.");
+    }*/
+
+
+
 //Write file
     public void writeBlogThemesFile() {
         try {
