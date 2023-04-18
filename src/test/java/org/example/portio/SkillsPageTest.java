@@ -1,15 +1,15 @@
 package org.example.portio;
 
-import io.qameta.allure.Epic;
-import io.qameta.allure.Story;
+import io.qameta.allure.Description;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 
 public class SkillsPageTest extends TestEnvironment{
-    @Epic("Content functionalities")
-    @Story("GetData")
+    @DisplayName("Skill types")
+    @Description("Collect all the Skill types in a String array")
     @Test
     public void testGetSkillTypes() {
         String[] expected = {"HTML", "CSS", "Javascript"};
@@ -18,8 +18,8 @@ public class SkillsPageTest extends TestEnvironment{
         String[] actual = skillsPage.getSkillTypes();
         Assertions.assertArrayEquals(expected, actual);
     }
-    @Epic("Content functionalities")
-    @Story("GetData")
+    @DisplayName("Skill percents")
+    @Description("Collect all the Skill percents in a String array")
     @Test
     public void testGetSkillPercents() {
         String[] expected = {"69", "60", "85"};
@@ -28,8 +28,8 @@ public class SkillsPageTest extends TestEnvironment{
         String[] actual = skillsPage.getSkillPercents();
         Assertions.assertArrayEquals(expected, actual);
     }
-    @Epic("Content functionalities")
-    @Story("GetData")
+    @DisplayName("Skill types & percents HashMap")
+    @Description("Collect all the Skill types & percents in a HashMap")
     @Test
     public void testGetSkills() throws InterruptedException {
         loginPage.login();
