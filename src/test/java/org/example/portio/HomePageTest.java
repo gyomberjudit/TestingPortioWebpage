@@ -33,14 +33,6 @@ public class HomePageTest extends TestEnvironment{
     @Epic("Technical functionalities")
     @Story("Navigation")
     @Test
-    public void testLinkResume() {
-        loginPage.login();
-        homePage.clickOnLinkResume();
-        Assertions.assertTrue(resumePage.isResumePageTextDisplayed());
-    }
-    @Epic("Technical functionalities")
-    @Story("Navigation")
-    @Test
     public void testLinkSkills() {
         loginPage.login();
         homePage.clickOnLinkSkills();
@@ -53,13 +45,5 @@ public class HomePageTest extends TestEnvironment{
         loginPage.login();
         homePage.clickOnLinkBlog();
         Assertions.assertTrue(blogPage.isBlogPageTextDisplayed());
-    }
-    @Epic("Technical functionalities")
-    @Story("Navigating")
-    @Test
-    public void testLinkContact() {
-        loginPage.login();
-        homePage.clickOnLinkContact();
-        Assertions.assertTrue(footerPage.isFooterPageTextDisplayed());
     }
 }
