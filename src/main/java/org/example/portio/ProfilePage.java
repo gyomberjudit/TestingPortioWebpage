@@ -30,8 +30,6 @@ public void setProfile(String name, String bio, String phone) {
         driver.findElement(DELETE_BUTTON).click();
         driver.findElement(CONFIRM_DELETE_BUTTON).click();
     }
-
-//methods for assertions
     public String getProfileMessage() {
     return driver.findElement(PROFILE_MESSAGE).getText();
 }
