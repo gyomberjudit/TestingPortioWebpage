@@ -38,6 +38,7 @@ public class FooterPageTest extends TestEnvironment{
         Thread.sleep(3000);
         String actual = footerPage.getChildWindowUrl();
         Assertions.assertEquals(Pages.FACEBOOK.getUrl(), actual);
+        Thread.sleep(3000);
         Allure.addAttachment("Successful navigation to Facebook", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
     }
     @DisplayName("Test Linkedin link")
@@ -48,6 +49,7 @@ public class FooterPageTest extends TestEnvironment{
         footerPage.clickIconLinkedin();
         String actual = footerPage.getChildWindowUrl();
         Assertions.assertEquals(Pages.LINKEDIN.getUrl(), actual);
+        Thread.sleep(3000);
         Allure.addAttachment("Successful navigation to Linkedin", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
     }
 }
