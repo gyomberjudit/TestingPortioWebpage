@@ -25,8 +25,6 @@ public class BlogPage extends BasePage{
         actions.moveToElement(button).pause(Duration.ofSeconds(5)).perform();
         actions.click(button).build().perform();
     }
-
-//methods for assertion
     public boolean isBlogPageTextDisplayed() {
         return driver.findElement(BLOG_PAGE_TEXT).isDisplayed();
     }
