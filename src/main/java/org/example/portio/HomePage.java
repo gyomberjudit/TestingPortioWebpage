@@ -20,17 +20,13 @@ public class HomePage extends BasePage{
     private final By LINK_ABOUT = By.xpath("//*[@id=\"navbarCollapse\"]//li[2]/a");
     private final By LINK_SERVICE = By.xpath("//*[@id=\"navbarCollapse\"]//li[3]/a");
     private final By LINK_WORK = By.xpath("//*[text()=\"Work\"]");
-    private final By LINK_RESUME = By.xpath("//*[@id=\"navbarCollapse\"]//li[5]/a");
     private final By LINK_SKILLS = By.xpath("//*[@id=\"navbarCollapse\"]//li[6]/a");
     private final By LINK_BLOG = By.xpath("//*[@id=\"navbarCollapse\"]//li[7]/a");
-    private final By LINK_CONTACT = By.xpath("//*[@id=\"navbarCollapse\"]//li[8]/a");
-
 
 //constructor
     public HomePage(WebDriver driver) {
         super(driver, Pages.LANDING_PAGE.getUrl());
     }
-
 
 //methods for homePage
     public void logout() {
@@ -56,20 +52,12 @@ public class HomePage extends BasePage{
     public void clickOnLinkWork() {
         driver.findElement(LINK_WORK).click();
     }
-    public void clickOnLinkResume() {
-        driver.findElement(LINK_RESUME).click();
-    }
     public void clickOnLinkSkills() {
         driver.findElement(LINK_SKILLS).click();
     }
     public void clickOnLinkBlog() {
         driver.findElement(LINK_BLOG).click();
     }
-    public void clickOnLinkContact() {
-        driver.findElement(LINK_CONTACT).click();
-    }
-
-//methods for assertions
     public boolean isPortioLogoDisplayed() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement logo = wait.until(ExpectedConditions.visibilityOfElementLocated(PORTIO_LOGO));
