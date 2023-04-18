@@ -26,6 +26,7 @@ public class LoginPage extends BasePage{
 
 
 //methods for login
+//login with accepting terms
     public void login() {
         String username = "lovasia";
         String password = "kispal123";
@@ -47,8 +48,6 @@ public class LoginPage extends BasePage{
         driver.findElement(INPUT_PASSWORD_LOGIN).sendKeys(password);
         driver.findElement(BUTTON_LOGIN).sendKeys(Keys.ENTER);
     }
-
-//methods for assertions
     public String getAlertMessage() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         WebElement alertMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(MESSAGE_ALERT));
