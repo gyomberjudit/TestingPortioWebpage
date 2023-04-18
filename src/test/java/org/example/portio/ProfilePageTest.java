@@ -27,6 +27,7 @@ public class ProfilePageTest extends TestEnvironment{
         homePage.clickProfile();
         profilePage.setProfile(name, bio, phone);
         Assertions.assertEquals("Profile Edited!", profilePage.getProfileMessage());
+        Allure.addAttachment("Message after setting profile: 'Profile edited'", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
     }
     @DisplayName("Test profile name")
     @Description("Test is profile name visible after setting account")
@@ -45,8 +46,8 @@ public class ProfilePageTest extends TestEnvironment{
         profilePage.setProfile(name, bio, phone);
         Assertions.assertEquals("Profile Edited!", profilePage.getProfileMessage());
         homePage.navigate();
-        Allure.addAttachment("Username is not displayed after profile edited", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         Assertions.assertEquals("Teszt Eszti", homePage.getProfileName());
+        Allure.addAttachment("Username is not displayed after profile edited", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
     }
     @DisplayName("Delete Account")
     @Description("Click profile and delete account")
@@ -62,8 +63,8 @@ public class ProfilePageTest extends TestEnvironment{
         homePage.clickProfile();
         profilePage.deleteAccount();
         loginPage.login2(username, password);
-        Allure.addAttachment("Account deleted, user can't log in", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         Assertions.assertTrue(loginPage.isAlertMessageDisplayed());
         Assertions.assertEquals(expectedMessage, loginPage.getAlertMessage());
+        Allure.addAttachment("Account deleted, user can't log in", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
     }
 }
