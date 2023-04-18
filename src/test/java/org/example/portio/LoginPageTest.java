@@ -1,9 +1,9 @@
 package org.example.portio;
 
 import io.qameta.allure.Allure;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Story;
+import io.qameta.allure.Description;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -11,8 +11,8 @@ import org.openqa.selenium.TakesScreenshot;
 import java.io.ByteArrayInputStream;
 
 public class LoginPageTest extends TestEnvironment{
-    @Epic("Technical functionalities")
-    @Story("Login")
+    @DisplayName("Login")
+    @Description("Login with right credentials, accepting terms")
     @Test
     public void testLogin() {
         loginPage.login();
@@ -20,8 +20,8 @@ public class LoginPageTest extends TestEnvironment{
         Assertions.assertEquals(Pages.LANDING_PAGE.getUrl(), driver.getCurrentUrl());
         Assertions.assertTrue(homePage.isPortioLogoDisplayed());
     }
-    @Epic("Technical functionalities")
-    @Story("Login")
+    @DisplayName("Wrong login1")
+    @Description("Login with missing username")
     @Test
     public void testLoginWithMissingUsername() {
         String missingUsername = "";
@@ -32,8 +32,8 @@ public class LoginPageTest extends TestEnvironment{
         Allure.addAttachment("Failed login with missing username", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         Assertions.assertEquals(Pages.LOGIN_PAGE.getUrl(), driver.getCurrentUrl());
     }
-    @Epic("Technical functionalities")
-    @Story("Login")
+    @DisplayName("Wrong login2")
+    @Description("Login with wrong password")
     @Test
     public void testLoginWithWrongPassword() {
         String username = "lovasia";
@@ -46,8 +46,8 @@ public class LoginPageTest extends TestEnvironment{
         Assertions.assertTrue(loginPage.isAlertMessageDisplayed());
         Assertions.assertEquals(expectedMessage, loginPage.getAlertMessage());
     }
-    @Epic("Technical functionalities")
-    @Story("Login")
+    @DisplayName("Login with Enter")
+    @Description("Login pressing button Enter")
     @Test
     public void testLoginWithEnter() {
         String username = "lovasia";
@@ -56,8 +56,8 @@ public class LoginPageTest extends TestEnvironment{
         Assertions.assertEquals(Pages.LANDING_PAGE.getUrl(), driver.getCurrentUrl());
         Assertions.assertTrue(homePage.isPortioLogoDisplayed());
     }
-    @Epic("Technical functionalities")
-    @Story("Login")
+    @DisplayName("Wrong Login3")
+    @Description("Login without registration")
     @Test
     public void testLoginWithoutRegistration() {
         String username = "tesztelek";
@@ -69,8 +69,8 @@ public class LoginPageTest extends TestEnvironment{
         Assertions.assertTrue(loginPage.isAlertMessageDisplayed());
         Assertions.assertEquals(expectedMessage, loginPage.getAlertMessage());
     }
-    @Epic("Technical functionalities")
-    @Story("Logout")
+    @DisplayName("Logout")
+    @Description("Logging out after logging in")
     @Test
     public void testLogout() {
         HomePage homePage = new HomePage(driver);
