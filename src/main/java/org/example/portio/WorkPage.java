@@ -28,10 +28,6 @@ public class WorkPage extends BasePage{
         }
         return quantity;
     }
-    public int quantityOfPortfolio2() {
-        List<WebElement> works = driver.findElements(WORKS);
-        return works.size();
-    }
     public String[] contentOfPortfolio() {
         List<WebElement> works = driver.findElements(WORK_TITLES);
 
@@ -48,8 +44,6 @@ public class WorkPage extends BasePage{
         js.executeScript("arguments[0].scrollIntoView();", caseStudyLink);
         js.executeScript("arguments[0].click();", caseStudyLink);
     }
-
-//methods for assertions
     public boolean isWorkPageTextDisplayed() {
         return driver.findElement(WORKPAGE_TEXT).isDisplayed();
     }
