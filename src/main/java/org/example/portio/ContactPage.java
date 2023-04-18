@@ -19,16 +19,12 @@ public class ContactPage extends BasePage{
     private final By INPUT_MESSAGE = By.id("message");
     private final By CHECKBOX = By.id("aggrement");
     private final By INPUT_SEND_MESSAGE = By.xpath("//*[@type=\"submit\"]");
-    private final By HOME_LINK = By.xpath("//*[@class=\"breadcrumb-item\"]/a");
     private final By MESSAGE_STATUS = By.id("contact-form-status");
-
 
 //constructor
     public ContactPage(WebDriver driver) {
         super(driver, Pages.CONTACT_PAGE.getUrl());
     }
-
-
 
 //methods for contactPage
     public Map<String, String> getContactInfo() {
@@ -53,11 +49,6 @@ public class ContactPage extends BasePage{
     public void sendMessage() {
         driver.findElement(INPUT_SEND_MESSAGE).click();
     }
-    public void getBackToHomePage() {
-        driver.findElement(HOME_LINK).click();
-    }
-
-//methods for assertions
     public boolean isContactMeTextDisplayed() {
         return driver.findElement(CONTACT_ME_TEXT).isDisplayed();
     }
