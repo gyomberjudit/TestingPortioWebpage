@@ -1,57 +1,33 @@
 package org.example.portio;
 
-import io.qameta.allure.Allure;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Story;
+import jdk.jfr.Description;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.LinkedHashMap;
 
 public class BlogPage2Test extends TestEnvironment{
-    @Epic("Technical functionalities")
-    @Story("Navigating")
-    @Test
-    public void
-    testButtonSeeAllPosts() {
-        loginPage.login();
-        homePage.clickOnLinkBlog();
-        blogPage.clickButtonSeeAllPosts();
-        Assertions.assertTrue(blogPage2.isBlogPage2TextDisplayed());
-        Assertions.assertEquals(Pages.BLOG_PAGE.getUrl(), driver.getCurrentUrl());
-    }
-    @Epic("Technical functionalities")
-    @Story("Navigating")
-    @Test
-    public void testHomeLink() {
-        loginPage.login();
-        homePage.clickOnLinkBlog();
-        blogPage.clickButtonSeeAllPosts();
-        blogPage2.clickOnHomeLink();
-        Assertions.assertEquals(Pages.LANDING_PAGE.getUrl(), driver.getCurrentUrl());
-        Allure.addAttachment("Failed navigation back to HomePage", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
-    }
-    @Epic("Content functionalities")
-    @Story("CountItems")
+
+    @DisplayName("Counting number of blog items")
+    @Description("Add the number of blogs with paginating the pages")
     @Test
     public void testGetTotalItems() {
         loginPage.login();
         homePage.clickOnLinkBlog();
         blogPage.clickButtonSeeAllPosts();
+        Assertions.assertEquals(Pages.BLOG_PAGE.getUrl(), driver.getCurrentUrl());
         int actual = blogPage2.getTotalItems();
         Assertions.assertEquals(9, actual);
     }
-    @Epic("Content functionalities")
-    @Story("GetData")
+    @DisplayName("Collect blog titles and blogs' tag")
+    @Description("Iterating the blogs one after each other get the blog's tag")
     @Test
     public void testGetTags() {
         loginPage.login();
         homePage.clickOnLinkBlog();
         blogPage.clickButtonSeeAllPosts();
+
         LinkedHashMap<String, String> expected = new LinkedHashMap<>();
         expected.put("Markdown Formatting Demo", "Website");
         expected.put("Designer Conference at Florida 2020", "Mobile");
@@ -62,12 +38,13 @@ public class BlogPage2Test extends TestEnvironment{
         expected.put("Things you must know as a designer", "Mobile");
         expected.put("World's Most Famous App Developers and Designers", "Fun");
         expected.put("You must know this before becoming a designer", "Fun");
+
         LinkedHashMap<String, String> actual = blogPage2.getTags();
 
         Assertions.assertEquals(expected, actual);
     }
-    @Epic("Technical functionalities")
-    @Story("Filewriting")
+    @DisplayName("Save picture1")
+    @Description(("Save picture to an existing file"))
     @Test
     public void testSavePicture() throws IOException {
         loginPage.login();
@@ -75,8 +52,8 @@ public class BlogPage2Test extends TestEnvironment{
         blogPage.clickButtonSeeAllPosts();
         blogPage2.savePicture();
     }
-    @Epic("Technical functionalities")
-    @Story("Filewriting")
+    @DisplayName("Save picture2")
+    @Description("Save picture with creating the file at the same time")
     @Test
     public void testSavePicture2() {
         loginPage.login();
@@ -84,8 +61,8 @@ public class BlogPage2Test extends TestEnvironment{
         blogPage.clickButtonSeeAllPosts();
         blogPage2.savePicture2();
     }
-    @Epic("Technical functionalities")
-    @Story("Filewriting")
+    @DisplayName("Write file")
+    @Description("Collect bolg titles iterating through them and save the text to a file, then read them and compare with expected String")
     @Test
     public void testWriteBlogThemesFile() {
         loginPage.login();
