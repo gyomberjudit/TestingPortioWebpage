@@ -1,13 +1,11 @@
 package org.example.portio;
 
-import io.qameta.allure.Epic;
-import io.qameta.allure.Story;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class AboutPageTest extends TestEnvironment{
-    @Epic("Technical functionalities")
-    @Story("Navigation")
+    @DisplayName("Test Hire me button")
     @Test
     public void testButtonHireMe() throws InterruptedException {
         loginPage.login();
@@ -15,8 +13,7 @@ public class AboutPageTest extends TestEnvironment{
         aboutPage.clickOnHireMe();
         Assertions.assertEquals(Pages.CONTACT_PAGE.getUrl(), driver.getCurrentUrl());
     }
-    @Epic("Technical functionalities")
-    @Story("FileDownloading")
+    @DisplayName("Test downloading CV")
     @Test
     public void testFileDownload() {
         String filename = "CV";
