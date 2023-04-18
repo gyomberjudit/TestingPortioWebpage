@@ -1,14 +1,9 @@
 package org.example.portio;
 
-import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-
-import java.io.ByteArrayInputStream;
 
 public class ResumePageTest extends TestEnvironment{
     @DisplayName("Number of workplaces")
@@ -26,7 +21,6 @@ public class ResumePageTest extends TestEnvironment{
         String[] years = {"2016-Present", "2010-2016", "2005-2010", "2001-2005"};
         loginPage.login();
         resumePage.clickExperiences();
-        Allure.addAttachment("Years of experience", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         String[] actual = resumePage.getYearsOfExperience();
         Assertions.assertArrayEquals(years, actual);
     }
@@ -39,7 +33,6 @@ public class ResumePageTest extends TestEnvironment{
         String[] actual = resumePage.getFirmsOfExperience();
         loginPage.login();
         resumePage.clickExperiences();
-        Allure.addAttachment("Firms to get experience", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         Assertions.assertArrayEquals(expected, actual);
     }
 }
