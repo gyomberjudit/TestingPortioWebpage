@@ -62,8 +62,8 @@ public class HomePage extends BasePage{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement logo = wait.until(ExpectedConditions.visibilityOfElementLocated(PORTIO_LOGO));
         return logo.isDisplayed();
-}
+    }
     public String getProfileName() {
         return driver.findElement(PROFILE_TEXT).getText();
     }
-}
+    }
