@@ -7,7 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class ServicePageTest extends TestEnvironment{
-    @DisplayName("Move slider")
+    @DisplayName("Move slider1")
     @Description("Move slider from the first item to the last one with pressing right arrow")
     @Test
     public void testMoveSlider() throws InterruptedException {
@@ -16,7 +16,7 @@ public class ServicePageTest extends TestEnvironment{
         servicePage.moveSliderWithRightArrow();
         Assertions.assertTrue(servicePage.isLastSlideDisplayed());
     }
-    @DisplayName("Move slider")
+    @DisplayName("Move slider2")
     @Description("Move slider from the first item to the last one with drag and drop")
     @Test
     public void testSlider() {
