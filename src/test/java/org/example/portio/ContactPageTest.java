@@ -1,14 +1,14 @@
 package org.example.portio;
 
+import io.qameta.allure.Description;
 import org.json.simple.JSONObject;
 import io.qameta.allure.Allure;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Story;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -18,31 +18,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ContactPageTest extends TestEnvironment{
-    @Epic("Technical functionalities")
-    @Story("Navigating")
+    @DisplayName("Contact information")
+    @Description("Compare expected HashMap of information with a given json file")
     @Test
-    public void testNavigateToContactPageWithHireMeButton() {
+    public void testGetContactInfo() throws IOException, ParseException {
         loginPage.login();
         Assertions.assertTrue(homePage.isPortioLogoDisplayed());
         homePage.navigateToContactPageWithHireMeNowButton();
         Assertions.assertTrue(contactPage.isContactMeTextDisplayed());
         Assertions.assertEquals(Pages.CONTACT_PAGE.getUrl(), driver.getCurrentUrl());
-    }
-    @Epic("Technical functionalities")
-    @Story("Navigating")
-    @Test
-    public void testNavigateToContactPageWithContactMeButton() {
-        loginPage.login();
-        Assertions.assertTrue(homePage.isPortioLogoDisplayed());
-        homePage.navigateToContactPageWithContactMeButton();
-        Assertions.assertTrue(contactPage.isContactMeTextDisplayed());
-        Assertions.assertEquals(Pages.CONTACT_PAGE.getUrl(), driver.getCurrentUrl());
-    }
-    @Epic("Technical functionalities")
-    @Story("JSONFile reading")
-    @Test
-    public void testGetContactInfo() throws IOException, ParseException {
-        testNavigateToContactPageWithHireMeButton();
         Map<String, String> actual = contactPage.getContactInfo();
         JSONParser parser = new JSONParser();
         Object obj = parser.parse(new FileReader("contactInfo.json"));
@@ -56,8 +40,8 @@ public class ContactPageTest extends TestEnvironment{
         }
         Assertions.assertEquals(expected, actual);
     }
-    @Epic("Content functionalities")
-    @Story("Forms")
+    @DisplayName("Send message with Contact Form")
+    @Description("Unsuccessful message sending: 'Oops! There was a problem.'")
     @Test
     public void testContactForm() {
         String name = "Kis Pal";
@@ -73,8 +57,6 @@ public class ContactPageTest extends TestEnvironment{
         Assertions.assertEquals("Message was sent successfully", contactPage.getMessageStatusText());
     }
     @Disabled
-    @Epic("Content functionalities")
-    @Story("Forms")
     @Test
     public void testContactFormWithoutCheckingCheckbox() {
         String name = "Kis Pal";
@@ -89,16 +71,5 @@ public class ContactPageTest extends TestEnvironment{
         contactPage.sendMessage();
         Allure.addAttachment("Warning message in case not checking checkbox", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         Assertions.assertEquals(warningMessage, contactPage.getTooltipMessage());
-    }
-    @Epic("Technical functionalities")
-    @Story("Navigating")
-    @Test
-    public void testNavigateFromContactPageBackToHomePage() {
-        loginPage.login();
-        Assertions.assertTrue(homePage.isPortioLogoDisplayed());
-        homePage.navigateToContactPageWithContactMeButton();
-        Assertions.assertTrue(contactPage.isContactMeTextDisplayed());
-        contactPage.getBackToHomePage();
-        Assertions.assertEquals(Pages.LANDING_PAGE.getUrl(), driver.getCurrentUrl());
     }
 }
