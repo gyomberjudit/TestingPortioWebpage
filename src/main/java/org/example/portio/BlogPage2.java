@@ -33,10 +33,9 @@ public class BlogPage2 extends BasePage{
          return driver.findElements(BLOG_ITEMS).size();
     }
     public boolean isArrowClickable() {
-        Actions actions = new Actions(driver);
         WebElement nextArrow = driver.findElement(NEXT_ARROW);
         if (nextArrow.isDisplayed()) {
-            actions.moveToElement(nextArrow).pause(Duration.ofSeconds(3)).click().perform();
+            nextArrow.click();
             return true;
         }
         return false;
@@ -60,7 +59,6 @@ public class BlogPage2 extends BasePage{
                 List<WebElement> items =  driver.findElements(BLOG_THEMES);
                 for (WebElement item : items) {
                     String key = item.getText();
-                    item.click();
                     WebElement tagName = driver.findElement(TAG);
                     String value = tagName.getText();
                     driver.navigate().back();
