@@ -27,8 +27,6 @@ public class AboutPage extends BasePage{
     public void clickDownloadCV() {
         driver.findElement(BUTTON_DOWNLOAD_CV).click();
     }
-
-//methods for assertions
     public boolean isAboutPageTextDisplayed() {
         return driver.findElement(ABOUT_PAGE_TEXT).isDisplayed();
     }
