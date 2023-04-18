@@ -1,14 +1,14 @@
 package org.example.portio;
 
-import io.qameta.allure.Epic;
-import io.qameta.allure.Story;
+import io.qameta.allure.Description;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class ServicePageTest extends TestEnvironment{
-    @Epic("Content functionalities")
-    @Story("Slider")
+    @DisplayName("Move slider")
+    @Description("Move slider from the first item to the last one with pressing right arrow")
     @Test
     public void testMoveSlider() throws InterruptedException {
         loginPage.login();
@@ -16,8 +16,8 @@ public class ServicePageTest extends TestEnvironment{
         servicePage.moveSliderWithRightArrow();
         Assertions.assertTrue(servicePage.isLastSlideDisplayed());
     }
-    @Epic("Content functionalities")
-    @Story("Slider")
+    @DisplayName("Move slider")
+    @Description("Move slider from the first item to the last one with drag and drop")
     @Test
     public void testSlider() {
         loginPage.login();
@@ -26,8 +26,8 @@ public class ServicePageTest extends TestEnvironment{
         Assertions.assertTrue(servicePage.isLastSlideDisplayed());
     }
     @Disabled
-    @Epic("Content functionalities")
-    @Story("Slider")
+    @DisplayName("Count items in slider")
+    @Description("Count the number of items in the slider")
     @Test
     public void testQuantityOfSlides2() {
         loginPage.login();
