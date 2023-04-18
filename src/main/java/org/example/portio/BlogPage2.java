@@ -1,17 +1,13 @@
 package org.example.portio;
 
-import io.qameta.allure.Allure;
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
-import java.time.Duration;
 import java.util.*;
 
 public class BlogPage2 extends BasePage{
@@ -20,7 +16,6 @@ public class BlogPage2 extends BasePage{
     private final By BLOG_ITEMS = By.xpath("//*[@class=\"section blog-page\"]/div/div/div");
     private final By NEXT_ARROW = By.xpath("//*[contains(@class, \"pagination\")]/li[3]/a");
     private final By BLOG_THEMES = By.xpath("//h5[@class=\"mb-0\"]/a");
-    private final By TAG = By.xpath("//*[@class=\"post-meta\"]/li[3]/a");
 
 //constructor
     public BlogPage2(WebDriver driver) {
@@ -51,26 +46,6 @@ public class BlogPage2 extends BasePage{
         }
         return totalItems;
     }
-//Collect blog titles and blogs' tag
-    public LinkedHashMap<String, String> getTags() {
-        LinkedHashMap<String, String> map = new LinkedHashMap<>();
-        try {
-            do {
-                List<WebElement> items =  driver.findElements(BLOG_THEMES);
-                for (WebElement item : items) {
-                    String key = item.getText();
-                    WebElement tagName = driver.findElement(TAG);
-                    String value = tagName.getText();
-                    driver.navigate().back();
-                    Allure.addAttachment("Tag names", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
-                    map.put(key, value);
-                }
-            } while (isArrowClickable());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return map;
-    }
 //Save pictures
     public void savePicture() throws IOException {
         File file = new File("image.jpg");
@@ -95,17 +70,17 @@ public class BlogPage2 extends BasePage{
 //Write file
     public void writeBlogThemesFile() {
         try {
-            String themes = "";
+            String text = "";
             FileWriter writer = new FileWriter("blogThemes.txt");
 
             do {
                 List<WebElement> items =  driver.findElements(BLOG_THEMES);
                 for (WebElement item : items) {
                     String theme = item.getText();
-                    themes += theme + ",\n";
-                    writer.write(themes);
+                    text += theme + ",\n";
+                    writer.write(text);
                 }
-            } while (!isArrowClickable());
+            } while (isArrowClickable());
             writer.close();
         } catch (Exception e) {
             e.printStackTrace();

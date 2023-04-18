@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import java.io.IOException;
-import java.util.LinkedHashMap;
 
 public class BlogPage2Test extends TestEnvironment{
 
@@ -19,29 +18,6 @@ public class BlogPage2Test extends TestEnvironment{
         Assertions.assertEquals(Pages.BLOG_PAGE.getUrl(), driver.getCurrentUrl());
         int actual = blogPage2.getTotalItems();
         Assertions.assertEquals(9, actual);
-    }
-    @DisplayName("Collect blog titles and blogs' tag")
-    @Description("Iterating the blogs one after each other get the blog's tag")
-    @Test
-    public void testGetTags() {
-        loginPage.login();
-        homePage.clickOnLinkBlog();
-        blogPage.clickButtonSeeAllPosts();
-
-        LinkedHashMap<String, String> expected = new LinkedHashMap<>();
-        expected.put("Markdown Formatting Demo", "Website");
-        expected.put("Designer Conference at Florida 2020", "Mobile");
-        expected.put("Benjamin Franklins thoughts about new designers", "Website");
-        expected.put("Designers thoughts about mobile UI", "Mobile");
-        expected.put("How to become acreative designer", "Fun");
-        expected.put("New designers limitations", "Website");
-        expected.put("Things you must know as a designer", "Mobile");
-        expected.put("World's Most Famous App Developers and Designers", "Fun");
-        expected.put("You must know this before becoming a designer", "Fun");
-
-        LinkedHashMap<String, String> actual = blogPage2.getTags();
-
-        Assertions.assertEquals(expected, actual);
     }
     @DisplayName("Save picture1")
     @Description(("Save picture to an existing file"))
