@@ -37,8 +37,8 @@ public class FooterPageTest extends TestEnvironment{
         footerPage.clickIconFacebbok();
         Thread.sleep(3000);
         String actual = footerPage.getChildWindowUrl();
-        Allure.addAttachment("Successful navigation to Facebook", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         Assertions.assertEquals(Pages.FACEBOOK.getUrl(), actual);
+        Allure.addAttachment("Successful navigation to Facebook", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
     }
     @DisplayName("Test Linkedin link")
     @Description("Clicking on Linkedin link the user navigates to Linkedin webpage")
@@ -47,7 +47,7 @@ public class FooterPageTest extends TestEnvironment{
         loginPage.login();
         footerPage.clickIconLinkedin();
         String actual = footerPage.getChildWindowUrl();
-        Allure.addAttachment("Successful navigation to Linkedin", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         Assertions.assertEquals(Pages.LINKEDIN.getUrl(), actual);
+        Allure.addAttachment("Successful navigation to Linkedin", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
     }
 }
