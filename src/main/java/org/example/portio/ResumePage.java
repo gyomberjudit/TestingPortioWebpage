@@ -47,7 +47,8 @@ public class ResumePage extends BasePage{
         String[] items = new String[firms.size()];
         int i=0;
         for (WebElement firm : firms) {
-            items[i++] = firm.getText();
+            String text = firm.getText();
+            items[i++] = text;
         }
         return items;
     }
