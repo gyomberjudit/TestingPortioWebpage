@@ -13,12 +13,10 @@ public class ServicePage extends BasePage{
     private final By SLIDER_LAST_ELEMENT = By.xpath("//*[contains(@class, \"service__slider\")]/div/div/div[6]");
     private final By SLIDES = By.id("//*[@class=\"slick-track\"]/div[contains(@class, \"service__slider\")]");
 
-
 //constructor
     public ServicePage(WebDriver driver) {
         super(driver, Pages.LANDING_PAGE.getUrl());
     }
-
 
 //methods for ServicePage
     public void moveSliderWithRightArrow() throws InterruptedException {
@@ -38,8 +36,6 @@ public class ServicePage extends BasePage{
         List<WebElement> slides = driver.findElements(SLIDES);
         return slides.size();
     }
-
-//methods for assertions
     public boolean isServicePageTextDisplayed() {
         return driver.findElement(SERVICE_PAGE_TEXT).isDisplayed();
     }
