@@ -1,9 +1,15 @@
 package org.example.portio;
 
+import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
 public class BlogPage2Test extends TestEnvironment{
@@ -30,12 +36,13 @@ public class BlogPage2Test extends TestEnvironment{
     }
     @DisplayName("Save picture2")
     @Description("Save picture with creating the file at the same time")
-    @Test
+    @RepeatedTest(2)
     public void testSavePicture2() {
         loginPage.login();
         homePage.clickOnLinkBlog();
         blogPage.clickButtonSeeAllPosts();
         blogPage2.savePicture2();
+        Allure.addAttachment("Saving picture then deleting it", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
     }
     @DisplayName("Write file")
     @Description("Collect bolg titles iterating through them and save the text to a file, then read them and compare with expected String")
