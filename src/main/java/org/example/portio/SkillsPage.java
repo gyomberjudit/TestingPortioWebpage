@@ -52,7 +52,6 @@ public class SkillsPage extends BasePage{
         }
         return map;
     }
-//methods for assertion
     public boolean isSkillsPageTextDisplayed() {
         return driver.findElement(SKILLS_PAGE_TEXT).isDisplayed();
     }
