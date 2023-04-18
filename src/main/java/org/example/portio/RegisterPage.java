@@ -44,8 +44,6 @@ public class RegisterPage extends BasePage{
     public void clickLoginButton() {
         driver.findElement(BUTTON_LOGIN).click();
     }
-
-//methods for assertations
     public String registeredMessage() {
         return driver.findElement(MESSAGE_USER_REGISTERED).getText();
     }
