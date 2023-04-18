@@ -53,8 +53,8 @@ public class ContactPageTest extends TestEnvironment{
         contactPage.fillContactMeForm(name, email, message);
         contactPage.checkCheckbox();
         contactPage.sendMessage();
-        Allure.addAttachment("Sending contact form is unsuccessful", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         Assertions.assertEquals("Message was sent successfully", contactPage.getMessageStatusText());
+        Allure.addAttachment("Sending contact form is unsuccessful", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
     }
     @Disabled
     @Test
