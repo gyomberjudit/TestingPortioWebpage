@@ -22,7 +22,7 @@ public class BlogPage2Test extends BaseTest {
     @Tag("Data saving")
     @Tag("Save picture")
     @Test
-    public void testSavePicture() throws IOException {
+    public void testSavePicture() throws IOException, InterruptedException {
         String image = "image.jpg";
         String url = "https://lennertamas.github.io/portio/images/allpost/allPost-2.jpg";
         String format = "jpg";
@@ -41,7 +41,7 @@ public class BlogPage2Test extends BaseTest {
     @Tag("Data saving")
     @Tag("Save picture")
     @RepeatedTest(2)
-    public void testSavePicture2() {
+    public void testSavePicture2() throws InterruptedException {
         String image = "image2.jpg";
         String url = "https://lennertamas.github.io/portio/images/allpost/allPost-5.jpg";
         String format = "jpg";

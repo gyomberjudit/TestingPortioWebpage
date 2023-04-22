@@ -19,10 +19,12 @@ public class NavigationTest extends BaseTest {
     @Test
     public void testButtonHireMe() {
         loginPage.login();
+        addAttachment("User logged in");
         homePage.clickOnLinkAbout();
         aboutPage.clickOnHireMe();
         String expected = Pages.CONTACT_PAGE.getUrl();
         String actual = driver.getCurrentUrl();
+        addAttachment("Successful navigation to ContactPage");
 
         Assertions.assertEquals(expected, actual);
     }
@@ -39,8 +41,8 @@ public class NavigationTest extends BaseTest {
         footerPage.clickLinkPrivacyAndPolicy();
         String expected = Pages.LOGIN_PAGE.getUrl();
         String actual = driver.getCurrentUrl();
-
         addAttachment("Failed navigation to Privacy and Policy");
+
         Assertions.assertNotEquals(expected, actual);
     }
 

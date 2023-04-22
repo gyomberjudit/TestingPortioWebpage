@@ -10,7 +10,7 @@ import testEnvironment.BaseTest;
 @Epic("Technical functionalities")
 public class RegisterPageTest extends BaseTest {
 
-    @DisplayName("Accepting terms")
+    @DisplayName("Accept terms")
     @Description("Accept terms by clicking on OK button before Registration")
     @Story("Terms and Conditions")
     @Severity(SeverityLevel.BLOCKER)
@@ -31,8 +31,8 @@ public class RegisterPageTest extends BaseTest {
 
     }
 
-    @DisplayName("Refusing accepting terms")
-    @Description("Close terms - not accepting it - by clicking on Close Icon")
+    @DisplayName("Refuse accepting terms")
+    @Description("Refuse accepting terms by clicking on Close Icon")
     @Story("Terms and Conditions")
     @Severity(SeverityLevel.CRITICAL)
     @Tag("Not accept terms")
@@ -46,7 +46,7 @@ public class RegisterPageTest extends BaseTest {
 
         loginPage.clickOnCloseIcon();
         boolean registerButtonVisible = loginPage.isRegisterButtonDisplayed();
-        addAttachment("Navigate to LoginPage after NOT accepting terms");
+        addAttachment("Navigate to LoginPage after NOT accepting terms, but it shouldn't");
 
         Assertions.assertFalse(registerButtonVisible);
 

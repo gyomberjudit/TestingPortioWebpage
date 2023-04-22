@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilPages.BasePage;
 import utilPages.Pages;
@@ -64,6 +65,12 @@ public class ContactPage extends BasePage {
     //Checking if sending message was successful
     public String getMessageStatusText() {
         return driver.findElement(MESSAGE_STATUS).getText();
+    }
+
+    //Scroll to status message to make screenshot
+    public void waitForMessage() throws InterruptedException {
+        scrollToElement(MESSAGE_STATUS);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(MESSAGE_STATUS));
     }
 
     //Message after sending the form without checking checkbox

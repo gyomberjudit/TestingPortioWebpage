@@ -16,6 +16,7 @@ public class ProfilePageTest extends BaseTest {
     @Story("Data input")
     @Severity(SeverityLevel.NORMAL)
     @Tag("Data input")
+    @Tag("Profile")
     @Test
     public void testSetProfile() {
         String username = "teszteszter";
@@ -45,7 +46,7 @@ public class ProfilePageTest extends BaseTest {
     @Story("Data modification")
     @Severity(SeverityLevel.NORMAL)
     @Tag("Data modification")
-    @Tag("Failed")
+    @Tag("Profile")
     @Test
     public void testProfileUsername() {
         String username = "teszteszter";
@@ -81,6 +82,7 @@ public class ProfilePageTest extends BaseTest {
     @Story("Data deletion")
     @Severity(SeverityLevel.CRITICAL)
     @Tag("Data deletion")
+    @Tag("Profile")
     @Test
     public void testDeleteAccount() {
         String username = "teszteszter";

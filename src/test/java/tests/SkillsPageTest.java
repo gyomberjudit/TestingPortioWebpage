@@ -29,6 +29,7 @@ public class SkillsPageTest extends BaseTest {
                 expected.put("CSS", "60");
                 expected.put("Javascript", "85");
         HashMap<String, String> actual = skillsPage.getSkills();
+        addAttachment("Skill types and percents");
 
         Assertions.assertEquals(expected, actual);
     }

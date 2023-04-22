@@ -32,7 +32,7 @@ public class LoginPageTest extends BaseTest {
     @Story("Login")
     @Severity(SeverityLevel.CRITICAL)
     @Tag("Login")
-    @Tag("Failed")
+    @Tag("Wrong data")
     @Test
     public void testLoginWithMissingUsername() {
         String missingUsername = "";
@@ -52,7 +52,7 @@ public class LoginPageTest extends BaseTest {
     @Story("Login")
     @Severity(SeverityLevel.CRITICAL)
     @Tag("Login")
-    @Tag("Failed")
+    @Tag("Wrong data")
     @Test
     public void testLoginWithWrongPassword() {
         String username = "lovasia";
@@ -94,7 +94,7 @@ public class LoginPageTest extends BaseTest {
     @Story("Login")
     @Severity(SeverityLevel.CRITICAL)
     @Tag("Login")
-    @Tag("Failed")
+    @Tag("Wrong data")
     @Test
     public void testLoginWithoutRegistration() {
         String username = "tesztelek";

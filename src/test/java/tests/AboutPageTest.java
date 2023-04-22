@@ -12,6 +12,7 @@ public class AboutPageTest extends BaseTest {
 
     @DisplayName("Test downloading CV")
     @Description("Failed download by clicking on 'Download CV' button")
+    @Story("File download")
     @Severity(SeverityLevel.NORMAL)
     @Tag("File download")
     @Test

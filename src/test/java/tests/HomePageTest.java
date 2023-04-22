@@ -19,11 +19,13 @@ public class HomePageTest extends BaseTest {
     @Test
     public void testLogout() {
         loginPage.login();
+        addAttachment("The user is logged in");
         Assertions.assertTrue(homePage.isPortioLogoDisplayed());
         homePage.logout();
         boolean loginButtonVisible = loginPage.isLoginButtonDisplayed();
         String expected = Pages.LOGOUT_PAGE.getUrl();
         String actual = driver.getCurrentUrl();
+        addAttachment("The user is logged out");
 
         Assertions.assertTrue(loginButtonVisible);
         Assertions.assertEquals(expected, actual);
