@@ -28,21 +28,13 @@ Java, JUnit, Maven, Selenium, Allure report, Github actions
 Tesztelt funkciók:
 - reisztráció
 - bejelentkezés
-- menu validálása
-- profil beállítása
-- üzenetküldés (contact form)
-- tartalmak közti navigálás 
-- tartalom validálása
+- adatkezelési nyilatkozat használata
+- adatok listázása
+- többoldalas lista bejárása
+- új adat bevitel
+- ismételt és sorozatos adatbevitel adatforrásból
+- meglévő adat módosítása
+- adatok törlése
+- adatok lementése felületről
+- kijelentkezés
 
-
-
-Programozási módok:
-- Lista bejárása
-- Lista elemeinek mentése HahMap-be
-- Fájl írása
-- Fájl olvasása
-- Fájl létrehozása
-- WindowHandling
-- Waits
-- Actions 
-- JavaScriptExecutor

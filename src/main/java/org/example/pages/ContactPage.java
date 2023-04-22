@@ -1,19 +1,16 @@
-package org.example.portio;
+package org.example.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-
+import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class ContactPage extends BasePage{
-
-//locate elements for ContactPage
     private final By CONTACT_ME_TEXT = By.xpath("//*[@class=\"col-12 text-center\"]/h3");
-    private final By CONTACT_INFOS = By.xpath("//*[@class=\"section contact__info\"]/div/div/div");
+    private final By CONTACT_INFO = By.xpath("//*[@class=\"section contact__info\"]/div/div/div");
     private final By INPUT_NAME = By.name("Name");
     private final By INPUT_EMAIL = By.name("email");
     private final By INPUT_MESSAGE = By.id("message");
@@ -21,45 +18,55 @@ public class ContactPage extends BasePage{
     private final By INPUT_SEND_MESSAGE = By.xpath("//*[@type=\"submit\"]");
     private final By MESSAGE_STATUS = By.id("contact-form-status");
 
-//constructor
-    public ContactPage(WebDriver driver) {
-        super(driver, Pages.CONTACT_PAGE.getUrl());
+    public ContactPage(WebDriver driver, WebDriverWait wait) {
+        super(driver, wait, Pages.CONTACT_PAGE.getUrl());
     }
 
-//methods for contactPage
+
+    //Iterating through Contact information List, write the data into HashMap
     public Map<String, String> getContactInfo() {
-        List<WebElement> contactInfos = driver.findElements(CONTACT_INFOS);
+        List<WebElement> contactInfo = driver.findElements(CONTACT_INFO);
 
         Map<String, String> map = new HashMap<>();
-        for (WebElement info : contactInfos) {
+        for (WebElement info : contactInfo) {
             String title = info.findElement(By.xpath(".//h4")).getText();
             String data = info.findElement(By.xpath(".//p")).getText();
             map.put(title, data);
         }
         return map;
     }
+
+    //Give data and message while filling the Contact Form
     public void fillContactMeForm(String name, String email, String message) {
         driver.findElement(INPUT_NAME).sendKeys(name);
         driver.findElement(INPUT_EMAIL).sendKeys(email);
         driver.findElement(INPUT_MESSAGE).sendKeys(message);
     }
+
+    //Check checkbox by clicking on the box
     public void checkCheckbox() {
         driver.findElement(CHECKBOX).click();
     }
+
+    //Sending message by clicking on Send Message button
     public void sendMessage() {
         driver.findElement(INPUT_SEND_MESSAGE).click();
     }
+
+    //Checking if navigating to ContactPage is successful
     public boolean isContactMeTextDisplayed() {
         return driver.findElement(CONTACT_ME_TEXT).isDisplayed();
     }
+
+    //Checking if sending message was successful
     public String getMessageStatusText() {
         return driver.findElement(MESSAGE_STATUS).getText();
     }
-    public String getTooltipMessage() {
-        Actions actions = new Actions(driver);
-        WebElement checkbox = driver.findElement(CHECKBOX);
-        actions.moveToElement(checkbox).perform();
-        WebElement toolTip = driver.findElement(By.xpath("//*[@id=\"aggrement\"]"));
+
+    //Message after sending the form without checking checkbox
+    public String getTooltipMessage() throws InterruptedException {
+        scrollToElement(CHECKBOX);
+        WebElement toolTip = driver.findElement(By.xpath(""));
         return toolTip.getText();
     }
 }

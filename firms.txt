@@ -1,5 +1,4 @@
-Umbrella co.,
-Aperture Science,
-ACME Inc.,
-LexCorp;
-
+Umbrella co.
+Aperture Science
+ACME Inc.
+LexCorp

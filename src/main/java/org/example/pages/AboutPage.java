@@ -1,35 +1,31 @@
-package org.example.portio;
+package org.example.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 
 public class AboutPage extends BasePage{
-
-//locate elements for AboutPage
-    private final By ABOUT_PAGE_TEXT = By.id("about-me");
     private final By BUTTON_HIRE_ME = By.xpath("//*[text()=\"Hire me\"]");
     private final By BUTTON_DOWNLOAD_CV = By.xpath("//*[text()=\"Hire me\"]/following-sibling::a");
 
-
-//constructor
-    public AboutPage(WebDriver driver) {
-        super(driver, Pages.LANDING_PAGE.getUrl());
+    public AboutPage(WebDriver driver, WebDriverWait wait) {
+        super(driver, wait, Pages.LANDING_PAGE.getUrl());
     }
 
 
-//methods for AboutPage
-    public void clickOnHireMe() throws InterruptedException {
-        scrollToElement(BUTTON_HIRE_ME);
-        driver.findElement(BUTTON_HIRE_ME).click();
+    //Navigate to ContactPage by clicking on Hire Me button
+    public void clickOnHireMe() {
+        wait.until(ExpectedConditions.elementToBeClickable(BUTTON_HIRE_ME)).click();
     }
+
+    //Try download CV by clicking on Download CV button
     public void clickDownloadCV() {
-        driver.findElement(BUTTON_DOWNLOAD_CV).click();
+        wait.until(ExpectedConditions.elementToBeClickable(BUTTON_DOWNLOAD_CV)).click();
     }
-    public boolean isAboutPageTextDisplayed() {
-        return driver.findElement(ABOUT_PAGE_TEXT).isDisplayed();
-    }
+
+    //Check if downloading CV was successful
     public boolean isFileExist(String filename) {
         String home = System.getProperty("user.home");
         String file_with_location = home + "\\Downloads\\" + filename;

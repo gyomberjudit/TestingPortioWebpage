@@ -1,38 +1,32 @@
-package org.example.portio;
+package org.example.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
+import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.Set;
 
 public class FooterPage extends  BasePage{
-
-//locate elements for homePage
-    private final By LINK_FAQ = By.xpath("//*[@class=\"unstyle-list small\"]/li[2]/a");
     private final By LINK_PRIVACY_AND_POLICY = By.xpath("//*[@class=\"unstyle-list small\"]/li[3]/a");
     private final By ICON_FACEBOOK = By.xpath("//*[@class=\"unstyle-list\"]/li[1]/a");
-    private final By ICON_LINKEDIN = By.xpath("//*[@class=\"unstyle-list\"]/li[2]/a");
 
-
-//constructor
-    public FooterPage(WebDriver driver) {
-        super(driver, Pages.LANDING_PAGE.getUrl());
+    public FooterPage(WebDriver driver, WebDriverWait wait) {
+        super(driver, wait, Pages.LANDING_PAGE.getUrl());
     }
 
 
-//methods
-    public void clickLinkFAQ() throws InterruptedException {
-        scrollToElement(LINK_FAQ);
-        driver.findElement(LINK_FAQ).click();
-    }
+    //navigate to Privacy and Policy page
     public void clickLinkPrivacyAndPolicy() throws InterruptedException {
         scrollToElement(LINK_PRIVACY_AND_POLICY);
         driver.findElement(LINK_PRIVACY_AND_POLICY).click();
     }
+
+    //navigate to facebook
     public void clickIconFacebbok() throws InterruptedException {
         scrollToElement(ICON_FACEBOOK);
         driver.findElement(ICON_FACEBOOK).click();
     }
+
+    //Checking if navigation to a new window was successful
     public String getChildWindowUrl() throws InterruptedException {
         String parentWindow = driver.getWindowHandle();
         Set<String> windows = driver.getWindowHandles();
@@ -48,9 +42,5 @@ public class FooterPage extends  BasePage{
         Thread.sleep(3000);
         driver.switchTo().window(parentWindow);
         return url.toString();
-    }
-    public void clickIconLinkedin() throws InterruptedException {
-        scrollToElement(ICON_LINKEDIN);
-        driver.findElement(ICON_LINKEDIN).click();
     }
 }
