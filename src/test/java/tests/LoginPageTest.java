@@ -1,8 +1,10 @@
-package org.example.tests;
+package tests;
 
+import org.junit.jupiter.api.Tag;
 import io.qameta.allure.*;
-import org.example.pages.Pages;
+import utilPages.Pages;
 import org.junit.jupiter.api.*;
+import testEnvironment.BaseTest;
 
 @Epic("Technical functionalities")
 public class LoginPageTest extends BaseTest {
@@ -12,6 +14,7 @@ public class LoginPageTest extends BaseTest {
     @Story("Login")
     @Severity(SeverityLevel.BLOCKER)
     @Tag("Login")
+    @Tag("Successful")
     @Test
     public void testLogin() {
         loginPage.login();
@@ -19,9 +22,9 @@ public class LoginPageTest extends BaseTest {
         String expected = Pages.LANDING_PAGE.getUrl();
         String actual = driver.getCurrentUrl();
 
+        addAttachment("Successful login");
         Assertions.assertTrue(loggedIn);
         Assertions.assertEquals(expected, actual);
-        addAttachment("Successful login");
     }
 
     @DisplayName("Wrong login1")
@@ -29,6 +32,7 @@ public class LoginPageTest extends BaseTest {
     @Story("Login")
     @Severity(SeverityLevel.CRITICAL)
     @Tag("Login")
+    @Tag("Failed")
     @Test
     public void testLoginWithMissingUsername() {
         String missingUsername = "";
@@ -39,8 +43,8 @@ public class LoginPageTest extends BaseTest {
         String expected = Pages.LOGIN_PAGE.getUrl();
         String actual = driver.getCurrentUrl();
 
+        addAttachment("Failed login with missing username, warning message is visible");
         Assertions.assertEquals(expected, actual);
-        addAttachment("Failed login with missing username");
     }
 
     @DisplayName("Wrong login2")
@@ -48,6 +52,7 @@ public class LoginPageTest extends BaseTest {
     @Story("Login")
     @Severity(SeverityLevel.CRITICAL)
     @Tag("Login")
+    @Tag("Failed")
     @Test
     public void testLoginWithWrongPassword() {
         String username = "lovasia";
@@ -59,9 +64,9 @@ public class LoginPageTest extends BaseTest {
         String expectedMessage = "Username or Password\n" + "is not correct!";
         String actualMessage = loginPage.getAlertMessage();
 
+        addAttachment("Failed login with wrong password, warning message is visible");
         Assertions.assertTrue(failedLogin);
         Assertions.assertEquals(expectedMessage, actualMessage);
-        addAttachment("Failed login with wrong password");
     }
 
     @DisplayName("Login with Enter")
@@ -69,6 +74,7 @@ public class LoginPageTest extends BaseTest {
     @Story("Login")
     @Severity(SeverityLevel.MINOR)
     @Tag("Login")
+    @Tag("Successful")
     @Test
     public void testLoginWithEnter() {
         String username = "lovasia";
@@ -78,9 +84,9 @@ public class LoginPageTest extends BaseTest {
         String expected = Pages.LANDING_PAGE.getUrl();
         String actual = driver.getCurrentUrl();
 
+        addAttachment("Successful login with key Enter");
         Assertions.assertTrue(loggedIn);
         Assertions.assertEquals(expected, actual);
-        addAttachment("Successful login with key Enter");
     }
 
     @DisplayName("Wrong Login3")
@@ -88,6 +94,7 @@ public class LoginPageTest extends BaseTest {
     @Story("Login")
     @Severity(SeverityLevel.CRITICAL)
     @Tag("Login")
+    @Tag("Failed")
     @Test
     public void testLoginWithoutRegistration() {
         String username = "tesztelek";
@@ -99,8 +106,8 @@ public class LoginPageTest extends BaseTest {
         String expectedMessage = "Username or Password\n" + "is not correct!";
         String actualMessage = loginPage.getAlertMessage();
 
+        addAttachment("Failed login without registration, warning message is visible");
         Assertions.assertTrue(failedLogin);
         Assertions.assertEquals(expectedMessage, actualMessage);
-        addAttachment("Failed login without registration");
     }
 }

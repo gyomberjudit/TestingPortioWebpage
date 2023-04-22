@@ -1,21 +1,22 @@
-package org.example.tests;
+package tests;
 
+import org.junit.jupiter.api.Tag;
 import io.qameta.allure.*;
-import org.example.pages.Pages;
+import utilPages.Pages;
 import org.junit.jupiter.api.*;
+import testEnvironment.BaseTest;
 
-import java.io.IOException;
-
-@Epic("Lists of data")
-@Epic("File handling")
+@Epic("Data handling")
 public class BlogPageTest extends BaseTest {
 
     //Count the number of blog posts with pagination
     @DisplayName("Counting number of blog items")
     @Description("Add the number of blog posts with paginating the pages")
-    @Story("Data count")
+    @Story("List traversal with pagination")
     @Severity(SeverityLevel.MINOR)
-    @Tag("List traversal with pagination")
+    @Tag("Data listing")
+    @Tag("Pagination")
+    @Tag("Count items")
     @Test
     public void testGetTotalItems() throws InterruptedException {
         loginPage.login();
@@ -29,48 +30,16 @@ public class BlogPageTest extends BaseTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    //Saving picture from a post to an existing file
-    @DisplayName("Save picture1")
-    @Description(("Save picture to an existing file"))
-    @Story("Save picture")
-    @Severity(SeverityLevel.NORMAL)
-    @Tag("Data saving")
-    @Test
-    public void testSavePicture() throws IOException {
-        String image = "image.jpg";
-        String url = "https://lennertamas.github.io/portio/images/allpost/allPost-2.jpg";
-        String format = "jpg";
-        loginPage.login();
-        homePage.clickOnLinkBlog();
-        blogLinkPage.clickButtonSeeAllPosts();
-        blogPage.savePicture(image, url, format);
-    }
-
-    //Saving picture from a post while making a file, or deleting it if exists
-    @DisplayName("Save picture2")
-    @Description("Save picture with creating the file at the same time")
-    @Story("Save picture")
-    @Severity(SeverityLevel.NORMAL)
-    @Tag("Data saving")
-    @RepeatedTest(2)
-    public void testSavePicture2() {
-        String image = "image2.jpg";
-        String url = "https://lennertamas.github.io/portio/images/allpost/allPost-5.jpg";
-        String format = "jpg";
-        loginPage.login();
-        homePage.clickOnLinkBlog();
-        blogLinkPage.clickButtonSeeAllPosts();
-        blogPage.savePicture2(image, url, format);
-    }
-
     //Saving data (by file writing) and comparing them to data at BlogPage (by file reading)
     @DisplayName("Write file")
-    @Description("Collect bolg titles iterating through them and save the text to a file, then read them and compare with expected String")
-    @Story("Write file")
+    @Description("Collect bolg posts' titles iterating through them and save the text to a file, then read them and compare with expected String")
+    @Story("List traversal with pagination")
     @Severity(SeverityLevel.NORMAL)
-    @Tag("List traversal with pagination")
-    @Tag("File writing")
+    @Tag("Data listing")
+    @Tag("Pagination")
     @Tag("Data saving")
+    @Tag("File writing")
+    @Tag("File reading")
     @Test
     public void testWriteBlogThemesFile() {
         String file = "blogThemes.txt";

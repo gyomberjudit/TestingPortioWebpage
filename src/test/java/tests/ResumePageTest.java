@@ -1,20 +1,21 @@
-package org.example.tests;
+package tests;
 
 import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import testEnvironment.BaseTest;
 
-@Epic("Lists of data")
-@Epic("File handling")
+@Epic("Data handling")
 public class ResumePageTest extends BaseTest {
 
     @DisplayName("Number of workplaces")
     @Description("Get the size of workplaces' list")
-    @Story("Data count")
+    @Story("Data listing")
     @Severity(SeverityLevel.MINOR)
     @Tag("Data listing")
+    @Tag("Data count")
     @Test
     public void testQuantityOfExperiences() throws InterruptedException {
         loginPage.login();
@@ -26,9 +27,9 @@ public class ResumePageTest extends BaseTest {
     }
 
     //Compare work years stored in a String array with years from ResumePage
-    @DisplayName("Periods of working time")
+    @DisplayName("Periods of working times")
     @Description("Collect the work years in String array")
-    @Story("Data storage")
+    @Story("Data listing")
     @Severity(SeverityLevel.NORMAL)
     @Tag("Data listing")
     @Test
@@ -42,11 +43,12 @@ public class ResumePageTest extends BaseTest {
     }
 
     ////Compare workplaces stored in a JSON file (using file reading) with workplaces from ResumePage
-    @DisplayName("Workplaces")
+    @DisplayName("Names of workplaces")
     @Description("Collect workplaces in String array and compare to a given file")
-    @Story("Read file")
+    @Story("Data listing")
     @Severity(SeverityLevel.NORMAL)
     @Tag("Data listing")
+    @Tag("Read file")
     @Test
     public void testExperience() throws InterruptedException {
         String fileName = "firms.txt";

@@ -1,11 +1,13 @@
-package org.example.pages;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utilPages.BasePage;
+import utilPages.Pages;
 
-public class HomePage extends BasePage{
+public class HomePage extends BasePage {
     private final By LINK_LOGOUT = By.xpath("//*[@id=\"logout-link\"]/a");
     private final By PROFILE_LINK = By.xpath("//*[@class=\"nav-link\"]");
     private final By PROFILE_TEXT = By.id("profile-btn");
@@ -13,7 +15,6 @@ public class HomePage extends BasePage{
     private final By CONTACT_ME_BUTTON = By.xpath("//*[@class=\"hero_content\"]/a");
     private final By PORTIO_LOGO = By.xpath("//*[@class=\"container\"]/a/img");
     private final By LINK_ABOUT = By.xpath("//*[@id=\"navbarCollapse\"]//li[2]/a");
-    private final By LINK_WORK = By.xpath("//*[text()=\"Work\"]");
     private final By LINK_SKILLS = By.xpath("//*[@id=\"navbarCollapse\"]//li[6]/a");
     private final By LINK_BLOG = By.xpath("//*[@id=\"navbarCollapse\"]//li[7]/a");
 
@@ -43,11 +44,6 @@ public class HomePage extends BasePage{
     }
     public void clickOnLinkAbout() {
         driver.findElement(LINK_ABOUT).click();
-    }
-
-    //Navigating to WorkPage by clicking on Work link
-    public void clickOnLinkWork() {
-        driver.findElement(LINK_WORK).click();
     }
 
     //Navigating to SkillsPage by clicking on Skills link

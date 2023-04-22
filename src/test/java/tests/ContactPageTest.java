@@ -1,28 +1,25 @@
-package org.example.tests;
+package tests;
 
 import io.qameta.allure.*;
-import org.example.pages.Pages;
+import utilPages.Pages;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.junit.jupiter.api.*;
-
+import testEnvironment.BaseTest;
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
-@Epic("Lists of data")
-@Epic("Data modification")
+@Epic("Data handling")
 public class ContactPageTest extends BaseTest {
 
     //Compare data given in JSON file with data collected into HashMap from ContactPage
     @DisplayName("Contact information")
-    @Description("Compare expected HashMap of Contact information with a given json file")
-    @Story("Data storage")
+    @Description("Compare expected HashMap of Contact information with a given JSON file")
+    @Story("Data listing")
     @Severity(SeverityLevel.NORMAL)
-    @Tag("Data listing")
-    @Tag("JSON")
     @Test
     public void testGetContactInfo() throws IOException, ParseException {
         loginPage.login();
@@ -42,15 +39,14 @@ public class ContactPageTest extends BaseTest {
             expected.put(key, value);
         }
 
-        Assertions.assertEquals(expected, actual);
         addAttachment("Given contact information on ContactPage");
+        Assertions.assertEquals(expected, actual);
     }
 
     @DisplayName("Send message with Contact Form")
     @Description("Unsuccessful message sending: 'Oops! There was a problem.'")
     @Story("Data input")
     @Severity(SeverityLevel.CRITICAL)
-    @Tag("Data input")
     @Test
     public void testContactForm() {
         String name = "Kis Pal";
@@ -67,15 +63,14 @@ public class ContactPageTest extends BaseTest {
         String expected = "Message was sent successfully";
         String actual = contactPage.getMessageStatusText();
 
-        Assertions.assertEquals(expected, actual);
         addAttachment("Sending contact form is unsuccessful");
+        Assertions.assertEquals(expected, actual);
     }
 
     @DisplayName("Send message without checking checkbox")
     @Description("Unsuccessful message sending: 'Tooltip warning to check checkbox'")
     @Story("Data input")
     @Severity(SeverityLevel.NORMAL)
-    @Tag("Data input")
     @Disabled
     @Test
     public void testContactFormWithoutCheckingCheckbox() throws InterruptedException {
@@ -92,7 +87,7 @@ public class ContactPageTest extends BaseTest {
         String warningMessage = "Please, tick this box if you want to proceed.";
         String tooltip = contactPage.getTooltipMessage();
 
-        Assertions.assertEquals(warningMessage, tooltip);
         addAttachment("Warning message if checkbox is not checked");
+        Assertions.assertEquals(warningMessage, tooltip);
     }
 }

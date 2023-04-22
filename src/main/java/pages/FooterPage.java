@@ -1,11 +1,14 @@
-package org.example.pages;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utilPages.BasePage;
+import utilPages.Pages;
+
 import java.util.Set;
 
-public class FooterPage extends  BasePage{
+public class FooterPage extends BasePage {
     private final By LINK_PRIVACY_AND_POLICY = By.xpath("//*[@class=\"unstyle-list small\"]/li[3]/a");
     private final By ICON_FACEBOOK = By.xpath("//*[@class=\"unstyle-list\"]/li[1]/a");
 
@@ -27,7 +30,7 @@ public class FooterPage extends  BasePage{
     }
 
     //Checking if navigation to a new window was successful
-    public String getChildWindowUrl() throws InterruptedException {
+    public String getChildWindowUrl() {
         String parentWindow = driver.getWindowHandle();
         Set<String> windows = driver.getWindowHandles();
         StringBuilder url = new StringBuilder();
@@ -39,7 +42,6 @@ public class FooterPage extends  BasePage{
                 driver.close();
             }
         }
-        Thread.sleep(3000);
         driver.switchTo().window(parentWindow);
         return url.toString();
     }

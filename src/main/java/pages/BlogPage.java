@@ -1,7 +1,10 @@
-package org.example.pages;
+package pages;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utilPages.BasePage;
+import utilPages.Pages;
+
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -10,7 +13,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
-public class BlogPage extends BasePage{
+public class BlogPage extends BasePage {
     private final By BLOG_ITEMS = By.xpath("//*[@class=\"section blog-page\"]/div/div/div");
     private final By NEXT_ARROW = By.xpath("//*[contains(@class, \"pagination\")]/li[3]/a");
     private final By BLOG_THEMES = By.xpath("//h5[@class=\"mb-0\"]/a");

@@ -1,12 +1,15 @@
-package org.example.pages;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utilPages.BasePage;
+import utilPages.Pages;
+
 import java.io.File;
 
-public class AboutPage extends BasePage{
+public class AboutPage extends BasePage {
     private final By BUTTON_HIRE_ME = By.xpath("//*[text()=\"Hire me\"]");
     private final By BUTTON_DOWNLOAD_CV = By.xpath("//*[text()=\"Hire me\"]/following-sibling::a");
 

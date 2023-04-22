@@ -1,8 +1,7 @@
-package org.example.tests;
+package testEnvironment;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Allure;
-import org.example.pages.*;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -10,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.*;
 
 import java.io.ByteArrayInputStream;
 import java.time.Duration;
@@ -18,7 +18,7 @@ public class BaseTest {
     protected WebDriver driver;
     protected WebDriverWait wait;
     protected RegisterPage registerPage;
-    LoginPage loginPage;
+    protected LoginPage loginPage;
     protected HomePage homePage;
     protected ContactPage contactPage;
     protected ProfilePage profilePage;

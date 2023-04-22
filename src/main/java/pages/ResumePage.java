@@ -1,15 +1,18 @@
-package org.example.pages;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utilPages.BasePage;
+import utilPages.Pages;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ResumePage extends BasePage{
+public class ResumePage extends BasePage {
     private final By BUTTON_EXPERIENCES = By.xpath("//*[@href=\"#experience\"]");
     private final By EXPERIENCES_ITEMS = By.xpath("//*[@id=\"experience\"]/div");
     private final By EXPERIENCE_YEARS = By.xpath("//*[@id=\"experience\"]/div/span");

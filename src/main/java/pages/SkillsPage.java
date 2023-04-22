@@ -1,13 +1,16 @@
-package org.example.pages;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utilPages.BasePage;
+import utilPages.Pages;
+
 import java.util.HashMap;
 import java.util.List;
 
-public class SkillsPage extends BasePage{
+public class SkillsPage extends BasePage {
     private final By SKILLS = By.xpath("//*[@class=\"skill__progress\"]/div[contains(@class, \"js-animation\")]");
 
     public SkillsPage(WebDriver driver, WebDriverWait wait) {

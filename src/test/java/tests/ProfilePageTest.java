@@ -1,12 +1,13 @@
-package org.example.tests;
+package tests;
 
 import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import testEnvironment.BaseTest;
 
-@Epic("Data modification")
+@Epic("Data handling")
 public class ProfilePageTest extends BaseTest {
 
     //Setting profile with registration because of incognito mode
@@ -34,8 +35,8 @@ public class ProfilePageTest extends BaseTest {
         String expectedMessage = "Profile Edited!";
         String actualMessage = profilePage.getProfileMessage();
 
+        addAttachment("Success message visible after setting profile: 'Profile edited'");
         Assertions.assertEquals(expectedMessage, actualMessage);
-        addAttachment("Message after setting profile: 'Profile edited'");
     }
 
     //Checking if profile name has changed after setting it (with registration because of incognito mode)
@@ -44,6 +45,7 @@ public class ProfilePageTest extends BaseTest {
     @Story("Data modification")
     @Severity(SeverityLevel.NORMAL)
     @Tag("Data modification")
+    @Tag("Failed")
     @Test
     public void testProfileUsername() {
         String username = "teszteszter";
@@ -69,13 +71,13 @@ public class ProfilePageTest extends BaseTest {
         String expectedProfileName = "Teszt Eszti";
         String actualProfileName = homePage.getProfileName();
 
-        Assertions.assertEquals(expectedProfileName, actualProfileName);
         addAttachment("Username is not displayed after profile edited");
+        Assertions.assertEquals(expectedProfileName, actualProfileName);
     }
 
     //Delete a registered account
     @DisplayName("Delete Account")
-    @Description("Click profile and delete account")
+    @Description("Click profile and delete account, then try login again")
     @Story("Data deletion")
     @Severity(SeverityLevel.CRITICAL)
     @Tag("Data deletion")
@@ -102,8 +104,8 @@ public class ProfilePageTest extends BaseTest {
         String expectedMessage = "Username or Password\n" + "is not correct!";
         String actualMessage = loginPage.getAlertMessage();
 
+        addAttachment("Account deleted, user can't log in, warning message is visible");
         Assertions.assertTrue(alertMessageVisible);
         Assertions.assertEquals(expectedMessage, actualMessage);
-        addAttachment("Account deleted, user can't log in");
     }
 }

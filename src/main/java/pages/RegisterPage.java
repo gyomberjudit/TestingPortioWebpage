@@ -1,10 +1,12 @@
-package org.example.pages;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utilPages.BasePage;
+import utilPages.Pages;
 
-public class RegisterPage extends BasePage{
+public class RegisterPage extends BasePage {
     private final By BUTTON_REGISTER = By.xpath("//*[@id=\"login\"]/button[1]");   // ez a login pagen van!!!!!
     private final By INPUT_USERNAME_REGISTER = By.id("register-username");
     private final By INPUT_PASSWORD_REGISTER = By.id("register-password");

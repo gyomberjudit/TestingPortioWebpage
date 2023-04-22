@@ -1,14 +1,17 @@
-package org.example.pages;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utilPages.BasePage;
+import utilPages.Pages;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ContactPage extends BasePage{
+public class ContactPage extends BasePage {
     private final By CONTACT_ME_TEXT = By.xpath("//*[@class=\"col-12 text-center\"]/h3");
     private final By CONTACT_INFO = By.xpath("//*[@class=\"section contact__info\"]/div/div/div");
     private final By INPUT_NAME = By.name("Name");

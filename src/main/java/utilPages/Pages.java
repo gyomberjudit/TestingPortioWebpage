@@ -1,4 +1,4 @@
-package org.example.pages;
+package utilPages;
 
 public enum Pages {
     LOGIN_PAGE("https://lennertamas.github.io/portio/"),
@@ -6,10 +6,8 @@ public enum Pages {
     LOGOUT_PAGE("https://lennertamas.github.io/portio/index.html"),
     CONTACT_PAGE("https://lennertamas.github.io/portio/contact/"),
     PROFILE_PAGE("https://lennertamas.github.io/portio/profile"),
-    RECIPE_APP_PAGE("https://lennertamas.github.io/portio/portfolio/recipe-app-ux-study/"),
     BLOG_PAGE("https://lennertamas.github.io/portio/blog/"),
-    FACEBOOK("https://www.facebook.com/"),
-    LINKEDIN("https://www.linkedin.com/");
+    FACEBOOK("https://www.facebook.com/");
 
     private final String url;
 

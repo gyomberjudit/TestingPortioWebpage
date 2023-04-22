@@ -1,19 +1,20 @@
-package org.example.tests;
+package tests;
 
 import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import testEnvironment.BaseTest;
 
 @Epic("Technical functionalities")
 public class RegisterPageTest extends BaseTest {
 
     @DisplayName("Accepting terms")
     @Description("Accept terms by clicking on OK button before Registration")
-    @Story("Accepting terms")
+    @Story("Terms and Conditions")
     @Severity(SeverityLevel.BLOCKER)
-    @Tag("Registration")
+    @Tag("Accept terms")
     @Test
     public void testAcceptTerms() {
         loginPage.navigate();
@@ -24,16 +25,17 @@ public class RegisterPageTest extends BaseTest {
 
         loginPage.acceptTerms();
         boolean registerButtonVisible = loginPage.isRegisterButtonDisplayed();
+        addAttachment("Navigate to LoginPage after accepting terms");
 
         Assertions.assertTrue(registerButtonVisible);
-        addAttachment("Navigate to LoginPage after accepting terms");
+
     }
 
     @DisplayName("Refusing accepting terms")
     @Description("Close terms - not accepting it - by clicking on Close Icon")
-    @Story("Close terms instead of accepting")
+    @Story("Terms and Conditions")
     @Severity(SeverityLevel.CRITICAL)
-    @Tag("Registration")
+    @Tag("Not accept terms")
     @Test
     public void testNotAcceptTerms() {
         loginPage.navigate();
@@ -44,9 +46,10 @@ public class RegisterPageTest extends BaseTest {
 
         loginPage.clickOnCloseIcon();
         boolean registerButtonVisible = loginPage.isRegisterButtonDisplayed();
+        addAttachment("Navigate to LoginPage after NOT accepting terms");
 
         Assertions.assertFalse(registerButtonVisible);
-        addAttachment("Navigate to LoginPage after NOT accepting terms");
+
     }
 
     @DisplayName("Registration")
@@ -54,16 +57,17 @@ public class RegisterPageTest extends BaseTest {
     @Story("Registration")
     @Severity(SeverityLevel.CRITICAL)
     @Tag("Registration")
+    @Tag("Successful")
     @Test
     public void testRegistration() {
         registerPage.registration();
         boolean userRegistered = registerPage.userRegistered();
         String expectedMessage = "User registered!";
         String actualMessage = registerPage.registeredMessage();
+        addAttachment("Success message after successful registration");
 
         Assertions.assertTrue(userRegistered);
         Assertions.assertEquals(expectedMessage, actualMessage);
-        addAttachment("Successful registration");
     }
 
     @DisplayName("Registration - Wrong password")
@@ -71,6 +75,7 @@ public class RegisterPageTest extends BaseTest {
     @Story("Registration")
     @Severity(SeverityLevel.BLOCKER)
     @Tag("Registration")
+    @Tag("Wrong")
     @Test
     public void testRegistrationWithMissingPassword() {
         String username = "teszteszter";
@@ -78,9 +83,9 @@ public class RegisterPageTest extends BaseTest {
         String email = "teszteszter5@gmail.com";
         registerPage.wrongRegistration(username, missingPassword, email);
         boolean userRegistered = registerPage.userRegistered();
+        addAttachment("Successful registration despite of missing password");
 
         Assertions.assertFalse(userRegistered);
-        addAttachment("Successful registration despite of missing password");
     }
 
     @DisplayName("Registration - Wrong email")
@@ -88,6 +93,7 @@ public class RegisterPageTest extends BaseTest {
     @Story("Registration")
     @Severity(SeverityLevel.CRITICAL)
     @Tag("Registration")
+    @Tag("Wrong")
     @Test
     public void testRegistrationWithWrongEmail() {
         String username = "teszteszter";
@@ -95,8 +101,8 @@ public class RegisterPageTest extends BaseTest {
         String wrongEmail = "tesztesztergmail";
         registerPage.wrongRegistration(username, password, wrongEmail);
         boolean userRegistered = registerPage.userRegistered();
+        addAttachment("Successful registration despite of wrong email");
 
         Assertions.assertFalse(userRegistered);
-        addAttachment("Successful registration despite of wrong email");
     }
 }

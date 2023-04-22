@@ -1,21 +1,25 @@
-package org.example.tests;
+package tests;
 
 import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import testEnvironment.BaseTest;
+
 import java.util.HashMap;
 
-@Epic("Lists of data")
+@Epic("Data handling")
 public class SkillsPageTest extends BaseTest {
 
     //Compare data given in a HashMap with data collected into HashMap from SkillsPage
-    @DisplayName("Skill types & percents HashMap")
+    @DisplayName("Skill types & percents in HashMap")
     @Description("Collect all the Skill types & percents in a HashMap")
-    @Story("Data storage")
+    @Story("Data listing")
     @Severity(SeverityLevel.NORMAL)
     @Tag("Data listing")
+    @Tag("Data storage")
+    @Tag("HashMap")
     @Test
     public void testGetSkills() throws InterruptedException {
         loginPage.login();

@@ -1,12 +1,14 @@
-package org.example.pages;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utilPages.BasePage;
+import utilPages.Pages;
 
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
     private final By TEXT_TERMS_AND_CONDITIONS = By.xpath("//*[@class=\"popup\"]/h1");
     private final By CLOSE_TERMS_ICON = By.xpath("//*[@class=\"CloseIcon\"]");
     private final By BUTTON_REGISTER = By.xpath("//*[@id=\"login\"]/button[1]");

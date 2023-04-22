@@ -1,10 +1,12 @@
-package org.example.pages;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utilPages.BasePage;
+import utilPages.Pages;
 
-public class ProfilePage extends BasePage{
+public class ProfilePage extends BasePage {
     private final By NAME_INPUT = By.id("name");
     private final By BIO_INPUT = By.id("bio");
     private final By PHONE_INPUT = By.id("phone-number");

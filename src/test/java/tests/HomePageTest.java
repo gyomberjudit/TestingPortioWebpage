@@ -1,11 +1,12 @@
-package org.example.tests;
+package tests;
 
 import io.qameta.allure.*;
-import org.example.pages.Pages;
+import org.junit.jupiter.api.Tag;
+import utilPages.Pages;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import testEnvironment.BaseTest;
 
 @Epic("Technical functionalities")
 public class HomePageTest extends BaseTest {
