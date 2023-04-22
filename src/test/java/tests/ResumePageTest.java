@@ -14,8 +14,8 @@ public class ResumePageTest extends BaseTest {
     @Description("Get the size of workplaces' list")
     @Story("Data listing")
     @Severity(SeverityLevel.MINOR)
-    @Tag("Data listing")
-    @Tag("Data count")
+    @Tag("dataListing")
+    @Tag("dataCount")
     @Test
     public void testQuantityOfExperiences() throws InterruptedException {
         loginPage.login();
@@ -31,7 +31,7 @@ public class ResumePageTest extends BaseTest {
     @Description("Collect the work years in String array")
     @Story("Data listing")
     @Severity(SeverityLevel.NORMAL)
-    @Tag("Data listing")
+    @Tag("dataListing")
     @Test
     public void testYearsOfExperience() throws InterruptedException {
         loginPage.login();
@@ -47,8 +47,8 @@ public class ResumePageTest extends BaseTest {
     @Description("Collect workplaces in String array and compare to a given file")
     @Story("Data listing")
     @Severity(SeverityLevel.NORMAL)
-    @Tag("Data listing")
-    @Tag("Read file")
+    @Tag("dataListing")
+    @Tag("readFile")
     @Test
     public void testExperience() throws InterruptedException {
         String fileName = "firms.txt";

@@ -14,7 +14,7 @@ public class RegisterPageTest extends BaseTest {
     @Description("Accept terms by clicking on OK button before Registration")
     @Story("Terms and Conditions")
     @Severity(SeverityLevel.BLOCKER)
-    @Tag("Accept terms")
+    @Tag("acceptTerms")
     @Test
     public void testAcceptTerms() {
         loginPage.navigate();
@@ -35,7 +35,7 @@ public class RegisterPageTest extends BaseTest {
     @Description("Refuse accepting terms by clicking on Close Icon")
     @Story("Terms and Conditions")
     @Severity(SeverityLevel.CRITICAL)
-    @Tag("Not accept terms")
+    @Tag("refuseTerms")
     @Test
     public void testNotAcceptTerms() {
         loginPage.navigate();
@@ -56,8 +56,7 @@ public class RegisterPageTest extends BaseTest {
     @Description("Registration with right credentials")
     @Story("Registration")
     @Severity(SeverityLevel.CRITICAL)
-    @Tag("Registration")
-    @Tag("Successful")
+    @Tag("registration")
     @Test
     public void testRegistration() {
         registerPage.registration();
@@ -74,8 +73,8 @@ public class RegisterPageTest extends BaseTest {
     @Description("Registration using wrong password")
     @Story("Registration")
     @Severity(SeverityLevel.BLOCKER)
-    @Tag("Registration")
-    @Tag("Wrong")
+    @Tag("registration")
+    @Tag("wrongData")
     @Test
     public void testRegistrationWithMissingPassword() {
         String username = "teszteszter";
@@ -92,8 +91,8 @@ public class RegisterPageTest extends BaseTest {
     @Description("Registration using wrong email")
     @Story("Registration")
     @Severity(SeverityLevel.CRITICAL)
-    @Tag("Registration")
-    @Tag("Wrong")
+    @Tag("registration")
+    @Tag("wrongData")
     @Test
     public void testRegistrationWithWrongEmail() {
         String username = "teszteszter";

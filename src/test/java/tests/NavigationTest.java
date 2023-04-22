@@ -15,7 +15,7 @@ public class NavigationTest extends BaseTest {
     @Description("Test if Hire me button navigates to Contact page")
     @Story("Navigate with button")
     @Severity(SeverityLevel.NORMAL)
-    @Tag("Navigation")
+    @Tag("navigation")
     @Test
     public void testButtonHireMe() {
         loginPage.login();
@@ -33,8 +33,7 @@ public class NavigationTest extends BaseTest {
     @Description("Clicking on Privacy and Policy link the user is thrown out of Portio webpage")
     @Story("Navigate with link")
     @Severity(SeverityLevel.NORMAL)
-    @Tag("Navigation")
-    @Tag("Failed")
+    @Tag("navigation")
     @Test
     public void testPrivacyAndPolicyLink() throws InterruptedException {
         loginPage.login();
@@ -50,8 +49,8 @@ public class NavigationTest extends BaseTest {
     @Description("Clicking on Facebook link the user navigates to Facebook webpage")
     @Story("Navigate with window handling")
     @Severity(SeverityLevel.MINOR)
-    @Tag("Navigation")
-    @Tag("Window handling")
+    @Tag("navigation")
+    @Tag("windowHandling")
     @Test
     public void testFacebookLink() throws InterruptedException {
         loginPage.login();

@@ -17,8 +17,7 @@ public class SkillsPageTest extends BaseTest {
     @Description("Collect all the Skill types & percents in a HashMap")
     @Story("Data listing")
     @Severity(SeverityLevel.NORMAL)
-    @Tag("Data listing")
-    @Tag("Data storage")
+    @Tag("dataListing")
     @Tag("HashMap")
     @Test
     public void testGetSkills() throws InterruptedException {

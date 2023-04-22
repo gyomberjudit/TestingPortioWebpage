@@ -15,8 +15,8 @@ public class ProfilePageTest extends BaseTest {
     @Description("Set profile by giving credentials")
     @Story("Data input")
     @Severity(SeverityLevel.NORMAL)
-    @Tag("Data input")
-    @Tag("Profile")
+    @Tag("dataInput")
+    @Tag("profile")
     @Test
     public void testSetProfile() {
         String username = "teszteszter";
@@ -45,8 +45,8 @@ public class ProfilePageTest extends BaseTest {
     @Description("Test if profile name is visible after setting account")
     @Story("Data modification")
     @Severity(SeverityLevel.NORMAL)
-    @Tag("Data modification")
-    @Tag("Profile")
+    @Tag("dataModification")
+    @Tag("profile")
     @Test
     public void testProfileUsername() {
         String username = "teszteszter";
@@ -81,8 +81,8 @@ public class ProfilePageTest extends BaseTest {
     @Description("Click profile and delete account, then try login again")
     @Story("Data deletion")
     @Severity(SeverityLevel.CRITICAL)
-    @Tag("Data deletion")
-    @Tag("Profile")
+    @Tag("dataDeletion")
+    @Tag("profile")
     @Test
     public void testDeleteAccount() {
         String username = "teszteszter";

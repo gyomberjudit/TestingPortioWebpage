@@ -14,9 +14,9 @@ public class BlogPageTest extends BaseTest {
     @Description("Add the number of blog posts with paginating the pages")
     @Story("List traversal with pagination")
     @Severity(SeverityLevel.MINOR)
-    @Tag("Data listing")
+    @Tag("dataListing")
     @Tag("Pagination")
-    @Tag("Count items")
+    @Tag("dataCount")
     @Test
     public void testGetTotalItems() throws InterruptedException {
         loginPage.login();
@@ -35,11 +35,11 @@ public class BlogPageTest extends BaseTest {
     @Description("Collect bolg posts' titles iterating through them and save the text to a file, then read them and compare with expected String")
     @Story("List traversal with pagination")
     @Severity(SeverityLevel.NORMAL)
-    @Tag("Data listing")
-    @Tag("Pagination")
-    @Tag("Data saving")
-    @Tag("File writing")
-    @Tag("File reading")
+    @Tag("dataListing")
+    @Tag("pagination")
+    @Tag("dataSaving")
+    @Tag("fileWriting")
+    @Tag("fileReading")
     @Test
     public void testWriteBlogThemesFile() throws InterruptedException {
         String file = "blogThemes.txt";

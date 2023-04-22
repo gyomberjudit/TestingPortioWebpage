@@ -14,10 +14,10 @@ public class AboutPageTest extends BaseTest {
     @Description("Failed download by clicking on 'Download CV' button")
     @Story("File download")
     @Severity(SeverityLevel.NORMAL)
-    @Tag("File download")
+    @Tag("fileDownload")
     @Test
     public void testFileDownload() {
-        String filename = "CV";
+        String filename = "CV.pdf";
         loginPage.login();
         homePage.clickOnLinkAbout();
         aboutPage.clickDownloadCV();

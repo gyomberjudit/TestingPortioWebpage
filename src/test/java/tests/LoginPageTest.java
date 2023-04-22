@@ -13,8 +13,7 @@ public class LoginPageTest extends BaseTest {
     @Description("Login with right credentials, accepting terms")
     @Story("Login")
     @Severity(SeverityLevel.BLOCKER)
-    @Tag("Login")
-    @Tag("Successful")
+    @Tag("login")
     @Test
     public void testLogin() {
         loginPage.login();
@@ -31,8 +30,8 @@ public class LoginPageTest extends BaseTest {
     @Description("Login with missing username")
     @Story("Login")
     @Severity(SeverityLevel.CRITICAL)
-    @Tag("Login")
-    @Tag("Wrong data")
+    @Tag("login")
+    @Tag("wrongData")
     @Test
     public void testLoginWithMissingUsername() {
         String missingUsername = "";
@@ -51,8 +50,8 @@ public class LoginPageTest extends BaseTest {
     @Description("Login with wrong password")
     @Story("Login")
     @Severity(SeverityLevel.CRITICAL)
-    @Tag("Login")
-    @Tag("Wrong data")
+    @Tag("login")
+    @Tag("wrongData")
     @Test
     public void testLoginWithWrongPassword() {
         String username = "lovasia";
@@ -73,8 +72,7 @@ public class LoginPageTest extends BaseTest {
     @Description("Login pressing button Enter")
     @Story("Login")
     @Severity(SeverityLevel.MINOR)
-    @Tag("Login")
-    @Tag("Successful")
+    @Tag("login")
     @Test
     public void testLoginWithEnter() {
         String username = "lovasia";
@@ -93,8 +91,8 @@ public class LoginPageTest extends BaseTest {
     @Description("Login without registration")
     @Story("Login")
     @Severity(SeverityLevel.CRITICAL)
-    @Tag("Login")
-    @Tag("Wrong data")
+    @Tag("login")
+    @Tag("wrongData")
     @Test
     public void testLoginWithoutRegistration() {
         String username = "tesztelek";

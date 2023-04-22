@@ -15,7 +15,7 @@ public class HomePageTest extends BaseTest {
     @Description("Logging out after logging in")
     @Story("Logout")
     @Severity(SeverityLevel.CRITICAL)
-    @Tag("Logout")
+    @Tag("logout")
     @Test
     public void testLogout() {
         loginPage.login();

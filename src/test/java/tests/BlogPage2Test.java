@@ -19,8 +19,8 @@ public class BlogPage2Test extends BaseTest {
     @Story("Data saving")
     @Severity(SeverityLevel.NORMAL)
     @Attachment("C:\\Users\\Gyömbér Judit\\IdeaProjects\\TestingPortioWebpage\\image.jpg")
-    @Tag("Data saving")
-    @Tag("Save picture")
+    @Tag("dataSaving")
+    @Tag("savePicture")
     @Test
     public void testSavePicture() throws IOException, InterruptedException {
         String image = "image.jpg";
@@ -38,8 +38,8 @@ public class BlogPage2Test extends BaseTest {
     @Story("Data saving")
     @Severity(SeverityLevel.NORMAL)
     @Attachment("C:\\Users\\Gyömbér Judit\\IdeaProjects\\TestingPortioWebpage\\image2.jpg")
-    @Tag("Data saving")
-    @Tag("Save picture")
+    @Tag("dataSaving")
+    @Tag("savePicture")
     @RepeatedTest(2)
     public void testSavePicture2() throws InterruptedException {
         String image = "image2.jpg";

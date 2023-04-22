@@ -20,8 +20,8 @@ public class ContactPageTest extends BaseTest {
     @Description("Compare expected HashMap of Contact information with a given JSON file")
     @Story("Data listing")
     @Severity(SeverityLevel.NORMAL)
-    @Tag("Data listing")
-    @Tag("HasMap")
+    @Tag("dataListing")
+    @Tag("HashMap")
     @Tag("JSON")
     @Test
     public void testGetContactInfo() throws IOException, ParseException {
@@ -50,8 +50,8 @@ public class ContactPageTest extends BaseTest {
     @Description("Unsuccessful message sending: 'Oops! There was a problem.'")
     @Story("Data input")
     @Severity(SeverityLevel.CRITICAL)
-    @Tag("Data input")
-    @Tag("Send message")
+    @Tag("dataInput")
+    @Tag("sendMessage")
     @Test
     public void testContactForm() throws InterruptedException {
         String name = "Kis Pal";
@@ -77,8 +77,8 @@ public class ContactPageTest extends BaseTest {
     @Description("Unsuccessful message sending: 'Tooltip warning to check checkbox'")
     @Story("Data input")
     @Severity(SeverityLevel.NORMAL)
-    @Tag("Data input")
-    @Tag("Tooltip")
+    @Tag("dataInput")
+    @Tag("tooltip")
     @Disabled
     @Test
     public void testContactFormWithoutCheckingCheckbox() throws InterruptedException {
