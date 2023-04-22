@@ -8,7 +8,7 @@ import utilPages.BasePage;
 import utilPages.Pages;
 
 public class BlogLinkPage extends BasePage {
-    private final By BUTTON_SEE_ALL_POSTS = By.xpath("//*[contains(@class, \"desktop\")]/a");
+    private final By BUTTON_SEE_ALL_POSTS = By.xpath("//*[@class=\"section blog-preview\"]//div[contains(@class, \"desktop\")]/a");
 
     public BlogLinkPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait, Pages.LANDING_PAGE.getUrl());
