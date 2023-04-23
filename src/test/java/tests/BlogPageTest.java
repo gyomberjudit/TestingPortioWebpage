@@ -41,7 +41,7 @@ public class BlogPageTest extends BaseTest {
     @Tag("fileWriting")
     @Tag("fileReading")
     @Test
-    public void testWriteBlogThemesFile() throws InterruptedException {
+    public void testWriteBlogThemesFile() {
         String file = "blogThemes.txt";
         loginPage.login();
         homePage.clickOnLinkBlog();

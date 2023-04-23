@@ -1,10 +1,8 @@
 package tests;
 
 import io.qameta.allure.*;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+import org.openqa.selenium.By;
 import testEnvironment.BaseTest;
 
 import java.io.IOException;
@@ -18,18 +16,26 @@ public class BlogPage2Test extends BaseTest {
     @Description(("Save picture to an existing file"))
     @Story("Data saving")
     @Severity(SeverityLevel.NORMAL)
-    @Attachment("C:\\Users\\Gyömbér Judit\\IdeaProjects\\TestingPortioWebpage\\image.jpg")
+    @Attachment("image.jpg")
     @Tag("dataSaving")
     @Tag("savePicture")
     @Test
-    public void testSavePicture() throws IOException, InterruptedException {
-        String image = "image.jpg";
-        String url = "https://lennertamas.github.io/portio/images/allpost/allPost-2.jpg";
+    public void testSavePicture() throws IOException {
+        String fileName = "image.jpg";
+        String downloadedFileName = "download.jpg";
+        By xpath = By.xpath("//*[@class=\"row\"]/div[2]//img");
+        String targetUrl = "https://lennertamas.github.io/portio/images/allpost/allPost-2.jpg";
         String format = "jpg";
+
         loginPage.login();
         homePage.clickOnLinkBlog();
         blogLinkPage.clickButtonSeeAllPosts();
-        blogPage.savePicture(image, url, format);
+        blogPage.savePicture(fileName, xpath, format);
+        blogPage.downloadImage(downloadedFileName, targetUrl, format);
+        double expectedPercentage = 0.0;
+        double actualPercentage = blogPage.getDifferencePercentage(fileName, downloadedFileName);
+
+        Assertions.assertEquals(expectedPercentage, actualPercentage);
     }
 
     //Saving picture from a post while making a file, or deleting it if exists
@@ -37,17 +43,25 @@ public class BlogPage2Test extends BaseTest {
     @Description("Save picture with creating the file at the same time or deleting it if it exists")
     @Story("Data saving")
     @Severity(SeverityLevel.NORMAL)
-    @Attachment("C:\\Users\\Gyömbér Judit\\IdeaProjects\\TestingPortioWebpage\\image2.jpg")
+    @Attachment("image5.jpg")
     @Tag("dataSaving")
     @Tag("savePicture")
     @RepeatedTest(2)
-    public void testSavePicture2() throws InterruptedException {
-        String image = "image2.jpg";
-        String url = "https://lennertamas.github.io/portio/images/allpost/allPost-5.jpg";
+    public void testSavePicture2() throws IOException {
+        String fileName = "image2.jpg";
+        String downloadedFileName = "download2.jpg";
+        By xpath = By.xpath("//*[@class=\"row\"]/div[4]//img");
+        String targetUrl = "https://lennertamas.github.io/portio/images/allpost/allPost-5.jpg";
         String format = "jpg";
+
         loginPage.login();
         homePage.clickOnLinkBlog();
         blogLinkPage.clickButtonSeeAllPosts();
-        blogPage.savePicture2(image, url, format);
+        blogPage.savePicture2(fileName, xpath, format);
+        blogPage.downloadImage(downloadedFileName, targetUrl, format);
+        double expectedPercentage = 0.0;
+        double actualPercentage = blogPage.getDifferencePercentage(fileName, downloadedFileName);
+
+        Assertions.assertEquals(expectedPercentage, actualPercentage);
     }
 }

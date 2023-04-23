@@ -15,8 +15,7 @@ public class BlogLinkPage extends BasePage {
     }
 
     //Click on 'See All Posts' Button to navigate to all the posts
-    public void clickButtonSeeAllPosts() throws InterruptedException {
-        scrollToElement(BUTTON_SEE_ALL_POSTS);
+    public void clickButtonSeeAllPosts() {
         wait.until(ExpectedConditions.elementToBeClickable(BUTTON_SEE_ALL_POSTS)).click();
     }
 }

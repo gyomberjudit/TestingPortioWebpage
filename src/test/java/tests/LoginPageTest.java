@@ -87,7 +87,7 @@ public class LoginPageTest extends BaseTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @DisplayName("Wrong Login3")
+    @DisplayName("Wrong login3")
     @Description("Login without registration")
     @Story("Login")
     @Severity(SeverityLevel.CRITICAL)
