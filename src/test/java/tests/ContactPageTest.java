@@ -65,10 +65,9 @@ public class ContactPageTest extends BaseTest {
         contactPage.fillContactMeForm(name, email, message);
         contactPage.checkCheckbox();
         contactPage.sendMessage();
-        contactPage.waitForMessage();
-        addAttachment("Sending contact form is unsuccessful");
         String expected = "Message was sent successfully";
-        String actual = contactPage.getMessageStatusText();
+        String actual = contactPage.getMessage();
+        addAttachment("Sending contact form is unsuccessful");
 
         Assertions.assertEquals(expected, actual);
     }

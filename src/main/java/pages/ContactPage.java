@@ -63,14 +63,9 @@ public class ContactPage extends BasePage {
     }
 
     //Checking if sending message was successful
-    public String getMessageStatusText() {
-        return driver.findElement(MESSAGE_STATUS).getText();
-    }
-
-    //Scroll to status message to make screenshot
-    public void waitForMessage() throws InterruptedException {
+    public String getMessage() throws InterruptedException {
         scrollToElement(MESSAGE_STATUS);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(MESSAGE_STATUS));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(MESSAGE_STATUS)).getText();
     }
 
     //Message after sending the form without checking checkbox
