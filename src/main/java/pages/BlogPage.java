@@ -16,7 +16,8 @@ import java.util.*;
 public class BlogPage extends BasePage {
     private final By BLOG_ITEMS = By.xpath("//*[@class=\"section blog-page\"]/div/div/div");
     private final By NEXT_ARROW = By.xpath("//*[contains(@class, \"pagination\")]/li[3]/a");
-    private final By BLOG_THEMES = By.xpath("//h5[@class=\"mb-0\"]/a");
+    private final By BLOG_TITLES = By.xpath("//h5[@class=\"mb-0\"]/a");
+    private final By NUMBERS = By.xpath("//ul[@class='pagination justify-content-center pagination-lg']/li");
 
     public BlogPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait, Pages.BLOG_PAGE.getUrl());
@@ -149,27 +150,32 @@ public class BlogPage extends BasePage {
         ImageIO.write(image, format, file);
     }
 
-    //Write Blog's Titles to blogThemes file
-    public void writeBlogThemesFile(String file) {
+    //Write Blog's Titles to blogTitles file
+    public void writeBlogTitlesFile(String file) {
         try {
             FileWriter writer = new FileWriter(file);
-            String text = "";
-            do {
-                List<WebElement> items =  driver.findElements(BLOG_THEMES);
 
+            String titles = "";
+            int numbers = driver.findElements(NUMBERS).size()-1;
+            do {
+                List<WebElement> items = driver.findElements(BLOG_TITLES);
                 for (WebElement item : items) {
-                    String theme = item.getText();
-                    text += theme + "\n";
+                    String title = item.getText();
+                    titles += title + "\n";
                 }
-                writer.write(text);
-            } while (isArrowClickable());
+                if (numbers != 1) {
+                    driver.findElement(NEXT_ARROW).click();
+                }
+                numbers--;
+            } while (numbers > 0);
+            writer.write(titles);
             writer.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    //Read text from blogThemes file
+    //Read text from blogTitles file
     public String getFileData(String fileName) {
         StringBuilder data = new StringBuilder();
         try {

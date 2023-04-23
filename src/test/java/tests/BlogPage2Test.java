@@ -20,7 +20,7 @@ public class BlogPage2Test extends BaseTest {
     @Tag("dataSaving")
     @Tag("savePicture")
     @Test
-    public void testSavePicture() throws IOException {
+    public void testSavePicture() throws IOException, InterruptedException {
         String fileName = "image.jpg";
         String downloadedFileName = "download.jpg";
         By xpath = By.xpath("//*[@class=\"row\"]/div[2]//img");
@@ -47,7 +47,7 @@ public class BlogPage2Test extends BaseTest {
     @Tag("dataSaving")
     @Tag("savePicture")
     @RepeatedTest(2)
-    public void testSavePicture2() throws IOException {
+    public void testSavePicture2() throws IOException, InterruptedException {
         String fileName = "image2.jpg";
         String downloadedFileName = "download2.jpg";
         By xpath = By.xpath("//*[@class=\"row\"]/div[4]//img");

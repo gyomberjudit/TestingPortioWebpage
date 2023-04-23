@@ -63,8 +63,7 @@ public class ContactPage extends BasePage {
     }
 
     //Checking if sending message was successful
-    public String getMessage() throws InterruptedException {
-        scrollToElement(MESSAGE_STATUS);
+    public String getMessage() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(MESSAGE_STATUS)).getText();
     }
 

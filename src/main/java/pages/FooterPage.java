@@ -24,7 +24,7 @@ public class FooterPage extends BasePage {
     }
 
     //navigate to facebook
-    public void clickIconFacebbok() throws InterruptedException {
+    public void clickIconFacebok() throws InterruptedException {
         scrollToElement(ICON_FACEBOOK);
         driver.findElement(ICON_FACEBOOK).click();
     }

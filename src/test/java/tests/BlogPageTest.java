@@ -41,12 +41,12 @@ public class BlogPageTest extends BaseTest {
     @Tag("fileWriting")
     @Tag("fileReading")
     @Test
-    public void testWriteBlogThemesFile() {
-        String file = "blogThemes.txt";
+    public void testWriteBlogTitlesFile() throws InterruptedException {
+        String file = "blogTitles.txt";
         loginPage.login();
         homePage.clickOnLinkBlog();
         blogLinkPage.clickButtonSeeAllPosts();
-        blogPage.writeBlogThemesFile(file);
+        blogPage.writeBlogTitlesFile(file);
         String expected = """              
                 Markdown Formatting Demo
                 Designer Conference at Florida 2020

@@ -54,8 +54,8 @@ public class NavigationTest extends BaseTest {
     @Test
     public void testFacebookLink() throws InterruptedException {
         loginPage.login();
-        footerPage.clickIconFacebbok();
-        Thread.sleep(1000);
+        footerPage.clickIconFacebok();
+        Thread.sleep(2000);
         String expected = Pages.FACEBOOK.getUrl();
         String actual = footerPage.getChildWindowUrl();
 
