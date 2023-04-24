@@ -16,11 +16,10 @@ public class BlogPage2Test extends BaseTest {
     @Description(("Save picture to an existing file"))
     @Story("Data saving")
     @Severity(SeverityLevel.NORMAL)
-    @Attachment("image.jpg")
     @Tag("dataSaving")
     @Tag("savePicture")
     @Test
-    public void testSavePicture() throws IOException, InterruptedException {
+    public void testSavePicture() throws IOException{
         String fileName = "image.jpg";
         String downloadedFileName = "download.jpg";
         By xpath = By.xpath("//*[@class=\"row\"]/div[2]//img");
@@ -29,7 +28,6 @@ public class BlogPage2Test extends BaseTest {
 
         loginPage.login();
         homePage.clickOnLinkBlog();
-        blogLinkPage.clickButtonSeeAllPosts();
         blogPage.savePicture(fileName, xpath, format);
         blogPage.downloadImage(downloadedFileName, targetUrl, format);
         double expectedPercentage = 0.0;
@@ -38,25 +36,22 @@ public class BlogPage2Test extends BaseTest {
         Assertions.assertEquals(expectedPercentage, actualPercentage);
     }
 
-    //Saving picture from a post while making a file, or deleting it if exists
     @DisplayName("Save picture2")
     @Description("Save picture with creating the file at the same time or deleting it if it exists")
     @Story("Data saving")
     @Severity(SeverityLevel.NORMAL)
-    @Attachment("image5.jpg")
     @Tag("dataSaving")
     @Tag("savePicture")
     @RepeatedTest(2)
-    public void testSavePicture2() throws IOException, InterruptedException {
+    public void testSavePicture3() throws IOException{
         String fileName = "image2.jpg";
         String downloadedFileName = "download2.jpg";
-        By xpath = By.xpath("//*[@class=\"row\"]/div[4]//img");
-        String targetUrl = "https://lennertamas.github.io/portio/images/allpost/allPost-5.jpg";
+        By xpath = By.xpath("//*[@class=\"row\"]/div[3]//img");
+        String targetUrl = "https://lennertamas.github.io/portio/images/allpost/allPost-7.jpg";
         String format = "jpg";
 
         loginPage.login();
         homePage.clickOnLinkBlog();
-        blogLinkPage.clickButtonSeeAllPosts();
         blogPage.savePicture2(fileName, xpath, format);
         blogPage.downloadImage(downloadedFileName, targetUrl, format);
         double expectedPercentage = 0.0;

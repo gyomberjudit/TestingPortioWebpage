@@ -4,18 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26794f44-258f-49a9-b97f-0314055cd4a0" name="Changes" comment="picture saving assertion">
-      <change afterPath="$PROJECT_DIR$/blogTitles.txt" afterDir="false" />
+    <list default="true" id="26794f44-258f-49a9-b97f-0314055cd4a0" name="Changes" comment="blog titles">
       <change afterPath="$PROJECT_DIR$/users.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogThemes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/download2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/download2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/AboutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/AboutPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/BlogLinkPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/BlogLinkPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/BlogPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/BlogPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ContactPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ContactPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/FooterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/FooterPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utilPages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilPages/BasePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testEnvironment/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testEnvironment/BaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/BlogPage2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BlogPage2Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BlogPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BlogPageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ContactPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ContactPageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginPageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/NavigationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/NavigationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,22 +69,7 @@
       <recent name="testEnvironment" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BlogPageTest.testWriteBlogTitlesFile">
-    <configuration name="BlogPage2Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TestingPortioWebpage" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.BlogPage2Test" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.NavigationTest.testPrivacyAndPolicyLink">
     <configuration name="BlogPage2Test.testSavePicture" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestingPortioWebpage" />
       <extension name="coverage">
@@ -100,38 +86,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BlogPage2Test.testSavePicture2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TestingPortioWebpage" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.BlogPage2Test" />
-      <option name="METHOD_NAME" value="testSavePicture2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BlogPageTest.testGetTotalItems" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TestingPortioWebpage" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.BlogPageTest" />
-      <option name="METHOD_NAME" value="testGetTotalItems" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BlogPageTest.testWriteBlogTitlesFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestingPortioWebpage" />
       <extension name="coverage">
@@ -143,6 +97,54 @@
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.BlogPageTest" />
       <option name="METHOD_NAME" value="testWriteBlogTitlesFile" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NavigationTest.testButtonHireMe" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TestingPortioWebpage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.NavigationTest" />
+      <option name="METHOD_NAME" value="testButtonHireMe" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NavigationTest.testFacebookLink" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TestingPortioWebpage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.NavigationTest" />
+      <option name="METHOD_NAME" value="testFacebookLink" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NavigationTest.testPrivacyAndPolicyLink" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TestingPortioWebpage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.NavigationTest" />
+      <option name="METHOD_NAME" value="testPrivacyAndPolicyLink" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -166,19 +168,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.PortioTest" />
-      <item itemvalue="JUnit.BlogPageTest.testGetTotalItems" />
-      <item itemvalue="JUnit.BlogPageTest.testWriteBlogTitlesFile" />
-      <item itemvalue="JUnit.BlogPage2Test" />
       <item itemvalue="JUnit.BlogPage2Test.testSavePicture" />
-      <item itemvalue="JUnit.BlogPage2Test.testSavePicture2" />
+      <item itemvalue="JUnit.NavigationTest.testFacebookLink" />
+      <item itemvalue="JUnit.NavigationTest.testPrivacyAndPolicyLink" />
+      <item itemvalue="JUnit.BlogPageTest.testWriteBlogTitlesFile" />
+      <item itemvalue="JUnit.NavigationTest.testButtonHireMe" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.NavigationTest.testPrivacyAndPolicyLink" />
+        <item itemvalue="JUnit.NavigationTest.testFacebookLink" />
+        <item itemvalue="JUnit.NavigationTest.testButtonHireMe" />
         <item itemvalue="JUnit.BlogPageTest.testWriteBlogTitlesFile" />
-        <item itemvalue="JUnit.BlogPageTest.testGetTotalItems" />
-        <item itemvalue="JUnit.BlogPage2Test.testSavePicture2" />
         <item itemvalue="JUnit.BlogPage2Test.testSavePicture" />
-        <item itemvalue="JUnit.BlogPage2Test" />
       </list>
     </recent_temporary>
   </component>
@@ -190,13 +192,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680425033780</updated>
-    </task>
-    <task id="LOCAL-00078" summary="add refresh FooterPage.java">
-      <created>1681819927004</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1681819927004</updated>
     </task>
     <task id="LOCAL-00079" summary="add refresh AboutPage.java">
       <created>1681819989232</created>
@@ -534,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682271877784</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="blog titles">
+      <created>1682291498953</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1682291498953</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -549,7 +551,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add refresh firms.txt" />
     <MESSAGE value="refresh WorkPage.java" />
     <MESSAGE value="refresh WorkPageTest.java" />
     <MESSAGE value="refresh SkillsPageTest.java" />
@@ -574,7 +575,8 @@
     <MESSAGE value="correct tags" />
     <MESSAGE value="get message" />
     <MESSAGE value="picture saving assertion" />
-    <option name="LAST_COMMIT_MESSAGE" value="picture saving assertion" />
+    <MESSAGE value="blog titles" />
+    <option name="LAST_COMMIT_MESSAGE" value="blog titles" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TestingPortioWebpage$SkillsPageTest.ic" NAME="SkillsPageTest Coverage Results" MODIFIED="1681204969440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

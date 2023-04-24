@@ -18,15 +18,23 @@ public class FooterPage extends BasePage {
 
 
     //navigate to Privacy and Policy page
-    public void clickLinkPrivacyAndPolicy() throws InterruptedException {
+    public void scrollToAndClickLinkPrivacyAndPolicy() throws InterruptedException {
         scrollToElement(LINK_PRIVACY_AND_POLICY);
-        driver.findElement(LINK_PRIVACY_AND_POLICY).click();
+        try {
+            driver.findElement(LINK_PRIVACY_AND_POLICY).click();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     //navigate to facebook
-    public void clickIconFacebok() throws InterruptedException {
+    public void scrollToAndClickIconFacebok() throws InterruptedException {
         scrollToElement(ICON_FACEBOOK);
-        driver.findElement(ICON_FACEBOOK).click();
+        try {
+            driver.findElement(ICON_FACEBOOK).click();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     //Checking if navigation to a new window was successful

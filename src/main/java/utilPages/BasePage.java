@@ -1,10 +1,18 @@
 package utilPages;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class BasePage {
 
@@ -35,5 +43,19 @@ public class BasePage {
         WebElement element = driver.findElement(xpath);
         js.executeScript("arguments[0].scrollIntoView(true);", element);
         Thread.sleep(500);
+    }
+
+    //global JSON parser method
+    public Map<String, String > jsonParser(String fileName, String keys, String values) throws IOException, ParseException {
+        Map<String, String> map = new HashMap<>();
+        JSONParser parser = new JSONParser();
+        Object obj = parser.parse(new FileReader(fileName));
+        JSONArray array = (JSONArray) obj;
+        for (Object data : array) {
+            String key = (String) ((JSONObject) data).get(keys);
+            String value = (String) ((JSONObject) data).get(values);
+            map.put(key, value);
+        }
+        return map;
     }
 }

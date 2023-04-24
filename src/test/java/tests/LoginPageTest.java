@@ -1,13 +1,19 @@
 package tests;
 
+import org.json.simple.parser.ParseException;
 import org.junit.jupiter.api.Tag;
 import io.qameta.allure.*;
 import utilPages.Pages;
 import org.junit.jupiter.api.*;
 import testEnvironment.BaseTest;
+import java.io.IOException;
+import java.util.Map;
 
 @Epic("Technical functionalities")
 public class LoginPageTest extends BaseTest {
+
+    public LoginPageTest() {
+    }
 
     @DisplayName("Login")
     @Description("Login with right credentials, accepting terms")
@@ -24,6 +30,30 @@ public class LoginPageTest extends BaseTest {
         addAttachment("Successful login");
         Assertions.assertTrue(loggedIn);
         Assertions.assertEquals(expected, actual);
+    }
+
+    @DisplayName("Sequential login")
+    @Description("Login repeatedly with valid credentials from file.")
+    @Story("Login")
+    @Severity(SeverityLevel.CRITICAL)
+    @Tag("login")
+    @Test
+    public void testLoginMultipleUsers() throws IOException, ParseException {
+        loginPage.navigate();
+        loginPage.acceptTerms();
+
+        String fileName = "users.json";
+        String keys = "login";
+        String values = "password";
+        Map<String, String> map = loginPage.jsonParser(fileName, keys, values);
+        for(String key : map.keySet()){
+            loginPage.login2(key, map.get(key));
+            addAttachment("Logged in with multiple different credentials");
+            boolean loggedIn = homePage.isPortioLogoDisplayed();
+
+            Assertions.assertTrue(loggedIn);
+            loginPage.navigate();
+        }
     }
 
     @DisplayName("Wrong login1")

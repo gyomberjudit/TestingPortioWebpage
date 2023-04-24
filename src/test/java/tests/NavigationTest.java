@@ -37,12 +37,11 @@ public class NavigationTest extends BaseTest {
     @Test
     public void testPrivacyAndPolicyLink() throws InterruptedException {
         loginPage.login();
-        footerPage.clickLinkPrivacyAndPolicy();
-        String expected = Pages.LOGIN_PAGE.getUrl();
-        String actual = driver.getCurrentUrl();
+        footerPage.scrollToAndClickLinkPrivacyAndPolicy();
+        boolean thrownOutFromWebsite = loginPage.isLoginButtonDisplayed();
         addAttachment("Failed navigation to Privacy and Policy");
 
-        Assertions.assertNotEquals(expected, actual);
+        Assertions.assertFalse(thrownOutFromWebsite);
     }
 
     @DisplayName("Test Facebook link")
@@ -54,8 +53,7 @@ public class NavigationTest extends BaseTest {
     @Test
     public void testFacebookLink() throws InterruptedException {
         loginPage.login();
-        footerPage.clickIconFacebok();
-        Thread.sleep(2000);
+        footerPage.scrollToAndClickIconFacebok();
         String expected = Pages.FACEBOOK.getUrl();
         String actual = footerPage.getChildWindowUrl();
 

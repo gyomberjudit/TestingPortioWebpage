@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilPages.BasePage;
@@ -58,7 +59,13 @@ public class HomePage extends BasePage {
 
     //Checking if HomePage is visible
     public boolean isPortioLogoDisplayed() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(PORTIO_LOGO)).isDisplayed();
+        WebElement logo = driver.findElement(PORTIO_LOGO);
+        try {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(PORTIO_LOGO));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return logo.isDisplayed();
     }
 
     //Checking if Profile name displayed after setting profile

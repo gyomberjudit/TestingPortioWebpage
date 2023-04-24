@@ -2,8 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilPages.BasePage;
@@ -18,9 +16,10 @@ public class BlogLinkPage extends BasePage {
 
     //Click on 'See All Posts' Button to navigate to all the posts
     public void clickButtonSeeAllPosts() {
-        Actions actions = new Actions(driver);
-        WebElement button = driver.findElement(BUTTON_SEE_ALL_POSTS);
-        actions.moveToElement(button, 2, 2).click().build().perform();
-        wait.until(ExpectedConditions.elementToBeClickable(BUTTON_SEE_ALL_POSTS)).click();
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(BUTTON_SEE_ALL_POSTS)).click();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

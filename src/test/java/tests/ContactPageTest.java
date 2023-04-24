@@ -2,14 +2,10 @@ package tests;
 
 import io.qameta.allure.*;
 import utilPages.Pages;
-import org.json.simple.JSONObject;
-import org.json.simple.JSONArray;
-import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.junit.jupiter.api.*;
 import testEnvironment.BaseTest;
 import java.io.*;
-import java.util.HashMap;
 import java.util.Map;
 
 @Epic("Data handling")
@@ -26,21 +22,19 @@ public class ContactPageTest extends BaseTest {
     @Test
     public void testGetContactInfo() throws IOException, ParseException {
         loginPage.login();
+
         Assertions.assertTrue(homePage.isPortioLogoDisplayed());
+
         homePage.navigateWithHireMeNowButton();
+
         Assertions.assertTrue(contactPage.isContactMeTextDisplayed());
         Assertions.assertEquals(Pages.CONTACT_PAGE.getUrl(), driver.getCurrentUrl());
-        Map<String, String> actual = contactPage.getContactInfo();
 
-        JSONParser parser = new JSONParser();
-        Object obj = parser.parse(new FileReader("contactInfo.json"));
-        JSONArray contactInfos = (JSONArray) obj;
-        Map<String, String> expected = new HashMap<>();
-        for (Object info : contactInfos) {
-            String key = (String) ((JSONObject) info).get("title");
-            String value = (String) ((JSONObject) info).get("data");
-            expected.put(key, value);
-        }
+        String fileName = "contactInfo.json";
+        String keys = "title";
+        String values = "data";
+        Map<String, String> expected = contactPage.jsonParser(fileName, keys, values);
+        Map<String, String> actual = contactPage.getContactInfo();
 
         addAttachment("Given contact information on ContactPage");
         Assertions.assertEquals(expected, actual);
@@ -53,7 +47,7 @@ public class ContactPageTest extends BaseTest {
     @Tag("dataInput")
     @Tag("sendMessage")
     @Test
-    public void testContactForm() throws InterruptedException {
+    public void testContactForm() {
         String name = "Kis Pal";
         String email = "kispal@gmail.com";
         String message = "Let's work together";

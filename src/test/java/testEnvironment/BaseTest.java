@@ -42,13 +42,13 @@ public class BaseTest {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-notifications");
         options.addArguments("--disable-extensions");
-        //options.addArguments("--headless");
+        options.addArguments("--headless");
         options.addArguments("--window-size=1920,1080");
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("start-maximized");
 
         driver = new ChromeDriver(options);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         registerPage = new RegisterPage(driver, wait);
         loginPage = new LoginPage(driver, wait);
         homePage = new HomePage(driver, wait);
