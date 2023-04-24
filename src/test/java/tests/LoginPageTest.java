@@ -9,7 +9,7 @@ import testEnvironment.BaseTest;
 import java.io.IOException;
 import java.util.Map;
 
-@Epic("Technical functionalities")
+@Epic("Entry functionalities")
 public class LoginPageTest extends BaseTest {
 
     public LoginPageTest() {

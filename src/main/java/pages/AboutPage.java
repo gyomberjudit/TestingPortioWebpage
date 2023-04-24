@@ -10,23 +10,13 @@ import utilPages.Pages;
 import java.io.File;
 
 public class AboutPage extends BasePage {
-    private final By BUTTON_HIRE_ME = By.xpath("//*[@class=\"about_content-inner\"]//a[1]");
-    //private final By BUTTON_HIRE_ME = By.xpath("//*[text()=\"Hire me\"]");
+
     private final By BUTTON_DOWNLOAD_CV = By.xpath("//*[@class=\"about_content-inner\"]//a[2]");
 
     public AboutPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait, Pages.LANDING_PAGE.getUrl());
     }
 
-
-    //Navigate to ContactPage by clicking on Hire Me button
-    public void clickOnHireMe() {
-        try {
-            wait.until(ExpectedConditions.elementToBeClickable(BUTTON_HIRE_ME)).click();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     //Try download CV by clicking on Download CV button
     public void clickDownloadCV() {

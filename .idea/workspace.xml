@@ -4,20 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26794f44-258f-49a9-b97f-0314055cd4a0" name="Changes" comment="blog titles">
-      <change afterPath="$PROJECT_DIR$/users.json" afterDir="false" />
+    <list default="true" id="26794f44-258f-49a9-b97f-0314055cd4a0" name="Changes" comment="refresh README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/download2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/download2.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/AboutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/AboutPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/BlogLinkPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/BlogLinkPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/FooterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/FooterPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utilPages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilPages/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testEnvironment/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testEnvironment/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BlogPage2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BlogPage2Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ContactPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ContactPageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/BlogPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/BlogPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BlogPage2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BlogImageSaveTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BlogPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BlogPageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/HomePageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/HomePageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginPageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/NavigationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/NavigationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/RegisterPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/RegisterPageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +54,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Gyömbér Judit/IdeaProjects/TestingPortioWebpage"
+    "last_opened_file_path": "C:/Users/Gyömbér Judit/IdeaProjects/lopott/remek_alm"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -69,8 +66,8 @@
       <recent name="testEnvironment" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.NavigationTest.testPrivacyAndPolicyLink">
-    <configuration name="BlogPage2Test.testSavePicture" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.NavigationTest.testButtonHireMe">
+    <configuration name="BlogImageSaveTest.testSavePicture" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestingPortioWebpage" />
       <extension name="coverage">
         <pattern>
@@ -79,7 +76,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.BlogPage2Test" />
+      <option name="MAIN_CLASS_NAME" value="tests.BlogImageSaveTest" />
       <option name="METHOD_NAME" value="testSavePicture" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -168,7 +165,7 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.PortioTest" />
-      <item itemvalue="JUnit.BlogPage2Test.testSavePicture" />
+      <item itemvalue="JUnit.BlogImageSaveTest.testSavePicture" />
       <item itemvalue="JUnit.NavigationTest.testFacebookLink" />
       <item itemvalue="JUnit.NavigationTest.testPrivacyAndPolicyLink" />
       <item itemvalue="JUnit.BlogPageTest.testWriteBlogTitlesFile" />
@@ -176,11 +173,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.NavigationTest.testButtonHireMe" />
         <item itemvalue="JUnit.NavigationTest.testPrivacyAndPolicyLink" />
         <item itemvalue="JUnit.NavigationTest.testFacebookLink" />
-        <item itemvalue="JUnit.NavigationTest.testButtonHireMe" />
         <item itemvalue="JUnit.BlogPageTest.testWriteBlogTitlesFile" />
-        <item itemvalue="JUnit.BlogPage2Test.testSavePicture" />
+        <item itemvalue="JUnit.BlogImageSaveTest.testSavePicture" />
       </list>
     </recent_temporary>
   </component>
@@ -192,20 +189,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680425033780</updated>
-    </task>
-    <task id="LOCAL-00079" summary="add refresh AboutPage.java">
-      <created>1681819989232</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1681819989232</updated>
-    </task>
-    <task id="LOCAL-00080" summary="add refresh AboutPageTest.java">
-      <created>1681820020878</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1681820020878</updated>
     </task>
     <task id="LOCAL-00081" summary="add refresh ResumePageTest.java">
       <created>1681821535519</created>
@@ -536,7 +519,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682291498953</updated>
     </task>
-    <option name="localTasksCounter" value="128" />
+    <task id="LOCAL-00128" summary="img assertion and repeated login">
+      <created>1682324078970</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1682324078971</updated>
+    </task>
+    <task id="LOCAL-00129" summary="refresh README.md">
+      <created>1682355124389</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1682355124389</updated>
+    </task>
+    <option name="localTasksCounter" value="130" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -551,8 +548,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refresh WorkPage.java" />
-    <MESSAGE value="refresh WorkPageTest.java" />
     <MESSAGE value="refresh SkillsPageTest.java" />
     <MESSAGE value="refresh SkillsPage.java" />
     <MESSAGE value="refresh ServicePage.java" />
@@ -576,7 +571,9 @@
     <MESSAGE value="get message" />
     <MESSAGE value="picture saving assertion" />
     <MESSAGE value="blog titles" />
-    <option name="LAST_COMMIT_MESSAGE" value="blog titles" />
+    <MESSAGE value="img assertion and repeated login" />
+    <MESSAGE value="refresh README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="refresh README.md" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TestingPortioWebpage$SkillsPageTest.ic" NAME="SkillsPageTest Coverage Results" MODIFIED="1681204969440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

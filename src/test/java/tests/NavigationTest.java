@@ -11,8 +11,8 @@ import testEnvironment.BaseTest;
 @Epic("Navigation")
 public class NavigationTest extends BaseTest {
 
-    @DisplayName("Test Hire me button")
-    @Description("Test if Hire me button navigates to Contact page")
+    @DisplayName("Test 'Hire Me Now' button")
+    @Description("Test if 'Hire Me Now' button navigates to Contact page")
     @Story("Navigate with button")
     @Severity(SeverityLevel.NORMAL)
     @Tag("navigation")
@@ -20,8 +20,7 @@ public class NavigationTest extends BaseTest {
     public void testButtonHireMe() {
         loginPage.login();
         addAttachment("User logged in");
-        homePage.clickOnLinkAbout();
-        aboutPage.clickOnHireMe();
+        homePage.navigateWithHireMeNowButton();
         String expected = Pages.CONTACT_PAGE.getUrl();
         String actual = driver.getCurrentUrl();
         addAttachment("Successful navigation to ContactPage");

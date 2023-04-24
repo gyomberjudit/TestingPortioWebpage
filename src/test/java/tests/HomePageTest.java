@@ -8,7 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import testEnvironment.BaseTest;
 
-@Epic("Technical functionalities")
+@Epic("Entry functionalities")
 public class HomePageTest extends BaseTest {
 
     @DisplayName("Logout")

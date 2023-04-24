@@ -8,8 +8,7 @@ import testEnvironment.BaseTest;
 import java.io.IOException;
 
 @Epic("File handling")
-@Epic("Data handling")
-public class BlogPage2Test extends BaseTest {
+public class BlogImageSaveTest extends BaseTest {
 
     //Saving picture from a post to an existing file
     @DisplayName("Save picture1")
@@ -28,10 +27,10 @@ public class BlogPage2Test extends BaseTest {
 
         loginPage.login();
         homePage.clickOnLinkBlog();
-        blogPage.savePicture(fileName, xpath, format);
-        blogPage.downloadImage(downloadedFileName, targetUrl, format);
+        blogLinkPage.savePicture(fileName, xpath, format);
+        blogLinkPage.downloadImage(downloadedFileName, targetUrl, format);
         double expectedPercentage = 0.0;
-        double actualPercentage = blogPage.getDifferencePercentage(fileName, downloadedFileName);
+        double actualPercentage = blogLinkPage.getDifferencePercentage(fileName, downloadedFileName);
 
         Assertions.assertEquals(expectedPercentage, actualPercentage);
     }
@@ -52,10 +51,10 @@ public class BlogPage2Test extends BaseTest {
 
         loginPage.login();
         homePage.clickOnLinkBlog();
-        blogPage.savePicture2(fileName, xpath, format);
-        blogPage.downloadImage(downloadedFileName, targetUrl, format);
+        blogLinkPage.savePicture2(fileName, xpath, format);
+        blogLinkPage.downloadImage(downloadedFileName, targetUrl, format);
         double expectedPercentage = 0.0;
-        double actualPercentage = blogPage.getDifferencePercentage(fileName, downloadedFileName);
+        double actualPercentage = blogLinkPage.getDifferencePercentage(fileName, downloadedFileName);
 
         Assertions.assertEquals(expectedPercentage, actualPercentage);
     }

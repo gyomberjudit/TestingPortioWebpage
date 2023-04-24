@@ -41,11 +41,12 @@ public class BlogPageTest extends BaseTest {
     @Tag("fileWriting")
     @Tag("fileReading")
     @Test
-    public void testWriteBlogTitlesFile() throws InterruptedException {
+    public void testWriteBlogTitlesFile() {
         String file = "blogTitles.txt";
         loginPage.login();
         homePage.clickOnLinkBlog();
         blogLinkPage.clickButtonSeeAllPosts();
+        addAttachment("Blog titles on the first page");
         blogPage.writeBlogTitlesFile(file);
         String expected = """              
                 Markdown Formatting Demo
@@ -59,6 +60,7 @@ public class BlogPageTest extends BaseTest {
                 You must know this before becoming a designer
                 """;   //text block instead of concatenation
         String actual = blogPage.getFileData(file);
+        addAttachment("Blog titles on the second page");
 
         Assertions.assertEquals(expected, actual);
     }
