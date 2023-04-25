@@ -21,21 +21,38 @@ public class DataDeletionTest extends BaseTest {
     public void testDeleteAccount() {
         String username = "teszteszter";
         String password = "teszt";
-        registerPage.registration();
-        registerPage.clickLoginButton();
-        loginPage.login2(username, password);
-        boolean loggedIn = homePage.isPortioLogoDisplayed();
+        String email = "teszteszter5@gmail.com";
 
+        //registration
+        registerPage.navigate();
+        registerPage.acceptTerms();
+        registerPage.clickButtonRegister();
+        registerPage.inputUsername(username);
+        registerPage.inputPassword(password);
+        registerPage.inputEmail(email);
+        registerPage.clickButtonRegister2();
+        boolean userRegistered = registerPage.userRegistered();
+        Assertions.assertTrue(userRegistered);
+
+        //login
+        registerPage.clickLoginButton();
+        loginPage.inputUsername(username);
+        loginPage.inputPassword(password);
+        loginPage.clickLoginButton();
+        boolean loggedIn = homePage.isPortioLogoDisplayed();
         Assertions.assertTrue(loggedIn);
 
+        //delete account
         homePage.clickProfile();
         profilePage.deleteAccount();
         boolean confirmationMessageVisible = profilePage.isConfirmMessageDisplayed();
-
         Assertions.assertTrue(confirmationMessageVisible);
-
         profilePage.confirmDeletingAccount();
-        loginPage.login2(username, password);
+
+        //checking if deletion is successful
+        loginPage.inputUsername(username);
+        loginPage.inputPassword(password);
+        loginPage.clickLoginButton();
         boolean  alertMessageVisible = loginPage.isAlertMessageDisplayed();
         String expectedMessage = "Username or Password\n" + "is not correct!";
         String actualMessage = loginPage.getAlertMessage();

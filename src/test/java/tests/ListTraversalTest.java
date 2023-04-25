@@ -19,14 +19,31 @@ public class ListTraversalTest extends BaseTest {
     @Tag("dataCount")
     @Test
     public void testGetTotalItems() throws InterruptedException {
-        loginPage.login();
+        String username = "lovasia";
+        String password = "kispal123";
+
+        //login
+        loginPage.navigate();
+        loginPage.acceptTerms();
+        loginPage.inputUsername(username);
+        loginPage.inputPassword(password);
+        loginPage.clickLoginButton();
+        boolean loggedIn = homePage.isPortioLogoDisplayed();
+        Assertions.assertTrue(loggedIn);
+
+        //navigate to BlogPage
         homePage.clickOnLinkBlog();
         blogLinkPage.clickButtonSeeAllPosts();
-        Thread.sleep(500);
+        Thread.sleep(1000);
+        addAttachment("There are 6 items on the first page");
         Assertions.assertEquals(Pages.BLOG_PAGE.getUrl(), driver.getCurrentUrl());
+
+        //get the number of blog posts
         int expected = 9;
         int actual = blogPage.getTotalItems();
+        addAttachment("There are 3 items on the second page");
 
+        Assertions.assertEquals(Pages.BLOG_PAGE_TWO.getUrl(), driver.getCurrentUrl());
         Assertions.assertEquals(expected, actual);
     }
 
@@ -41,12 +58,28 @@ public class ListTraversalTest extends BaseTest {
     @Tag("fileWriting")
     @Tag("fileReading")
     @Test
-    public void testWriteBlogTitlesFile() {
+    public void testWriteBlogTitlesFile() throws InterruptedException {
+        String username = "lovasia";
+        String password = "kispal123";
         String file = "blogTitles.txt";
-        loginPage.login();
+
+        //login
+        loginPage.navigate();
+        loginPage.acceptTerms();
+        loginPage.inputUsername(username);
+        loginPage.inputPassword(password);
+        loginPage.clickLoginButton();
+        boolean loggedIn = homePage.isPortioLogoDisplayed();
+        Assertions.assertTrue(loggedIn);
+
+        //navigate to BlogPage
         homePage.clickOnLinkBlog();
         blogLinkPage.clickButtonSeeAllPosts();
+        Thread.sleep(1000);
         addAttachment("Blog titles on the first page");
+        Assertions.assertEquals(Pages.BLOG_PAGE.getUrl(), driver.getCurrentUrl());
+
+        //write blog posts' titles to blogTitles.txt file and compare it - by reading the file - with the expected text block
         blogPage.writeBlogTitlesFile(file);
         String expected = """              
                 Markdown Formatting Demo
@@ -62,6 +95,7 @@ public class ListTraversalTest extends BaseTest {
         String actual = blogPage.getFileData(file);
         addAttachment("Blog titles on the second page");
 
+        Assertions.assertEquals(Pages.BLOG_PAGE_TWO.getUrl(), driver.getCurrentUrl());
         Assertions.assertEquals(expected, actual);
     }
 }

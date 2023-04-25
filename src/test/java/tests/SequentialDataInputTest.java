@@ -15,21 +15,24 @@ import java.util.Map;
 public class SequentialDataInputTest extends BaseTest {
 
     @DisplayName("Sequential login")
-    @Description("Login repeatedly with valid credentials from file.")
-    @Story("Login")
+    @Description("Login repeatedly with valid credentials from JSON file.")
+    @Story("SequentialDataInput")
     @Severity(SeverityLevel.CRITICAL)
     @Tag("login")
     @Test
     public void testLoginMultipleUsers() throws IOException, ParseException {
-        loginPage.navigate();
-        loginPage.acceptTerms();
-
         String fileName = "users.json";
         String keys = "login";
         String values = "password";
+
+        loginPage.navigate();
+        loginPage.acceptTerms();
+
         Map<String, String> map = loginPage.jsonParser(fileName, keys, values);
         for(String key : map.keySet()){
-            loginPage.login2(key, map.get(key));
+            loginPage.inputUsername(key);
+            loginPage.inputPassword(map.get(key));
+            loginPage.clickLoginButton();
             addAttachment("Logged in with multiple different credentials");
             boolean loggedIn = homePage.isPortioLogoDisplayed();
 

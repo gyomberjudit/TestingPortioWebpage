@@ -17,7 +17,17 @@ public class RegistrationTest extends BaseTest {
     @Tag("registration")
     @Test
     public void testRegistration() {
-        registerPage.registration();
+        String username = "teszteszter";
+        String password = "teszt";
+        String email = "teszteszter5@gmail.com";
+
+        registerPage.navigate();
+        registerPage.acceptTerms();
+        registerPage.clickButtonRegister();
+        registerPage.inputUsername(username);
+        registerPage.inputPassword(password);
+        registerPage.inputEmail(email);
+        registerPage.clickButtonRegister2();
         boolean userRegistered = registerPage.userRegistered();
         String expectedMessage = "User registered!";
         String actualMessage = registerPage.registeredMessage();
@@ -38,7 +48,14 @@ public class RegistrationTest extends BaseTest {
         String username = "teszteszter";
         String missingPassword = "";
         String email = "teszteszter5@gmail.com";
-        registerPage.wrongRegistration(username, missingPassword, email);
+
+        registerPage.navigate();
+        registerPage.acceptTerms();
+        registerPage.clickButtonRegister();
+        registerPage.inputUsername(username);
+        registerPage.inputPassword(missingPassword);
+        registerPage.inputEmail(email);
+        registerPage.clickButtonRegister2();
         boolean userRegistered = registerPage.userRegistered();
         addAttachment("Successful registration despite of missing password");
 
@@ -56,7 +73,14 @@ public class RegistrationTest extends BaseTest {
         String username = "teszteszter";
         String password = "teszt";
         String wrongEmail = "tesztesztergmail";
-        registerPage.wrongRegistration(username, password, wrongEmail);
+
+        registerPage.navigate();
+        registerPage.acceptTerms();
+        registerPage.clickButtonRegister();
+        registerPage.inputUsername(username);
+        registerPage.inputPassword(password);
+        registerPage.inputEmail(wrongEmail);
+        registerPage.clickButtonRegister2();
         boolean userRegistered = registerPage.userRegistered();
         addAttachment("Successful registration despite of wrong email");
 

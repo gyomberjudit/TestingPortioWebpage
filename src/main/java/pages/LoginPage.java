@@ -1,7 +1,6 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -11,7 +10,6 @@ import utilPages.Pages;
 public class LoginPage extends BasePage {
     private final By TEXT_TERMS_AND_CONDITIONS = By.xpath("//*[@class=\"popup\"]/h1");
     private final By CLOSE_TERMS_ICON = By.xpath("//*[@class=\"CloseIcon\"]");
-    private final By BUTTON_REGISTER = By.xpath("//*[@id=\"login\"]/button[1]");
     private final By INPUT_USERNAME_LOGIN = By.id("email");
     private final By INPUT_PASSWORD_LOGIN = By.id("password");
     private final By BUTTON_LOGIN = By.xpath("//*[@id=\"login\"]/form//button");
@@ -32,36 +30,15 @@ public class LoginPage extends BasePage {
         driver.findElement(CLOSE_TERMS_ICON).click();
     }
 
-    //Checking if Accepting terms was successful
-    public boolean isRegisterButtonDisplayed() {
-        return driver.findElement(BUTTON_REGISTER).isDisplayed();
-    }
-
-    //logging in without registration (no need for registration with the given credentials, so the user should accept terms before logging in)
-    public void login() {
-        String username = "lovasia";
-        String password = "kispal123";
-        navigate();
-        acceptTerms();
+    //methods for login
+    public void inputUsername(String username) {
         driver.findElement(INPUT_USERNAME_LOGIN).sendKeys(username);
+    }
+    public void inputPassword(String password) {
         driver.findElement(INPUT_PASSWORD_LOGIN).sendKeys(password);
+    }
+    public void clickLoginButton() {
         driver.findElement(BUTTON_LOGIN).click();
-    }
-
-    //logging in, used for tests where the user have to do registration before logging in
-    public void login2(String username, String password) {
-        driver.findElement(INPUT_USERNAME_LOGIN).sendKeys(username);
-        driver.findElement(INPUT_PASSWORD_LOGIN).sendKeys(password);
-        driver.findElement(BUTTON_LOGIN).click();
-    }
-
-    //Logging in with pressing key Enter (this function doesn't work during exploratory testing)
-    public void loginWithEnter(String username, String password) {
-        navigate();
-        acceptTerms();
-        driver.findElement(INPUT_USERNAME_LOGIN).sendKeys(username);
-        driver.findElement(INPUT_PASSWORD_LOGIN).sendKeys(password);
-        driver.findElement(BUTTON_LOGIN).sendKeys(Keys.ENTER);
     }
 
     //Get the text of alert message after wrong login
@@ -74,7 +51,7 @@ public class LoginPage extends BasePage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(MESSAGE_ALERT)).isDisplayed();
     }
 
-    //Checking if Login button visible after logging out
+    //Checking if Login button visible
     public boolean isLoginButtonDisplayed() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(BUTTON_LOGIN)).isDisplayed();
     }

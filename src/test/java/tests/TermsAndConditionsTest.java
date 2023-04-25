@@ -1,15 +1,13 @@
 package tests;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
-import io.qameta.allure.Story;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import testEnvironment.BaseTest;
 
+@Epic("Entry functionalities")
 public class TermsAndConditionsTest extends BaseTest {
 
     @DisplayName("Accept terms")
@@ -26,10 +24,10 @@ public class TermsAndConditionsTest extends BaseTest {
         Assertions.assertTrue(textOfTermsVisible);
 
         loginPage.acceptTerms();
-        boolean registerButtonVisible = loginPage.isRegisterButtonDisplayed();
+        boolean loginButtonVisible = loginPage.isLoginButtonDisplayed();
         addAttachment("Navigate to LoginPage after accepting terms");
 
-        Assertions.assertTrue(registerButtonVisible);
+        Assertions.assertTrue(loginButtonVisible);
 
     }
 
@@ -47,10 +45,10 @@ public class TermsAndConditionsTest extends BaseTest {
         Assertions.assertTrue(textOfTermsVisible);
 
         loginPage.clickOnCloseIcon();
-        boolean registerButtonVisible = loginPage.isRegisterButtonDisplayed();
+        boolean loginButtonVisible = loginPage.isLoginButtonDisplayed();
         addAttachment("Navigate to LoginPage after NOT accepting terms");
 
-        Assertions.assertFalse(registerButtonVisible);
+        Assertions.assertFalse(loginButtonVisible);
 
     }
 }

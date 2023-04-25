@@ -4,22 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26794f44-258f-49a9-b97f-0314055cd4a0" name="Changes" comment="small corrections">
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/DataDeletionTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/DataInputTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/TermsAndConditionsTest.java" afterDir="false" />
+    <list default="true" id="26794f44-258f-49a9-b97f-0314055cd4a0" name="Changes" comment="change test class structure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/AboutPageTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BlogImageSaveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DataSavingTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BlogPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ListTraversalTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ContactPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SequentialDataInputTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/HomePageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LogoutTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ProfilePageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DataModificationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/RegisterPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/RegistrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ResumePageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ResumePageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/SkillsPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DataListingTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case_template.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test_case_template.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/AboutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/AboutPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ContactPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ContactPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/RegisterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/RegisterPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ResumePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ResumePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utilPages/Pages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilPages/Pages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/DataDeletionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DataDeletionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/DataInputTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DataInputTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/DataListingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DataListingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/DataModificationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DataModificationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/DataSavingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DataSavingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ListTraversalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ListTraversalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LogoutTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LogoutTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/NavigationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/NavigationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/RegistrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/RegistrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/SequentialDataInputTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SequentialDataInputTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/TermsAndConditionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TermsAndConditionsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,8 +76,8 @@
       <recent name="testEnvironment" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.tests in TestingPortioWebpage">
-    <configuration name="ListTraversalTest.testWriteBlogTitlesFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.SequentialDataInputTest.testLoginMultipleUsers">
+    <configuration name="LoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestingPortioWebpage" />
       <extension name="coverage">
         <pattern>
@@ -81,57 +86,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.ListTraversalTest" />
-      <option name="METHOD_NAME" value="testWriteBlogTitlesFile" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NavigationTest.testButtonHireMe" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TestingPortioWebpage" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.NavigationTest" />
-      <option name="METHOD_NAME" value="testButtonHireMe" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NavigationTest.testFacebookLink" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TestingPortioWebpage" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.NavigationTest" />
-      <option name="METHOD_NAME" value="testFacebookLink" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NavigationTest.testPrivacyAndPolicyLink" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TestingPortioWebpage" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.NavigationTest" />
-      <option name="METHOD_NAME" value="testPrivacyAndPolicyLink" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="tests.LoginTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -152,6 +108,52 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RegistrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TestingPortioWebpage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.RegistrationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SequentialDataInputTest.testLoginMultipleUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TestingPortioWebpage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.SequentialDataInputTest" />
+      <option name="METHOD_NAME" value="testLoginMultipleUsers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TermsAndConditionsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TestingPortioWebpage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.TermsAndConditionsTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="tests in TestingPortioWebpage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestingPortioWebpage" />
       <option name="TEST_OBJECT" value="directory" />
@@ -162,19 +164,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.PortioTest" />
-      <item itemvalue="JUnit.ListTraversalTest.testWriteBlogTitlesFile" />
+      <item itemvalue="JUnit.LoginTest" />
+      <item itemvalue="JUnit.RegistrationTest" />
+      <item itemvalue="JUnit.SequentialDataInputTest.testLoginMultipleUsers" />
+      <item itemvalue="JUnit.TermsAndConditionsTest" />
       <item itemvalue="JUnit.tests in TestingPortioWebpage" />
-      <item itemvalue="JUnit.NavigationTest.testFacebookLink" />
-      <item itemvalue="JUnit.NavigationTest.testPrivacyAndPolicyLink" />
-      <item itemvalue="JUnit.NavigationTest.testButtonHireMe" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SequentialDataInputTest.testLoginMultipleUsers" />
         <item itemvalue="JUnit.tests in TestingPortioWebpage" />
-        <item itemvalue="JUnit.NavigationTest.testButtonHireMe" />
-        <item itemvalue="JUnit.NavigationTest.testPrivacyAndPolicyLink" />
-        <item itemvalue="JUnit.NavigationTest.testFacebookLink" />
-        <item itemvalue="JUnit.ListTraversalTest.testWriteBlogTitlesFile" />
+        <item itemvalue="JUnit.LoginTest" />
+        <item itemvalue="JUnit.TermsAndConditionsTest" />
+        <item itemvalue="JUnit.RegistrationTest" />
       </list>
     </recent_temporary>
   </component>
@@ -186,13 +188,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680425033780</updated>
-    </task>
-    <task id="LOCAL-00082" summary="add refresh ResumePage.java">
-      <created>1681821565892</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1681821565892</updated>
     </task>
     <task id="LOCAL-00083" summary="add refresh ContactPage.java">
       <created>1681823131525</created>
@@ -530,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682357686336</updated>
     </task>
-    <option name="localTasksCounter" value="131" />
+    <task id="LOCAL-00131" summary="change test class structure">
+      <created>1682425516469</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1682425516469</updated>
+    </task>
+    <option name="localTasksCounter" value="132" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -545,7 +547,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refresh SkillsPageTest.java" />
     <MESSAGE value="refresh SkillsPage.java" />
     <MESSAGE value="refresh ServicePage.java" />
     <MESSAGE value="refresh ServicePageTest.java" />
@@ -570,7 +571,8 @@
     <MESSAGE value="img assertion and repeated login" />
     <MESSAGE value="refresh README.md" />
     <MESSAGE value="small corrections" />
-    <option name="LAST_COMMIT_MESSAGE" value="small corrections" />
+    <MESSAGE value="change test class structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="change test class structure" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TestingPortioWebpage$SkillsPageTest.ic" NAME="SkillsPageTest Coverage Results" MODIFIED="1681204969440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

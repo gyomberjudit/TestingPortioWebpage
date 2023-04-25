@@ -21,10 +21,16 @@ public class ProfilePage extends BasePage {
 
 
     //Setting profile by giving credentials and saving them
-    public void setProfile(String name, String bio, String phone) {
+    public void inputName(String name) {
         driver.findElement(NAME_INPUT).sendKeys(name);
+    }
+    public void inputBio(String bio) {
         driver.findElement(BIO_INPUT).sendKeys(bio);
+    }
+    public void inputPhone(String phone) {
         driver.findElement(PHONE_INPUT).sendKeys(phone);
+    }
+    public void clickSaveButton() {
         driver.findElement(SAVE_BUTTON).click();
     }
 

@@ -7,7 +7,7 @@ import testEnvironment.BaseTest;
 @Epic("Data handling")
 public class DataInputTest extends BaseTest {
 
-    //Setting profile with registration because of incognito mode
+    //Setting profile (with registration because of incognito mode)
     @DisplayName("Set Profile")
     @Description("Set profile by giving credentials")
     @Story("Data input")
@@ -18,18 +18,36 @@ public class DataInputTest extends BaseTest {
     public void testSetProfile() {
         String username = "teszteszter";
         String password = "teszt";
+        String email = "teszteszter5@gmail.com";
         String name ="Teszt Eszti";
         String bio ="female";
         String phone ="06301112233";
-        registerPage.registration();
-        registerPage.clickLoginButton();
-        loginPage.login2(username, password);
-        boolean loggedIn = homePage.isPortioLogoDisplayed();
 
+        //registration
+        registerPage.navigate();
+        registerPage.acceptTerms();
+        registerPage.clickButtonRegister();
+        registerPage.inputUsername(username);
+        registerPage.inputPassword(password);
+        registerPage.inputEmail(email);
+        registerPage.clickButtonRegister2();
+        boolean userRegistered = registerPage.userRegistered();
+        Assertions.assertTrue(userRegistered);
+
+        //logging in
+        registerPage.clickLoginButton();
+        loginPage.inputUsername(username);
+        loginPage.inputPassword(password);
+        loginPage.clickLoginButton();
+        boolean loggedIn = homePage.isPortioLogoDisplayed();
         Assertions.assertTrue(loggedIn);
 
+        //setting profile
         homePage.clickProfile();
-        profilePage.setProfile(name, bio, phone);
+        profilePage.inputName(name);
+        profilePage.inputBio(bio);
+        profilePage.inputPhone(phone);
+        profilePage.clickSaveButton();
         String expectedMessage = "Profile Edited!";
         String actualMessage = profilePage.getProfileMessage();
 
@@ -37,6 +55,7 @@ public class DataInputTest extends BaseTest {
         Assertions.assertEquals(expectedMessage, actualMessage);
     }
 
+    //Send message with Contact form
     @DisplayName("Send message with Contact Form")
     @Description("Unsuccessful message sending: 'Oops! There was a problem.'")
     @Story("Data input")
@@ -44,47 +63,34 @@ public class DataInputTest extends BaseTest {
     @Tag("dataInput")
     @Tag("sendMessage")
     @Test
-    public void testContactForm() {
+    public void testContactForm() throws InterruptedException {
+        String username = "lovasia";
+        String password = "kispal123";
         String name = "Kis Pal";
         String email = "kispal@gmail.com";
         String message = "Let's work together";
-        loginPage.login();
+
+        //login
+        loginPage.navigate();
+        loginPage.acceptTerms();
+        loginPage.inputUsername(username);
+        loginPage.inputPassword(password);
+        loginPage.clickLoginButton();
         boolean loggedIn = homePage.isPortioLogoDisplayed();
         Assertions.assertTrue(loggedIn);
 
-        homePage.navigateWithContactMeButton();
-        contactPage.fillContactMeForm(name, email, message);
+        //fill Contact form
+        homePage.clickContactMeButton();
+        contactPage.inputName(name);
+        contactPage.inputEmail(email);
+        contactPage.inputMessage(message);
         contactPage.checkCheckbox();
         contactPage.sendMessage();
         String expected = "Message was sent successfully";
         String actual = contactPage.getMessage();
+        Thread.sleep(1500);
         addAttachment("Sending contact form is unsuccessful");
 
         Assertions.assertEquals(expected, actual);
     }
-
-    /*@DisplayName("Send message without checking checkbox")
-    @Description("Unsuccessful message sending: 'Tooltip warning to check checkbox'")
-    @Story("Data input")
-    @Severity(SeverityLevel.NORMAL)
-    @Tag("dataInput")
-    @Tag("tooltip")
-    @Disabled
-    @Test
-    public void testContactFormWithoutCheckingCheckbox() throws InterruptedException {
-        String name = "Kis Pal";
-        String email = "kispal@gmail.com";
-        String message = "Let's work together";
-        loginPage.login();
-        Assertions.assertTrue(homePage.isPortioLogoDisplayed());
-        homePage.navigateWithContactMeButton();
-        Assertions.assertTrue(contactPage.isContactMeTextDisplayed());
-        contactPage.fillContactMeForm(name, email, message);
-        contactPage.sendMessage();
-        addAttachment("Warning message visible if checkbox is not checked");
-        String warningMessage = "Please, tick this box if you want to proceed.";
-        String tooltip = contactPage.getTooltipMessage();
-
-        Assertions.assertEquals(warningMessage, tooltip);
-    }*/
 }

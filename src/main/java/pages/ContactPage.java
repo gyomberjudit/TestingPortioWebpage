@@ -41,9 +41,13 @@ public class ContactPage extends BasePage {
     }
 
     //Give data and message while filling the Contact Form
-    public void fillContactMeForm(String name, String email, String message) {
+    public void inputName(String name) {
         driver.findElement(INPUT_NAME).sendKeys(name);
+    }
+    public void inputEmail(String email) {
         driver.findElement(INPUT_EMAIL).sendKeys(email);
+    }
+    public void inputMessage(String message) {
         driver.findElement(INPUT_MESSAGE).sendKeys(message);
     }
 
@@ -67,10 +71,5 @@ public class ContactPage extends BasePage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(MESSAGE_STATUS)).getText();
     }
 
-    //Message after sending the form without checking checkbox
-    public String getTooltipMessage() throws InterruptedException {
-        scrollToElement(CHECKBOX);
-        WebElement toolTip = driver.findElement(By.xpath(""));
-        return toolTip.getText();
-    }
+
 }

@@ -25,7 +25,7 @@ public class HomePage extends BasePage {
 
 
     //Logging out from the webpage
-    public void logout() {
+    public void clickLogoutButton() {
         driver.findElement(LINK_LOGOUT).click();
     }
 
@@ -35,14 +35,16 @@ public class HomePage extends BasePage {
     }
 
     //Navigating to ContactPage with 'Hire Me Now' button
-    public void navigateWithHireMeNowButton() {
+    public void clickHireMeNowButton() {
         driver.findElement(HIRE_ME_NOW_BUTTON).click();
     }
 
     //Navigating to ContactPage with 'Contact Me' button
-    public void navigateWithContactMeButton() {
+    public void clickContactMeButton() {
         driver.findElement(CONTACT_ME_BUTTON).click();
     }
+
+    //Navigating to AboutPage by clicking on About link
     public void clickOnLinkAbout() {
         driver.findElement(LINK_ABOUT).click();
     }
@@ -72,4 +74,4 @@ public class HomePage extends BasePage {
     public String getProfileName() {
         return driver.findElement(PROFILE_TEXT).getText();
     }
-    }
+}

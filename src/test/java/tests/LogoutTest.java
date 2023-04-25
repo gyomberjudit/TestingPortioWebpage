@@ -18,10 +18,21 @@ public class LogoutTest extends BaseTest {
     @Tag("logout")
     @Test
     public void testLogout() {
-        loginPage.login();
+        String username = "lovasia";
+        String password = "kispal123";
+
+        //login
+        loginPage.navigate();
+        loginPage.acceptTerms();
+        loginPage.inputUsername(username);
+        loginPage.inputPassword(password);
+        loginPage.clickLoginButton();
+        boolean loggedIn = homePage.isPortioLogoDisplayed();
         addAttachment("The user is logged in");
-        Assertions.assertTrue(homePage.isPortioLogoDisplayed());
-        homePage.logout();
+        Assertions.assertTrue(loggedIn);
+
+        //logout
+        homePage.clickLogoutButton();
         boolean loginButtonVisible = loginPage.isLoginButtonDisplayed();
         String expected = Pages.LOGOUT_PAGE.getUrl();
         String actual = driver.getCurrentUrl();

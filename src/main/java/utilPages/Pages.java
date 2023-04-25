@@ -7,6 +7,7 @@ public enum Pages {
     CONTACT_PAGE("https://lennertamas.github.io/portio/contact/"),
     PROFILE_PAGE("https://lennertamas.github.io/portio/profile"),
     BLOG_PAGE("https://lennertamas.github.io/portio/blog/"),
+    BLOG_PAGE_TWO("https://lennertamas.github.io/portio/blog/page/2/"),
     FACEBOOK("https://www.facebook.com/");
 
     private final String url;

@@ -18,8 +18,10 @@ public class FooterPage extends BasePage {
 
 
     //navigate to Privacy and Policy page
-    public void scrollToAndClickLinkPrivacyAndPolicy() throws InterruptedException {
+    public void scrollToPrivacyAndPolicyLink() throws InterruptedException {
         scrollToElement(LINK_PRIVACY_AND_POLICY);
+    }
+    public void clickPrivacyAndPolicyLink() {
         try {
             driver.findElement(LINK_PRIVACY_AND_POLICY).click();
         } catch (Exception e) {
@@ -28,8 +30,10 @@ public class FooterPage extends BasePage {
     }
 
     //navigate to facebook
-    public void scrollToAndClickIconFacebok() throws InterruptedException {
+    public void scrollToFacebookIcon() throws InterruptedException {
         scrollToElement(ICON_FACEBOOK);
+    }
+    public void clickFacebokIcon() {
         try {
             driver.findElement(ICON_FACEBOOK).click();
         } catch (Exception e) {

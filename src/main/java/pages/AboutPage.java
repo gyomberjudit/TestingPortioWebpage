@@ -19,6 +19,9 @@ public class AboutPage extends BasePage {
 
 
     //Try download CV by clicking on Download CV button
+    public void scrollToDownloadButton() throws InterruptedException {
+        scrollToElement(BUTTON_DOWNLOAD_CV);
+    }
     public void clickDownloadCV() {
         wait.until(ExpectedConditions.elementToBeClickable(BUTTON_DOWNLOAD_CV)).click();
     }

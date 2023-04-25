@@ -19,13 +19,24 @@ public class DataSavingTest extends BaseTest {
     @Tag("savePicture")
     @Test
     public void testSavePicture() throws IOException{
+        String username = "lovasia";
+        String password = "kispal123";
         String fileName = "image.jpg";
         String downloadedFileName = "download.jpg";
         By xpath = By.xpath("//*[@class=\"row\"]/div[2]//img");
         String targetUrl = "https://lennertamas.github.io/portio/images/allpost/allPost-2.jpg";
         String format = "jpg";
 
-        loginPage.login();
+        //login
+        loginPage.navigate();
+        loginPage.acceptTerms();
+        loginPage.inputUsername(username);
+        loginPage.inputPassword(password);
+        loginPage.clickLoginButton();
+        boolean loggedIn = homePage.isPortioLogoDisplayed();
+        Assertions.assertTrue(loggedIn);
+
+        //saving picture to an existing file from the website and comparing it with the downloaded picture
         homePage.clickOnLinkBlog();
         blogLinkPage.savePicture(fileName, xpath, format);
         blogLinkPage.downloadImage(downloadedFileName, targetUrl, format);
@@ -35,6 +46,7 @@ public class DataSavingTest extends BaseTest {
         Assertions.assertEquals(expectedPercentage, actualPercentage);
     }
 
+    //Saving picture from a post while making the file
     @DisplayName("Save picture2")
     @Description("Save picture with creating the file at the same time or deleting it if it exists")
     @Story("Data saving")
@@ -43,13 +55,24 @@ public class DataSavingTest extends BaseTest {
     @Tag("savePicture")
     @RepeatedTest(2)
     public void testSavePicture3() throws IOException{
+        String username = "lovasia";
+        String password = "kispal123";
         String fileName = "image2.jpg";
         String downloadedFileName = "download2.jpg";
         By xpath = By.xpath("//*[@class=\"row\"]/div[3]//img");
         String targetUrl = "https://lennertamas.github.io/portio/images/allpost/allPost-7.jpg";
         String format = "jpg";
 
-        loginPage.login();
+        //login
+        loginPage.navigate();
+        loginPage.acceptTerms();
+        loginPage.inputUsername(username);
+        loginPage.inputPassword(password);
+        loginPage.clickLoginButton();
+        boolean loggedIn = homePage.isPortioLogoDisplayed();
+        Assertions.assertTrue(loggedIn);
+
+        //saving picture while creating the file to save it to from the website and comparing it with the downloaded picture
         homePage.clickOnLinkBlog();
         blogLinkPage.savePicture2(fileName, xpath, format);
         blogLinkPage.downloadImage(downloadedFileName, targetUrl, format);
@@ -59,16 +82,30 @@ public class DataSavingTest extends BaseTest {
         Assertions.assertEquals(expectedPercentage, actualPercentage);
     }
 
+    //Downloading a file given on the website
     @DisplayName("Test downloading CV")
     @Description("Failed download by clicking on 'Download CV' button")
     @Story("File download")
     @Severity(SeverityLevel.NORMAL)
     @Tag("fileDownload")
     @Test
-    public void testFileDownload() {
+    public void testFileDownload() throws InterruptedException {
+        String username = "lovasia";
+        String password = "kispal123";
         String filename = "CV.pdf";
-        loginPage.login();
+
+        //login
+        loginPage.navigate();
+        loginPage.acceptTerms();
+        loginPage.inputUsername(username);
+        loginPage.inputPassword(password);
+        loginPage.clickLoginButton();
+        boolean loggedIn = homePage.isPortioLogoDisplayed();
+        Assertions.assertTrue(loggedIn);
+
+        //download CV
         homePage.clickOnLinkAbout();
+        aboutPage.scrollToDownloadButton();
         aboutPage.clickDownloadCV();
         boolean fileExists = aboutPage.isFileExist(filename);
 
