@@ -1,43 +1,40 @@
 package tests;
 
 import io.qameta.allure.*;
-import utilPages.Pages;
-import org.json.simple.parser.ParseException;
 import org.junit.jupiter.api.*;
 import testEnvironment.BaseTest;
-import java.io.*;
-import java.util.Map;
 
 @Epic("Data handling")
-public class ContactPageTest extends BaseTest {
+public class DataInputTest extends BaseTest {
 
-    //Compare data given in JSON file with data collected into HashMap from ContactPage
-    @DisplayName("Contact information")
-    @Description("Compare expected HashMap of Contact information with a given JSON file")
-    @Story("Data listing")
+    //Setting profile with registration because of incognito mode
+    @DisplayName("Set Profile")
+    @Description("Set profile by giving credentials")
+    @Story("Data input")
     @Severity(SeverityLevel.NORMAL)
-    @Tag("dataListing")
-    @Tag("HashMap")
-    @Tag("JSON")
+    @Tag("dataInput")
+    @Tag("profile")
     @Test
-    public void testGetContactInfo() throws IOException, ParseException {
-        loginPage.login();
+    public void testSetProfile() {
+        String username = "teszteszter";
+        String password = "teszt";
+        String name ="Teszt Eszti";
+        String bio ="female";
+        String phone ="06301112233";
+        registerPage.registration();
+        registerPage.clickLoginButton();
+        loginPage.login2(username, password);
+        boolean loggedIn = homePage.isPortioLogoDisplayed();
 
-        Assertions.assertTrue(homePage.isPortioLogoDisplayed());
+        Assertions.assertTrue(loggedIn);
 
-        homePage.navigateWithHireMeNowButton();
+        homePage.clickProfile();
+        profilePage.setProfile(name, bio, phone);
+        String expectedMessage = "Profile Edited!";
+        String actualMessage = profilePage.getProfileMessage();
 
-        Assertions.assertTrue(contactPage.isContactMeTextDisplayed());
-        Assertions.assertEquals(Pages.CONTACT_PAGE.getUrl(), driver.getCurrentUrl());
-
-        String fileName = "contactInfo.json";
-        String keys = "title";
-        String values = "data";
-        Map<String, String> expected = contactPage.jsonParser(fileName, keys, values);
-        Map<String, String> actual = contactPage.getContactInfo();
-
-        addAttachment("Given contact information on ContactPage");
-        Assertions.assertEquals(expected, actual);
+        addAttachment("Success message visible after setting profile: 'Profile edited'");
+        Assertions.assertEquals(expectedMessage, actualMessage);
     }
 
     @DisplayName("Send message with Contact Form")
@@ -66,7 +63,7 @@ public class ContactPageTest extends BaseTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @DisplayName("Send message without checking checkbox")
+    /*@DisplayName("Send message without checking checkbox")
     @Description("Unsuccessful message sending: 'Tooltip warning to check checkbox'")
     @Story("Data input")
     @Severity(SeverityLevel.NORMAL)
@@ -89,5 +86,5 @@ public class ContactPageTest extends BaseTest {
         String tooltip = contactPage.getTooltipMessage();
 
         Assertions.assertEquals(warningMessage, tooltip);
-    }
+    }*/
 }

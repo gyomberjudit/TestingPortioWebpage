@@ -8,7 +8,7 @@ import testEnvironment.BaseTest;
 import java.io.IOException;
 
 @Epic("File handling")
-public class BlogImageSaveTest extends BaseTest {
+public class DataSavingTest extends BaseTest {
 
     //Saving picture from a post to an existing file
     @DisplayName("Save picture1")
@@ -57,5 +57,21 @@ public class BlogImageSaveTest extends BaseTest {
         double actualPercentage = blogLinkPage.getDifferencePercentage(fileName, downloadedFileName);
 
         Assertions.assertEquals(expectedPercentage, actualPercentage);
+    }
+
+    @DisplayName("Test downloading CV")
+    @Description("Failed download by clicking on 'Download CV' button")
+    @Story("File download")
+    @Severity(SeverityLevel.NORMAL)
+    @Tag("fileDownload")
+    @Test
+    public void testFileDownload() {
+        String filename = "CV.pdf";
+        loginPage.login();
+        homePage.clickOnLinkAbout();
+        aboutPage.clickDownloadCV();
+        boolean fileExists = aboutPage.isFileExist(filename);
+
+        Assertions.assertTrue(fileExists);
     }
 }

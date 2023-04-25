@@ -8,49 +8,7 @@ import org.junit.jupiter.api.Test;
 import testEnvironment.BaseTest;
 
 @Epic("Entry functionalities")
-public class RegisterPageTest extends BaseTest {
-
-    @DisplayName("Accept terms")
-    @Description("Accept terms by clicking on OK button before Registration")
-    @Story("Terms and Conditions")
-    @Severity(SeverityLevel.BLOCKER)
-    @Tag("acceptTerms")
-    @Test
-    public void testAcceptTerms() {
-        loginPage.navigate();
-        addAttachment("Terms and Conditions text should be accepted before moving on");
-        boolean textOfTermsVisible = loginPage.isTermsAndConditionsTextDisplayed();
-
-        Assertions.assertTrue(textOfTermsVisible);
-
-        loginPage.acceptTerms();
-        boolean registerButtonVisible = loginPage.isRegisterButtonDisplayed();
-        addAttachment("Navigate to LoginPage after accepting terms");
-
-        Assertions.assertTrue(registerButtonVisible);
-
-    }
-
-    @DisplayName("Refuse accepting terms")
-    @Description("Refuse accepting terms by clicking on Close Icon")
-    @Story("Terms and Conditions")
-    @Severity(SeverityLevel.CRITICAL)
-    @Tag("refuseTerms")
-    @Test
-    public void testNotAcceptTerms() {
-        loginPage.navigate();
-        addAttachment("Terms and Conditions text should be accepted before moving on");
-        boolean textOfTermsVisible = loginPage.isTermsAndConditionsTextDisplayed();
-
-        Assertions.assertTrue(textOfTermsVisible);
-
-        loginPage.clickOnCloseIcon();
-        boolean registerButtonVisible = loginPage.isRegisterButtonDisplayed();
-        addAttachment("Navigate to LoginPage after NOT accepting terms, but it shouldn't");
-
-        Assertions.assertFalse(registerButtonVisible);
-
-    }
+public class RegistrationTest extends BaseTest {
 
     @DisplayName("Registration")
     @Description("Registration with right credentials")

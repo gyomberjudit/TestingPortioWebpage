@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import testEnvironment.BaseTest;
 
 @Epic("Entry functionalities")
-public class HomePageTest extends BaseTest {
+public class LogoutTest extends BaseTest {
 
     @DisplayName("Logout")
     @Description("Logging out after logging in")

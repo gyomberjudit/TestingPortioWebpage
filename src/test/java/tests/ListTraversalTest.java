@@ -7,7 +7,7 @@ import org.junit.jupiter.api.*;
 import testEnvironment.BaseTest;
 
 @Epic("Data handling")
-public class BlogPageTest extends BaseTest {
+public class ListTraversalTest extends BaseTest {
 
     //Count the number of blog posts with pagination
     @DisplayName("Counting number of blog items")
