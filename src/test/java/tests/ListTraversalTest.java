@@ -34,7 +34,7 @@ public class ListTraversalTest extends BaseTest {
         //navigate to BlogPage
         homePage.clickOnLinkBlog();
         blogLinkPage.clickButtonSeeAllPosts();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         addAttachment("There are 6 items on the first page");
         Assertions.assertEquals(Pages.BLOG_PAGE.getUrl(), driver.getCurrentUrl());
 
@@ -75,7 +75,7 @@ public class ListTraversalTest extends BaseTest {
         //navigate to BlogPage
         homePage.clickOnLinkBlog();
         blogLinkPage.clickButtonSeeAllPosts();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         addAttachment("Blog titles on the first page");
         Assertions.assertEquals(Pages.BLOG_PAGE.getUrl(), driver.getCurrentUrl());
 
