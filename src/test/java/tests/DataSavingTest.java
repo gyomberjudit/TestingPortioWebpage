@@ -11,7 +11,7 @@ import java.io.IOException;
 public class DataSavingTest extends BaseTest {
 
     //Saving picture from a post to an existing file
-    @DisplayName("Save picture1")
+    @DisplayName("TC20 - Save picture1")
     @Description(("TC20 - Save picture to an existing file"))
     @Story("Data saving")
     @Severity(SeverityLevel.NORMAL)
