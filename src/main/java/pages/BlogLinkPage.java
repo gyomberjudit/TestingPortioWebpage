@@ -2,11 +2,9 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilPages.BasePage;
 import utilPages.Pages;
-
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -22,13 +20,8 @@ public class BlogLinkPage extends BasePage {
 
     //Click on 'See All Posts' Button to navigate to all the posts
     public void clickButtonSeeAllPosts() throws InterruptedException {
-        //try {
         Thread.sleep(3000);
         driver.findElement(BUTTON_SEE_ALL_POSTS).click();
-            //wait.until(ExpectedConditions.elementToBeClickable(BUTTON_SEE_ALL_POSTS)).click();
-        /*} catch (Exception e) {
-            e.printStackTrace();
-        }*/
     }
 
     //Save one of the blogs' picture to image.jpg file

@@ -42,6 +42,12 @@ public class BlogPage extends BasePage {
         return totalItems;
     }
 
+    //scroll to blogs to take screenshot
+    public void scrollWindow() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,150)", "");
+    }
+
     //Write Blog's Titles to blogTitles file
     public void writeBlogTitlesFile(String file) {
         try {
