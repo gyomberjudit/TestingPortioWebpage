@@ -21,12 +21,14 @@ public class BlogLinkPage extends BasePage {
     }
 
     //Click on 'See All Posts' Button to navigate to all the posts
-    public void clickButtonSeeAllPosts() {
-        try {
-            wait.until(ExpectedConditions.elementToBeClickable(BUTTON_SEE_ALL_POSTS)).click();
-        } catch (Exception e) {
+    public void clickButtonSeeAllPosts() throws InterruptedException {
+        //try {
+        Thread.sleep(3000);
+        driver.findElement(BUTTON_SEE_ALL_POSTS).click();
+            //wait.until(ExpectedConditions.elementToBeClickable(BUTTON_SEE_ALL_POSTS)).click();
+        /*} catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     //Save one of the blogs' picture to image.jpg file
