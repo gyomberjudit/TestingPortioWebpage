@@ -86,10 +86,11 @@ public class DataInputTest extends BaseTest {
         contactPage.inputMessage(message);
         contactPage.checkCheckbox();
         contactPage.sendMessage();
+        contactPage.scrollWindow();
+        Thread.sleep(2000);
+        addAttachment("Sending contact form is unsuccessful");
         String expected = "Message was sent successfully";
         String actual = contactPage.getMessage();
-        Thread.sleep(1500);
-        addAttachment("Sending contact form is unsuccessful");
 
         Assertions.assertEquals(expected, actual);
     }

@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -59,6 +60,12 @@ public class ContactPage extends BasePage {
     //Sending message by clicking on Send Message button
     public void sendMessage() {
         driver.findElement(INPUT_SEND_MESSAGE).click();
+    }
+
+    //scroll to the message to take screenshot
+    public void scrollWindow() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,600)", "");
     }
 
     //Checking if navigating to ContactPage is successful
