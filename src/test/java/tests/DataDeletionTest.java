@@ -11,7 +11,7 @@ import testEnvironment.BaseTest;
 public class DataDeletionTest extends BaseTest {
 
     //Delete a registered account
-    @DisplayName("Delete Account")
+    @DisplayName("TC19 - Delete Account")
     @Description("Click profile and delete account, then try login again")
     @Story("Data deletion")
     @Severity(SeverityLevel.CRITICAL)

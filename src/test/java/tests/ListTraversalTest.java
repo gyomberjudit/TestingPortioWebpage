@@ -10,7 +10,7 @@ import testEnvironment.BaseTest;
 public class ListTraversalTest extends BaseTest {
 
     //Count the number of blog posts with pagination
-    @DisplayName("Counting number of blog items")
+    @DisplayName("TC13 - Counting number of blog items")
     @Description("Add the number of blog posts with paginating the pages")
     @Story("List traversal with pagination")
     @Severity(SeverityLevel.MINOR)
@@ -34,7 +34,7 @@ public class ListTraversalTest extends BaseTest {
         //navigate to BlogPage
         homePage.clickOnLinkBlog();
         blogLinkPage.clickButtonSeeAllPosts();
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         addAttachment("There are 6 items on the first page");
         Assertions.assertEquals(Pages.BLOG_PAGE.getUrl(), driver.getCurrentUrl());
 
@@ -48,7 +48,7 @@ public class ListTraversalTest extends BaseTest {
     }
 
     //Saving data (by file writing) and comparing them to data at BlogPage (by file reading)
-    @DisplayName("Write file")
+    @DisplayName("TC14 - Write file")
     @Description("Collect bolg posts' titles iterating through them and save the text to a file, then read them and compare with expected String")
     @Story("List traversal with pagination")
     @Severity(SeverityLevel.NORMAL)
@@ -75,7 +75,7 @@ public class ListTraversalTest extends BaseTest {
         //navigate to BlogPage
         homePage.clickOnLinkBlog();
         blogLinkPage.clickButtonSeeAllPosts();
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         addAttachment("Blog titles on the first page");
         Assertions.assertEquals(Pages.BLOG_PAGE.getUrl(), driver.getCurrentUrl());
 

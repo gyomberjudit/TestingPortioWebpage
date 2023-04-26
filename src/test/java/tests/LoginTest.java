@@ -9,7 +9,7 @@ import testEnvironment.BaseTest;
 @Epic("Entry functionalities")
 public class LoginTest extends BaseTest {
 
-    @DisplayName("Login")
+    @DisplayName("TC6 - Login")
     @Description("Login with right credentials, accepting terms")
     @Story("Login")
     @Severity(SeverityLevel.BLOCKER)
@@ -33,7 +33,7 @@ public class LoginTest extends BaseTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @DisplayName("Wrong login1")
+    @DisplayName("TC7 - Wrong login1")
     @Description("Login with missing username")
     @Story("Login")
     @Severity(SeverityLevel.CRITICAL)
@@ -57,7 +57,7 @@ public class LoginTest extends BaseTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @DisplayName("Wrong login2")
+    @DisplayName("TC8 - Wrong login2")
     @Description("Login with wrong password")
     @Story("Login")
     @Severity(SeverityLevel.CRITICAL)

@@ -11,7 +11,7 @@ import testEnvironment.BaseTest;
 @Epic("Entry functionalities")
 public class LogoutTest extends BaseTest {
 
-    @DisplayName("Logout")
+    @DisplayName("TC26 - Logout")
     @Description("Logging out after logging in")
     @Story("Logout")
     @Severity(SeverityLevel.CRITICAL)

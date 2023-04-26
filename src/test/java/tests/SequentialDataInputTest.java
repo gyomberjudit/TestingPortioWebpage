@@ -14,7 +14,7 @@ import java.util.Map;
 @Epic("Data handling")
 public class SequentialDataInputTest extends BaseTest {
 
-    @DisplayName("Sequential login")
+    @DisplayName("TC17 - Sequential login")
     @Description("Login repeatedly with valid credentials from JSON file.")
     @Story("SequentialDataInput")
     @Severity(SeverityLevel.CRITICAL)

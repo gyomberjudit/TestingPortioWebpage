@@ -12,7 +12,7 @@ public class DataSavingTest extends BaseTest {
 
     //Saving picture from a post to an existing file
     @DisplayName("Save picture1")
-    @Description(("Save picture to an existing file"))
+    @Description(("TC20 - Save picture to an existing file"))
     @Story("Data saving")
     @Severity(SeverityLevel.NORMAL)
     @Tag("dataSaving")
@@ -47,14 +47,14 @@ public class DataSavingTest extends BaseTest {
     }
 
     //Saving picture from a post while making the file
-    @DisplayName("Save picture2")
+    @DisplayName("TC21 - Save picture2")
     @Description("Save picture with creating the file at the same time or deleting it if it exists")
     @Story("Data saving")
     @Severity(SeverityLevel.NORMAL)
     @Tag("dataSaving")
     @Tag("savePicture")
     @RepeatedTest(2)
-    public void testSavePicture3() throws IOException{
+    public void testSavePicture2() throws IOException{
         String username = "lovasia";
         String password = "kispal123";
         String fileName = "image2.jpg";
@@ -83,7 +83,7 @@ public class DataSavingTest extends BaseTest {
     }
 
     //Downloading a file given on the website
-    @DisplayName("Test downloading CV")
+    @DisplayName("TC22 - Test downloading CV")
     @Description("Failed download by clicking on 'Download CV' button")
     @Story("File download")
     @Severity(SeverityLevel.NORMAL)

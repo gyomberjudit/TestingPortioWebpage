@@ -10,7 +10,7 @@ import testEnvironment.BaseTest;
 @Epic("Entry functionalities")
 public class TermsAndConditionsTest extends BaseTest {
 
-    @DisplayName("Accept terms")
+    @DisplayName("TC1 - Accept terms")
     @Description("Accept terms by clicking on OK button before Registration")
     @Story("Terms and Conditions")
     @Severity(SeverityLevel.BLOCKER)
@@ -31,7 +31,7 @@ public class TermsAndConditionsTest extends BaseTest {
 
     }
 
-    @DisplayName("Refuse accepting terms")
+    @DisplayName("TC2 - Refuse accepting terms")
     @Description("Refuse accepting terms by clicking on Close Icon")
     @Story("Terms and Conditions")
     @Severity(SeverityLevel.CRITICAL)

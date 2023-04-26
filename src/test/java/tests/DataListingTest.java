@@ -15,7 +15,7 @@ import java.util.Map;
 public class DataListingTest extends BaseTest {
 
     //get the number of Experiences
-    @DisplayName("Number of workplaces")
+    @DisplayName("TC9 - Number of workplaces")
     @Description("Get the size of workplaces' list")
     @Story("Data listing")
     @Severity(SeverityLevel.MINOR)
@@ -45,7 +45,7 @@ public class DataListingTest extends BaseTest {
     }
 
     //Compare workplaces stored in a txt file (using file reading) with workplaces from ResumePage
-    @DisplayName("Names of workplaces")
+    @DisplayName("TC10 - Names of workplaces")
     @Description("Collect workplaces in String array and compare to a given file")
     @Story("Data listing")
     @Severity(SeverityLevel.NORMAL)
@@ -76,7 +76,7 @@ public class DataListingTest extends BaseTest {
     }
 
     //Compare expected data given in a HashMap with data collected into HashMap from SkillsPage
-    @DisplayName("Skill types & percents in HashMap")
+    @DisplayName("TC11 - Skill types & percents in HashMap")
     @Description("Collect all the Skill types & percents in a HashMap")
     @Story("Data listing")
     @Severity(SeverityLevel.NORMAL)
@@ -109,7 +109,7 @@ public class DataListingTest extends BaseTest {
     }
 
     //Compare expected data given in JSON file with data collected into HashMap from ContactPage
-    @DisplayName("Contact information")
+    @DisplayName("TC12 - Contact information")
     @Description("Compare expected HashMap of Contact information with a given JSON file")
     @Story("Data listing")
     @Severity(SeverityLevel.NORMAL)
@@ -120,6 +120,9 @@ public class DataListingTest extends BaseTest {
     public void testGetContactInfo() throws IOException, ParseException {
         String username = "lovasia";
         String password = "kispal123";
+        String fileName = "contactInfo.json";
+        String keys = "title";
+        String values = "data";
 
         //login
         loginPage.navigate();
@@ -136,9 +139,6 @@ public class DataListingTest extends BaseTest {
         Assertions.assertTrue(contactPageVisible);
 
         //Compare expected data given in JSON file with data collected into HashMap from ContactPage
-        String fileName = "contactInfo.json";
-        String keys = "title";
-        String values = "data";
         Map<String, String> expected = contactPage.jsonParser(fileName, keys, values);
         Map<String, String> actual = contactPage.getContactInfo();
         addAttachment("Given contact information on ContactPage");

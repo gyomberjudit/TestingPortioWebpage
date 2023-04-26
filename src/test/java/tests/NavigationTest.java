@@ -12,7 +12,7 @@ import testEnvironment.BaseTest;
 public class NavigationTest extends BaseTest {
 
     //test if clicking on 'Hire Me Now' button navigates to ContactPage
-    @DisplayName("Test 'Hire Me Now' button")
+    @DisplayName("TC23 - Test 'Hire Me Now' button")
     @Description("Test if 'Hire Me Now' button navigates to Contact page")
     @Story("Navigate with button")
     @Severity(SeverityLevel.NORMAL)
@@ -42,7 +42,7 @@ public class NavigationTest extends BaseTest {
     }
 
     //test if clicking on 'Privacy and Policy' link navigates to the document
-    @DisplayName("Test Privacy and policy link")
+    @DisplayName("TC24 - Test Privacy and policy link")
     @Description("Clicking on Privacy and Policy link the user is thrown out of Portio webpage")
     @Story("Navigate with link")
     @Severity(SeverityLevel.NORMAL)
@@ -72,7 +72,7 @@ public class NavigationTest extends BaseTest {
     }
 
     //check if clicking on 'Facebbok' link navigates to Facebook
-    @DisplayName("Test Facebook link")
+    @DisplayName("TC25 - Test Facebook link")
     @Description("Clicking on Facebook link the user navigates to Facebook webpage")
     @Story("Navigate with window handling")
     @Severity(SeverityLevel.MINOR)

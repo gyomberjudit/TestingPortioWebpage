@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26794f44-258f-49a9-b97f-0314055cd4a0" name="Changes" comment="change test class structure">
+    <list default="true" id="26794f44-258f-49a9-b97f-0314055cd4a0" name="Changes" comment="thread.sleep">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/AboutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/AboutPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ContactPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ContactPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/RegisterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/RegisterPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ResumePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ResumePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utilPages/Pages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilPages/Pages.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/DataDeletionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DataDeletionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/DataInputTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DataInputTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/DataListingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DataListingTest.java" afterDir="false" />
@@ -25,6 +18,7 @@
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/RegistrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/RegistrationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/SequentialDataInputTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SequentialDataInputTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/TermsAndConditionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TermsAndConditionsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_case_template.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test_case_template.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +70,22 @@
       <recent name="testEnvironment" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SequentialDataInputTest.testLoginMultipleUsers">
+  <component name="RunManager" selected="JUnit.ListTraversalTest">
+    <configuration name="ListTraversalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TestingPortioWebpage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.ListTraversalTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestingPortioWebpage" />
       <extension name="coverage">
@@ -103,21 +112,6 @@
       <option name="PACKAGE_NAME" value="org.example.portio" />
       <option name="MAIN_CLASS_NAME" value="org.example.portio.PortioTest" />
       <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RegistrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TestingPortioWebpage" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.RegistrationTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -164,19 +158,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.PortioTest" />
+      <item itemvalue="JUnit.ListTraversalTest" />
       <item itemvalue="JUnit.LoginTest" />
-      <item itemvalue="JUnit.RegistrationTest" />
       <item itemvalue="JUnit.SequentialDataInputTest.testLoginMultipleUsers" />
       <item itemvalue="JUnit.TermsAndConditionsTest" />
       <item itemvalue="JUnit.tests in TestingPortioWebpage" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ListTraversalTest" />
         <item itemvalue="JUnit.SequentialDataInputTest.testLoginMultipleUsers" />
         <item itemvalue="JUnit.tests in TestingPortioWebpage" />
         <item itemvalue="JUnit.LoginTest" />
         <item itemvalue="JUnit.TermsAndConditionsTest" />
-        <item itemvalue="JUnit.RegistrationTest" />
       </list>
     </recent_temporary>
   </component>
@@ -188,20 +182,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680425033780</updated>
-    </task>
-    <task id="LOCAL-00083" summary="add refresh ContactPage.java">
-      <created>1681823131525</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1681823131525</updated>
-    </task>
-    <task id="LOCAL-00084" summary="add refresh ContactPage.java">
-      <created>1681823141595</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1681823141596</updated>
     </task>
     <task id="LOCAL-00085" summary="add refresh BasePage.java">
       <created>1681823204768</created>
@@ -532,7 +512,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682425516469</updated>
     </task>
-    <option name="localTasksCounter" value="132" />
+    <task id="LOCAL-00132" summary="step by step tests">
+      <created>1682444742913</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1682444742913</updated>
+    </task>
+    <task id="LOCAL-00133" summary="thread.sleep">
+      <created>1682445831991</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1682445831991</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -547,8 +541,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refresh SkillsPage.java" />
-    <MESSAGE value="refresh ServicePage.java" />
     <MESSAGE value="refresh ServicePageTest.java" />
     <MESSAGE value="refresh RegisterPage.java" />
     <MESSAGE value="refresh ProfilePage.java" />
@@ -572,7 +564,9 @@
     <MESSAGE value="refresh README.md" />
     <MESSAGE value="small corrections" />
     <MESSAGE value="change test class structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="change test class structure" />
+    <MESSAGE value="step by step tests" />
+    <MESSAGE value="thread.sleep" />
+    <option name="LAST_COMMIT_MESSAGE" value="thread.sleep" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TestingPortioWebpage$SkillsPageTest.ic" NAME="SkillsPageTest Coverage Results" MODIFIED="1681204969440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

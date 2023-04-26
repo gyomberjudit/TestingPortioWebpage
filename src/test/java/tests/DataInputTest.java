@@ -8,7 +8,7 @@ import testEnvironment.BaseTest;
 public class DataInputTest extends BaseTest {
 
     //Setting profile (with registration because of incognito mode)
-    @DisplayName("Set Profile")
+    @DisplayName("TC15 - Set Profile")
     @Description("Set profile by giving credentials")
     @Story("Data input")
     @Severity(SeverityLevel.NORMAL)
@@ -56,7 +56,7 @@ public class DataInputTest extends BaseTest {
     }
 
     //Send message with Contact form
-    @DisplayName("Send message with Contact Form")
+    @DisplayName("TC16 - Send message with Contact Form")
     @Description("Unsuccessful message sending: 'Oops! There was a problem.'")
     @Story("Data input")
     @Severity(SeverityLevel.CRITICAL)

@@ -10,7 +10,7 @@ import testEnvironment.BaseTest;
 @Epic("Entry functionalities")
 public class RegistrationTest extends BaseTest {
 
-    @DisplayName("Registration")
+    @DisplayName("TC3 - Registration")
     @Description("Registration with right credentials")
     @Story("Registration")
     @Severity(SeverityLevel.CRITICAL)
@@ -20,6 +20,7 @@ public class RegistrationTest extends BaseTest {
         String username = "teszteszter";
         String password = "teszt";
         String email = "teszteszter5@gmail.com";
+        String expectedMessage = "User registered!";
 
         registerPage.navigate();
         registerPage.acceptTerms();
@@ -29,7 +30,6 @@ public class RegistrationTest extends BaseTest {
         registerPage.inputEmail(email);
         registerPage.clickButtonRegister2();
         boolean userRegistered = registerPage.userRegistered();
-        String expectedMessage = "User registered!";
         String actualMessage = registerPage.registeredMessage();
         addAttachment("Success message after successful registration");
 
@@ -37,7 +37,7 @@ public class RegistrationTest extends BaseTest {
         Assertions.assertEquals(expectedMessage, actualMessage);
     }
 
-    @DisplayName("Registration - Wrong password")
+    @DisplayName("TC4 - Registration, Wrong password")
     @Description("Registration using wrong password")
     @Story("Registration")
     @Severity(SeverityLevel.BLOCKER)
@@ -62,7 +62,7 @@ public class RegistrationTest extends BaseTest {
         Assertions.assertFalse(userRegistered);
     }
 
-    @DisplayName("Registration - Wrong email")
+    @DisplayName("TC5 - Registration, Wrong email")
     @Description("Registration using wrong email")
     @Story("Registration")
     @Severity(SeverityLevel.CRITICAL)

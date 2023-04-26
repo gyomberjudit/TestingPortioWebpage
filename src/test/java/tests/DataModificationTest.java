@@ -11,10 +11,10 @@ import testEnvironment.BaseTest;
 public class DataModificationTest extends BaseTest {
 
     //Checking if profile name has changed after setting it (with registration because of incognito mode)
-    @DisplayName("Test profile name")
+    @DisplayName("TC18 - Test profile name")
     @Description("Test if profile name is visible after setting account")
     @Story("Data modification")
-    @Severity(SeverityLevel.NORMAL)
+    @Severity(SeverityLevel.MINOR)
     @Tag("dataModification")
     @Tag("profile")
     @Test
