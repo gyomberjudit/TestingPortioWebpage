@@ -2,7 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilPages.BasePage;
 import utilPages.Pages;
@@ -22,8 +21,9 @@ public class AboutPage extends BasePage {
     public void scrollToDownloadButton() throws InterruptedException {
         scrollToElement(BUTTON_DOWNLOAD_CV);
     }
-    public void clickDownloadCV() {
-        wait.until(ExpectedConditions.elementToBeClickable(BUTTON_DOWNLOAD_CV)).click();
+    public void clickDownloadCV() throws InterruptedException {
+        Thread.sleep(2000);
+        driver.findElement(BUTTON_DOWNLOAD_CV).click();
     }
 
     //Check if downloading CV was successful

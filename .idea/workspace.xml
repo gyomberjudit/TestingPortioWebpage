@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26794f44-258f-49a9-b97f-0314055cd4a0" name="Changes" comment="add TC numbers">
+    <list default="true" id="26794f44-258f-49a9-b97f-0314055cd4a0" name="Changes" comment="ready template">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/AboutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/AboutPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/BlogLinkPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/BlogLinkPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/BlogPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/BlogPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ContactPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ContactPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/FooterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/FooterPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utilPages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilPages/BasePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/DataSavingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DataSavingTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case_template.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test_case_template.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +67,38 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.DataSavingTest.testSavePicture2">
+    <configuration name="DataInputTest.testContactForm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TestingPortioWebpage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.DataInputTest" />
+      <option name="METHOD_NAME" value="testContactForm" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataSavingTest.testSavePicture" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TestingPortioWebpage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.DataSavingTest" />
+      <option name="METHOD_NAME" value="testSavePicture" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DataSavingTest.testSavePicture2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestingPortioWebpage" />
       <extension name="coverage">
@@ -91,21 +130,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TestingPortioWebpage" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.LoginTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PortioTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="TestingPortioWebpage" />
       <extension name="coverage">
@@ -122,22 +146,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SequentialDataInputTest.testLoginMultipleUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TestingPortioWebpage" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.SequentialDataInputTest" />
-      <option name="METHOD_NAME" value="testLoginMultipleUsers" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="tests in TestingPortioWebpage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestingPortioWebpage" />
       <option name="TEST_OBJECT" value="directory" />
@@ -148,19 +156,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.PortioTest" />
+      <item itemvalue="JUnit.DataInputTest.testContactForm" />
+      <item itemvalue="JUnit.DataSavingTest.testSavePicture" />
       <item itemvalue="JUnit.DataSavingTest.testSavePicture2" />
       <item itemvalue="JUnit.ListTraversalTest" />
-      <item itemvalue="JUnit.LoginTest" />
-      <item itemvalue="JUnit.SequentialDataInputTest.testLoginMultipleUsers" />
       <item itemvalue="JUnit.tests in TestingPortioWebpage" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.DataSavingTest.testSavePicture2" />
+        <item itemvalue="JUnit.DataSavingTest.testSavePicture" />
+        <item itemvalue="JUnit.DataInputTest.testContactForm" />
         <item itemvalue="JUnit.tests in TestingPortioWebpage" />
         <item itemvalue="JUnit.ListTraversalTest" />
-        <item itemvalue="JUnit.SequentialDataInputTest.testLoginMultipleUsers" />
-        <item itemvalue="JUnit.LoginTest" />
       </list>
     </recent_temporary>
   </component>
@@ -172,41 +180,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680425033780</updated>
-    </task>
-    <task id="LOCAL-00087" summary="add refresh BlogPage.java">
-      <created>1681826938021</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1681826938021</updated>
-    </task>
-    <task id="LOCAL-00088" summary="add refresh BlogPage2.java">
-      <created>1681827413721</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1681827413721</updated>
-    </task>
-    <task id="LOCAL-00089" summary="add refresh BlogPage2Test.java">
-      <created>1681827477946</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1681827477946</updated>
-    </task>
-    <task id="LOCAL-00090" summary="add refresh HomePageTest.java">
-      <created>1681827521554</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1681827521554</updated>
-    </task>
-    <task id="LOCAL-00091" summary="add refresh HomePage.java">
-      <created>1681827598173</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1681827598173</updated>
     </task>
     <task id="LOCAL-00092" summary="add refresh firms.txt">
       <created>1681829163613</created>
@@ -516,7 +489,42 @@
       <option name="project" value="LOCAL" />
       <updated>1682491905008</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="small corrections">
+      <created>1682497004432</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1682497004433</updated>
+    </task>
+    <task id="LOCAL-00137" summary="small corrections">
+      <created>1682514737350</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1682514737350</updated>
+    </task>
+    <task id="LOCAL-00138" summary="scroll">
+      <created>1682530892789</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1682530892789</updated>
+    </task>
+    <task id="LOCAL-00139" summary="scroll">
+      <created>1682535996434</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1682535996434</updated>
+    </task>
+    <task id="LOCAL-00140" summary="ready template">
+      <created>1682536040977</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1682536040977</updated>
+    </task>
+    <option name="localTasksCounter" value="141" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -531,8 +539,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refresh ProfilePage.java" />
-    <MESSAGE value="refresh ProfilePageTest.java" />
     <MESSAGE value="refresh LoginPage.java" />
     <MESSAGE value="refresh HomePage.java" />
     <MESSAGE value="add annotations" />
@@ -550,13 +556,15 @@
     <MESSAGE value="blog titles" />
     <MESSAGE value="img assertion and repeated login" />
     <MESSAGE value="refresh README.md" />
-    <MESSAGE value="small corrections" />
     <MESSAGE value="change test class structure" />
     <MESSAGE value="step by step tests" />
     <MESSAGE value="thread.sleep" />
     <MESSAGE value="add ready excel" />
     <MESSAGE value="add TC numbers" />
-    <option name="LAST_COMMIT_MESSAGE" value="add TC numbers" />
+    <MESSAGE value="small corrections" />
+    <MESSAGE value="scroll" />
+    <MESSAGE value="ready template" />
+    <option name="LAST_COMMIT_MESSAGE" value="ready template" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TestingPortioWebpage$SkillsPageTest.ic" NAME="SkillsPageTest Coverage Results" MODIFIED="1681204969440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

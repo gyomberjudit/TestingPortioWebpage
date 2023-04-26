@@ -53,7 +53,7 @@ public class DataSavingTest extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     @Tag("dataSaving")
     @Tag("savePicture")
-    @RepeatedTest(2)
+    @Test
     public void testSavePicture2() throws IOException{
         String username = "lovasia";
         String password = "kispal123";

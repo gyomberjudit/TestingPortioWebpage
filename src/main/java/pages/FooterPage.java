@@ -21,24 +21,18 @@ public class FooterPage extends BasePage {
     public void scrollToPrivacyAndPolicyLink() throws InterruptedException {
         scrollToElement(LINK_PRIVACY_AND_POLICY);
     }
-    public void clickPrivacyAndPolicyLink() {
-        try {
-            driver.findElement(LINK_PRIVACY_AND_POLICY).click();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public void clickPrivacyAndPolicyLink() throws InterruptedException {
+        Thread.sleep(3000);
+        driver.findElement(LINK_PRIVACY_AND_POLICY).click();
     }
 
     //navigate to facebook
     public void scrollToFacebookIcon() throws InterruptedException {
         scrollToElement(ICON_FACEBOOK);
     }
-    public void clickFacebokIcon() {
-        try {
-            driver.findElement(ICON_FACEBOOK).click();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public void clickFacebokIcon() throws InterruptedException {
+        Thread.sleep(3000);
+        driver.findElement(ICON_FACEBOOK).click();
     }
 
     //Checking if navigation to a new window was successful

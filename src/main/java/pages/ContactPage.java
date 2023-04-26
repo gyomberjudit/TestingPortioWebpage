@@ -65,7 +65,7 @@ public class ContactPage extends BasePage {
     //scroll to the message to take screenshot
     public void scrollWindow() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,550)", "");
+        js.executeScript("window.scrollBy(0,500)", "");
     }
 
     //Checking if navigating to ContactPage is successful

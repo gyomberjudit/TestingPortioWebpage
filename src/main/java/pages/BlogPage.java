@@ -45,7 +45,7 @@ public class BlogPage extends BasePage {
     //scroll to blogs to take screenshot
     public void scrollWindow() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,150)", "");
+        js.executeScript("window.scrollBy(0,250)", "");
     }
 
     //Write Blog's Titles to blogTitles file

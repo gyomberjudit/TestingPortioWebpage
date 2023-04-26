@@ -25,12 +25,17 @@ public class BlogLinkPage extends BasePage {
     }
 
     //Save one of the blogs' picture to image.jpg file
-    public void savePicture(String fileName, By xpath, String format) throws IOException {
-        File file = new File(fileName);
-        String src = driver.findElement(xpath).getAttribute("src");
-        URL url = new URL(src);
-        BufferedImage image = ImageIO.read(url);
-        ImageIO.write(image, format, file);
+    public void savePicture(String fileName, By xpath, String format) {
+        try {
+            File file = new File(fileName);
+            String src = driver.findElement(xpath).getAttribute("src");
+            URL url = new URL(src);
+            BufferedImage image = ImageIO.read(url);
+            ImageIO.write(image, format, file);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     //Create a new file image2.jpg and save one of the blogs' picture to it, or delete it if it exists

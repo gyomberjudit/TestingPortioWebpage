@@ -31,6 +31,7 @@ public class HomePage extends BasePage {
 
     //Navigating to ProfilePage by clicking on Profile link
     public void clickProfile() {
+        driver.findElement(PROFILE_LINK);
         wait.until(ExpectedConditions.elementToBeClickable(PROFILE_LINK)).click();
     }
 
@@ -63,6 +64,7 @@ public class HomePage extends BasePage {
     public boolean isPortioLogoDisplayed() {
         WebElement logo = driver.findElement(PORTIO_LOGO);
         try {
+            driver.findElement(PORTIO_LOGO);
             wait.until(ExpectedConditions.visibilityOfElementLocated(PORTIO_LOGO));
         } catch (Exception e) {
             e.printStackTrace();

@@ -43,16 +43,19 @@ public class LoginPage extends BasePage {
 
     //Get the text of alert message after wrong login
     public String getAlertMessage() {
+        driver.findElement(MESSAGE_ALERT);
         return wait.until(ExpectedConditions.visibilityOfElementLocated(MESSAGE_ALERT)).getText();
     }
 
     //Checking if alert message of wrong login is visible
     public boolean isAlertMessageDisplayed() {
+        driver.findElement(MESSAGE_ALERT);
         return wait.until(ExpectedConditions.visibilityOfElementLocated(MESSAGE_ALERT)).isDisplayed();
     }
 
     //Checking if Login button visible
     public boolean isLoginButtonDisplayed() {
+        driver.findElement(BUTTON_LOGIN);
         return wait.until(ExpectedConditions.visibilityOfElementLocated(BUTTON_LOGIN)).isDisplayed();
     }
 }
