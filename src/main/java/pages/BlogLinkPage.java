@@ -1,17 +1,13 @@
 package pages;
 
-import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilPages.BasePage;
 import utilPages.Pages;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -142,7 +138,6 @@ public class BlogLinkPage extends BasePage {
         File file = new File(fileName);
         URL url = new URL(targetUrl);
         BufferedImage image = ImageIO.read(url);
-        Allure.addAttachment("Downloaded picture", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         ImageIO.write(image, format, file);
     }
 }
