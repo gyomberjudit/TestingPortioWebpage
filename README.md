@@ -34,6 +34,7 @@ Github Actions, CI/CD Workflow, Allure report
 - meglévő adat módosítása
 - adatok törlése
 - adatok lementése felületről
+- navigáció
 - kijelentkezés
 
 ### Felépítés:
