@@ -12,6 +12,8 @@
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <aspectj.version>1.9.4</aspectj.version>
+        <compiler.version>1.7</compiler.version>
     </properties>
 
     <dependencies>
@@ -109,6 +111,9 @@
                     <testFailureIgnore>true</testFailureIgnore>
                     <forkCount>3</forkCount>
                     <reuseForks>true</reuseForks>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
                     <properties>
                         <property>
                             <name>listener</name>
