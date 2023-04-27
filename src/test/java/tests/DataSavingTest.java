@@ -42,7 +42,6 @@ public class DataSavingTest extends BaseTest {
         blogLinkPage.downloadImage(downloadedFileName, targetUrl, format);
         double expectedPercentage = 0.0;
         double actualPercentage = blogLinkPage.getDifferencePercentage(fileName, downloadedFileName);
-        blogLinkPage.addPictureScreenshot(fileName);
 
         Assertions.assertEquals(expectedPercentage, actualPercentage);
     }
@@ -79,7 +78,6 @@ public class DataSavingTest extends BaseTest {
         blogLinkPage.downloadImage(downloadedFileName, targetUrl, format);
         double expectedPercentage = 0.0;
         double actualPercentage = blogLinkPage.getDifferencePercentage(fileName, downloadedFileName);
-        blogLinkPage.addPictureScreenshot(targetUrl);
 
         Assertions.assertEquals(expectedPercentage, actualPercentage);
     }
