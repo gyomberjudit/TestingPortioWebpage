@@ -33,7 +33,6 @@ public class DataDeletionTest extends BaseTest {
         registerPage.clickButtonRegister2();
         boolean userRegistered = registerPage.userRegistered();
         Assertions.assertTrue(userRegistered);
-        addAttachment("User is registered");
 
         //login
         registerPage.clickLoginButton();
@@ -42,10 +41,10 @@ public class DataDeletionTest extends BaseTest {
         loginPage.clickLoginButton();
         boolean loggedIn = homePage.isPortioLogoDisplayed();
         Assertions.assertTrue(loggedIn);
-        addAttachment("User is logged in");
 
         //delete account
         homePage.clickProfile();
+        addAttachment("Click delete button");
         profilePage.deleteAccount();
         boolean confirmationMessageVisible = profilePage.isConfirmMessageDisplayed();
         Assertions.assertTrue(confirmationMessageVisible);

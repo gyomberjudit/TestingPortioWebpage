@@ -35,7 +35,6 @@ public class DataSavingTest extends BaseTest {
         loginPage.clickLoginButton();
         boolean loggedIn = homePage.isPortioLogoDisplayed();
         Assertions.assertTrue(loggedIn);
-        addAttachment("User is logged in");
 
         //saving picture to an existing file from the website and comparing it with the downloaded picture
         homePage.clickOnLinkBlog();
@@ -43,6 +42,7 @@ public class DataSavingTest extends BaseTest {
         blogLinkPage.downloadImage(downloadedFileName, targetUrl, format);
         double expectedPercentage = 0.0;
         double actualPercentage = blogLinkPage.getDifferencePercentage(fileName, downloadedFileName);
+        blogLinkPage.addPictureScreenshot(fileName);
 
         Assertions.assertEquals(expectedPercentage, actualPercentage);
     }
@@ -72,7 +72,6 @@ public class DataSavingTest extends BaseTest {
         loginPage.clickLoginButton();
         boolean loggedIn = homePage.isPortioLogoDisplayed();
         Assertions.assertTrue(loggedIn);
-        addAttachment("User is logged in");
 
         //saving picture while creating the file to save it to from the website and comparing it with the downloaded picture
         homePage.clickOnLinkBlog();
@@ -80,6 +79,7 @@ public class DataSavingTest extends BaseTest {
         blogLinkPage.downloadImage(downloadedFileName, targetUrl, format);
         double expectedPercentage = 0.0;
         double actualPercentage = blogLinkPage.getDifferencePercentage(fileName, downloadedFileName);
+        blogLinkPage.addPictureScreenshot(targetUrl);
 
         Assertions.assertEquals(expectedPercentage, actualPercentage);
     }
@@ -104,7 +104,6 @@ public class DataSavingTest extends BaseTest {
         loginPage.clickLoginButton();
         boolean loggedIn = homePage.isPortioLogoDisplayed();
         Assertions.assertTrue(loggedIn);
-        addAttachment("User is logged in");
 
         //download CV
         homePage.clickOnLinkAbout();

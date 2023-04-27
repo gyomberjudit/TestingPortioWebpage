@@ -36,7 +36,6 @@ public class DataModificationTest extends BaseTest {
         registerPage.clickButtonRegister2();
         boolean userRegistered = registerPage.userRegistered();
         Assertions.assertTrue(userRegistered);
-        addAttachment("User is registered");
 
         //logging in
         registerPage.clickLoginButton();
@@ -45,7 +44,6 @@ public class DataModificationTest extends BaseTest {
         loginPage.clickLoginButton();
         boolean loggedIn = homePage.isPortioLogoDisplayed();
         Assertions.assertTrue(loggedIn);
-        addAttachment("User is logged in");
 
         //setting profile
         homePage.clickProfile();

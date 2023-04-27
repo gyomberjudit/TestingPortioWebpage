@@ -30,7 +30,6 @@ public class ListTraversalTest extends BaseTest {
         loginPage.clickLoginButton();
         boolean loggedIn = homePage.isPortioLogoDisplayed();
         Assertions.assertTrue(loggedIn);
-        addAttachment("User is logged in");
 
         //navigate to BlogPage
         homePage.clickOnLinkBlog();
@@ -73,7 +72,6 @@ public class ListTraversalTest extends BaseTest {
         loginPage.clickLoginButton();
         boolean loggedIn = homePage.isPortioLogoDisplayed();
         Assertions.assertTrue(loggedIn);
-        addAttachment("User is logged in");
 
         //navigate to BlogPage
         homePage.clickOnLinkBlog();

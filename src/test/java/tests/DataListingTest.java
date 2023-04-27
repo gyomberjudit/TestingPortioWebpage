@@ -34,10 +34,10 @@ public class DataListingTest extends BaseTest {
         loginPage.clickLoginButton();
         boolean loggedIn = homePage.isPortioLogoDisplayed();
         Assertions.assertTrue(loggedIn);
-        addAttachment("User is logged in");
 
         //get quantity of Experiences
         resumePage.scrollToExperiencesButton();
+        addAttachment("Experiences");
         resumePage.clickExperiences();
         addAttachment("Experiences");
         int expected = 4;
@@ -67,10 +67,10 @@ public class DataListingTest extends BaseTest {
         loginPage.clickLoginButton();
         boolean loggedIn = homePage.isPortioLogoDisplayed();
         Assertions.assertTrue(loggedIn);
-        addAttachment("User is logged in");
 
         //Compare workplaces collected in a String array with firms.txt file
         resumePage.scrollToExperiencesButton();
+        addAttachment("Experiences");
         resumePage.clickExperiences();
         addAttachment("Experiences");
         String[] expected = resumePage.readFile(fileName);
@@ -99,7 +99,6 @@ public class DataListingTest extends BaseTest {
         loginPage.clickLoginButton();
         boolean loggedIn = homePage.isPortioLogoDisplayed();
         Assertions.assertTrue(loggedIn);
-        addAttachment("User is logged in");
 
         //Compare expected data given in a HashMap with data collected into HashMap from SkillsPage
         homePage.clickOnLinkSkills();
@@ -137,7 +136,6 @@ public class DataListingTest extends BaseTest {
         loginPage.clickLoginButton();
         boolean loggedIn = homePage.isPortioLogoDisplayed();
         Assertions.assertTrue(loggedIn);
-        addAttachment("User is logged in");
 
         //navigálás a ContactPage-re
         homePage.clickHireMeNowButton();

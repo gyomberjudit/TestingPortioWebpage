@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,9 +9,11 @@ import utilPages.BasePage;
 import utilPages.Pages;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Base64;
 
 public class BlogLinkPage extends BasePage {
     private final By BUTTON_SEE_ALL_POSTS = By.xpath("//*[@class=\"blog-preview__header_button desktop\"]/a");
@@ -139,6 +142,23 @@ public class BlogLinkPage extends BasePage {
         URL url = new URL(targetUrl);
         BufferedImage image = ImageIO.read(url);
         ImageIO.write(image, format, file);
+    }
+
+    @Attachment(value="img screenshot", type="image/jpg")
+    public byte[] addPictureScreenshot(String path) throws IOException {
+        File file = new File(path);
+        BufferedImage bufferedImage = ImageIO.read(file);
+
+        byte[] image = null;
+        try (ByteArrayOutputStream bos = new ByteArrayOutputStream()) {
+            ImageIO.write(bufferedImage, "png", bos);
+            image = bos.toByteArray();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // if decoding is not necessary just return image
+        return image != null ? Base64.getMimeDecoder().decode(image) : null;
     }
 
 }

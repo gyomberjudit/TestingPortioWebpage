@@ -33,7 +33,6 @@ public class DataInputTest extends BaseTest {
         registerPage.clickButtonRegister2();
         boolean userRegistered = registerPage.userRegistered();
         Assertions.assertTrue(userRegistered);
-        addAttachment("User is registered");
 
         //logging in
         registerPage.clickLoginButton();
@@ -42,7 +41,6 @@ public class DataInputTest extends BaseTest {
         loginPage.clickLoginButton();
         boolean loggedIn = homePage.isPortioLogoDisplayed();
         Assertions.assertTrue(loggedIn);
-        addAttachment("User is logged in");
 
         //setting profile
         homePage.clickProfile();
@@ -80,7 +78,6 @@ public class DataInputTest extends BaseTest {
         loginPage.clickLoginButton();
         boolean loggedIn = homePage.isPortioLogoDisplayed();
         Assertions.assertTrue(loggedIn);
-        addAttachment("User is logged in");
 
         //fill Contact form
         homePage.clickContactMeButton();

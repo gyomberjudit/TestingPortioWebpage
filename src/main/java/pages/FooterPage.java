@@ -1,12 +1,16 @@
 package pages;
 
+import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilPages.BasePage;
 import utilPages.Pages;
 
+import java.io.ByteArrayInputStream;
 import java.util.Set;
 
 public class FooterPage extends BasePage {
@@ -47,7 +51,7 @@ public class FooterPage extends BasePage {
         for (String childWindow : windows) {
             if (!parentWindow.equals(childWindow)) {
                 String childUrl = driver.switchTo().window(childWindow).getCurrentUrl();
-
+                Allure.addAttachment("Facebook child window", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
                 url.append(childUrl);
                 driver.close();
             }
