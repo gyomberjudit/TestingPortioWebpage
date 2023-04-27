@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,6 +20,7 @@ public class BlogLinkPage extends BasePage {
     }
 
     //Click on 'See All Posts' Button to navigate to all the posts
+    @Step("1. Navigate to BlogPage")
     public void clickButtonSeeAllPosts() throws InterruptedException {
         Thread.sleep(3000);
         driver.findElement(BUTTON_SEE_ALL_POSTS).click();

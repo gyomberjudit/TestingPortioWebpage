@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilPages.BasePage;
@@ -19,6 +20,7 @@ public class BlogPage extends BasePage {
     }
 
     //Count numbers of blog items
+    @Step("2. Get the size of blogs on one page")
     public int getItemsNumber() {
          return driver.findElements(BLOG_ITEMS).size();
     }
@@ -30,6 +32,7 @@ public class BlogPage extends BasePage {
         }
         return false;
     }
+    @Step("3. Get the total size of blogs clicking on next arrow")
     public int getTotalItems() {
         int totalItems = 0;
         try {
@@ -45,10 +48,11 @@ public class BlogPage extends BasePage {
     //scroll to blogs to take screenshot
     public void scrollWindow() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,250)", "");
+        js.executeScript("window.scrollBy(0,300)", "");
     }
 
     //Write Blog's Titles to blogTitles file
+    @Step("2. Write the blogs' title to an existing file while paginating pages")
     public void writeBlogTitlesFile(String file) {
         try {
             FileWriter writer = new FileWriter(file);
@@ -74,6 +78,7 @@ public class BlogPage extends BasePage {
     }
 
     //Read text from blogTitles file
+    @Step("3. Read the written file to compare it with the expected text.")
     public String getFileData(String fileName) {
         StringBuilder data = new StringBuilder();
         try {
