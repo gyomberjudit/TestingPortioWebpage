@@ -38,10 +38,10 @@ public class DataListingTest extends BaseTest {
         //get quantity of Experiences
         resumePage.scrollToExperiencesButton();
         resumePage.clickExperiences();
-        homePage.scrollWindow();
-        addAttachment("Three of four workplaces can be seen");
         int expected = 4;
         int actual = resumePage.quantityOfExperiences();
+        homePage.scrollWindow();
+        addAttachment("Three of four workplaces can be seen");
 
         Assertions.assertEquals(expected, actual);
     }
@@ -71,10 +71,10 @@ public class DataListingTest extends BaseTest {
         //Compare workplaces collected in a String array with firms.txt file
         resumePage.scrollToExperiencesButton();
         resumePage.clickExperiences();
-        homePage.scrollWindow();
-        addAttachment("Three of four workplaces can be seen");
         String[] expected = resumePage.readFile(fileName);
         String[] actual = resumePage.getFirmsOfExperience();
+        homePage.scrollWindow();
+        addAttachment("Three of four workplaces can be seen");
 
         Assertions.assertArrayEquals(expected, actual);
     }
