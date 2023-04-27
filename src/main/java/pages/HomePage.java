@@ -72,7 +72,7 @@ public class HomePage extends BasePage {
     //scroll to the ResumePage to take screenshot
     public void scrollWindow() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,1200)", "");
+        js.executeScript("window.scrollBy(0,600)", "");
     }
 
     //Checking if HomePage is visible
