@@ -23,16 +23,18 @@ public class FooterPage extends BasePage {
 
 
     //navigate to Privacy and Policy page
+    @Step("Scroll to footer")
     public void scrollToPrivacyAndPolicyLink() throws InterruptedException {
         scrollToElement(LINK_PRIVACY_AND_POLICY);
     }
-    @Step("Navigate to Privacy and Policy document")
+    @Step("Click 'Privacy and Policy' link")
     public void clickPrivacyAndPolicyLink() throws InterruptedException {
         Thread.sleep(3000);
         driver.findElement(LINK_PRIVACY_AND_POLICY).click();
     }
 
     //navigate to facebook
+    @Step("Scroll to footer")
     public void scrollToFacebookIcon() throws InterruptedException {
         scrollToElement(ICON_FACEBOOK);
     }

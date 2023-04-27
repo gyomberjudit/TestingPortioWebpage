@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26794f44-258f-49a9-b97f-0314055cd4a0" name="Changes" comment="remove img attachment">
+    <list default="true" id="26794f44-258f-49a9-b97f-0314055cd4a0" name="Changes" comment="small corrections">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/AboutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/AboutPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/BlogLinkPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/BlogLinkPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/FooterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/FooterPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/RegisterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/RegisterPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utilPages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilPages/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/DataInputTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DataInputTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/DataListingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DataListingTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -180,13 +174,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680425033780</updated>
-    </task>
-    <task id="LOCAL-00100" summary="add annotations">
-      <created>1681830752320</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1681830752320</updated>
     </task>
     <task id="LOCAL-00101" summary="refresh RegisterPage.java">
       <created>1681830783037</created>
@@ -524,7 +511,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682617104103</updated>
     </task>
-    <option name="localTasksCounter" value="149" />
+    <task id="LOCAL-00149" summary="small corrections">
+      <created>1682622444212</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1682622444212</updated>
+    </task>
+    <option name="localTasksCounter" value="150" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -554,7 +548,6 @@
     <MESSAGE value="thread.sleep" />
     <MESSAGE value="add ready excel" />
     <MESSAGE value="add TC numbers" />
-    <MESSAGE value="small corrections" />
     <MESSAGE value="scroll" />
     <MESSAGE value="ready template" />
     <MESSAGE value="scroll2" />
@@ -564,7 +557,8 @@
     <MESSAGE value="less @Steps" />
     <MESSAGE value="less login screenshot" />
     <MESSAGE value="remove img attachment" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove img attachment" />
+    <MESSAGE value="small corrections" />
+    <option name="LAST_COMMIT_MESSAGE" value="small corrections" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TestingPortioWebpage$SkillsPageTest.ic" NAME="SkillsPageTest Coverage Results" MODIFIED="1681204969440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

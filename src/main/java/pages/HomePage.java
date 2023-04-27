@@ -2,6 +2,7 @@ package pages;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -66,6 +67,12 @@ public class HomePage extends BasePage {
     @Step("Click menu link 'Blog'")
     public void clickOnLinkBlog() {
         driver.findElement(LINK_BLOG).click();
+    }
+
+    //scroll to the ResumePage to take screenshot
+    public void scrollWindow() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,3000)", "");
     }
 
     //Checking if HomePage is visible
