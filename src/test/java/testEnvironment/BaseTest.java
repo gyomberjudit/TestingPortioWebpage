@@ -2,7 +2,6 @@ package testEnvironment;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Allure;
-import io.qameta.allure.Step;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -64,7 +63,6 @@ public class BaseTest {
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
-    @Step("Add screenshot")
     public void addAttachment(String name) {
         Allure.addAttachment(name, new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
     }

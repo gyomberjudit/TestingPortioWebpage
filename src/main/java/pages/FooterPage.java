@@ -32,7 +32,7 @@ public class FooterPage extends BasePage {
     public void scrollToFacebookIcon() throws InterruptedException {
         scrollToElement(ICON_FACEBOOK);
     }
-    @Step("Navigate to Facebook")
+    @Step("Click Icon Facebook")
     public void clickFacebokIcon() throws InterruptedException {
         Thread.sleep(3000);
         driver.findElement(ICON_FACEBOOK).click();

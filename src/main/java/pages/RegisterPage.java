@@ -26,15 +26,12 @@ public class RegisterPage extends BasePage {
     public void clickButtonRegister() {
         driver.findElement(BUTTON_REGISTER).click();
     }
-    @Step("Input username")
     public void inputUsername(String username) {
         driver.findElement(INPUT_USERNAME_REGISTER).sendKeys(username);
     }
-    @Step("Input password")
     public void inputPassword(String password) {
         driver.findElement(INPUT_PASSWORD_REGISTER).sendKeys(password);
     }
-    @Step("Input email")
     public void inputEmail(String email) {
         driver.findElement(INPUT_EMAIL_REGISTER).sendKeys(email);
     }
@@ -56,7 +53,6 @@ public class RegisterPage extends BasePage {
     }
 
     //Checking if message of successful registration visible
-    @Step("Check if registration was successful")
     public boolean userRegistered() {
         return driver.findElement(MESSAGE_USER_REGISTERED).isDisplayed();
     }

@@ -39,7 +39,7 @@ public class HomePage extends BasePage {
     }
 
     //Navigating to ContactPage with 'Hire Me Now' button
-    @Step("Navigate to ContactPage")
+    @Step("Click Hire Me button")
     public void clickHireMeNowButton() {
         driver.findElement(HIRE_ME_NOW_BUTTON).click();
     }
@@ -69,7 +69,6 @@ public class HomePage extends BasePage {
     }
 
     //Checking if HomePage is visible
-    @Step("Check navigation to HomePage")
     public boolean isPortioLogoDisplayed() {
         WebElement logo = driver.findElement(PORTIO_LOGO);
         try {

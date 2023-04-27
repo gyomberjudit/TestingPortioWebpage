@@ -34,11 +34,9 @@ public class LoginPage extends BasePage {
     }
 
     //methods for login
-    @Step("Input username")
     public void inputUsername(String username) {
         driver.findElement(INPUT_USERNAME_LOGIN).sendKeys(username);
     }
-    @Step("Input password")
     public void inputPassword(String password) {
         driver.findElement(INPUT_PASSWORD_LOGIN).sendKeys(password);
     }
@@ -61,7 +59,6 @@ public class LoginPage extends BasePage {
     }
 
     //Checking if Login button visible
-    @Step("Check navigating to LoginPage")
     public boolean isLoginButtonDisplayed() {
         driver.findElement(BUTTON_LOGIN);
         return wait.until(ExpectedConditions.visibilityOfElementLocated(BUTTON_LOGIN)).isDisplayed();

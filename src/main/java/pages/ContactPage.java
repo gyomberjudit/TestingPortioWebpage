@@ -44,21 +44,17 @@ public class ContactPage extends BasePage {
     }
 
     //Give data and message while filling the Contact Form
-    @Step("Input name")
     public void inputName(String name) {
         driver.findElement(INPUT_NAME).sendKeys(name);
     }
-    @Step("Input email")
     public void inputEmail(String email) {
         driver.findElement(INPUT_EMAIL).sendKeys(email);
     }
-    @Step("Write message")
     public void inputMessage(String message) {
         driver.findElement(INPUT_MESSAGE).sendKeys(message);
     }
 
     //Check checkbox by clicking on the box
-    @Step("Check checkbox")
     public void checkCheckbox() {
         driver.findElement(CHECKBOX).click();
     }
@@ -76,13 +72,11 @@ public class ContactPage extends BasePage {
     }
 
     //Checking if navigating to ContactPage is successful
-    @Step("Check navigation to ContactPage")
     public boolean isContactMeTextDisplayed() {
         return driver.findElement(CONTACT_ME_TEXT).isDisplayed();
     }
 
     //Checking if sending message was successful
-    @Step("Check if sending message was successful")
     public String getMessage() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(MESSAGE_STATUS)).getText();
     }

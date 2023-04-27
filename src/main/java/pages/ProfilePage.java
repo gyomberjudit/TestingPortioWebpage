@@ -22,19 +22,16 @@ public class ProfilePage extends BasePage {
 
 
     //Setting profile by giving credentials and saving them
-    @Step("Input name")
     public void inputName(String name) {
         driver.findElement(NAME_INPUT).sendKeys(name);
     }
-    @Step("Input bio")
     public void inputBio(String bio) {
         driver.findElement(BIO_INPUT).sendKeys(bio);
     }
-    @Step("Input phone")
     public void inputPhone(String phone) {
         driver.findElement(PHONE_INPUT).sendKeys(phone);
     }
-    @Step("Save profile")
+    @Step("Set profile")
     public void clickSaveButton() {
         driver.findElement(SAVE_BUTTON).click();
     }
@@ -57,7 +54,6 @@ public class ProfilePage extends BasePage {
     }
 
     //Checking if confirmation message is visible during deleting
-    @Step("Check if deletion was successful")
     public boolean isConfirmMessageDisplayed() {
         return driver.findElement(CONFIRM_DELETE_BUTTON).isDisplayed();
     }
