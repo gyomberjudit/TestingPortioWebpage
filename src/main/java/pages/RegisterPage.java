@@ -47,7 +47,6 @@ public class RegisterPage extends BasePage {
     }
 
     //Get the text of successful registration message
-    @Step("Check message")
     public String registeredMessage() {
         return driver.findElement(MESSAGE_USER_REGISTERED).getText();
     }

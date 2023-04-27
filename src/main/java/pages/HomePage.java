@@ -32,38 +32,38 @@ public class HomePage extends BasePage {
     }
 
     //Navigating to ProfilePage by clicking on Profile link
-    @Step("Navigate to ProfilePage")
+    @Step("Click Profile")
     public void clickProfile() {
         driver.findElement(PROFILE_LINK);
         wait.until(ExpectedConditions.elementToBeClickable(PROFILE_LINK)).click();
     }
 
     //Navigating to ContactPage with 'Hire Me Now' button
-    @Step("Click Hire Me button")
+    @Step("Click 'Hire Me' button")
     public void clickHireMeNowButton() {
         driver.findElement(HIRE_ME_NOW_BUTTON).click();
     }
 
     //Navigating to ContactPage with 'Contact Me' button
-    @Step("Navigate to ContactPage")
+    @Step("Click 'Contact Me' button")
     public void clickContactMeButton() {
         driver.findElement(CONTACT_ME_BUTTON).click();
     }
 
     //Navigating to AboutPage by clicking on About link
-    @Step("Navigate to AboutPage")
+    @Step("Click menu link 'About'")
     public void clickOnLinkAbout() {
         driver.findElement(LINK_ABOUT).click();
     }
 
     //Navigating to SkillsPage by clicking on Skills link
-    @Step("Navigate to SkillsPage")
+    @Step("Click menu link 'Skills'")
     public void clickOnLinkSkills() {
         driver.findElement(LINK_SKILLS).click();
     }
 
     //Navigating to BlogPage by clicking on Blog link
-    @Step("Navigate to Blogs")
+    @Step("Click menu link 'Blog'")
     public void clickOnLinkBlog() {
         driver.findElement(LINK_BLOG).click();
     }

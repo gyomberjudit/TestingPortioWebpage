@@ -37,9 +37,8 @@ public class DataListingTest extends BaseTest {
 
         //get quantity of Experiences
         resumePage.scrollToExperiencesButton();
-        addAttachment("Experiences");
         resumePage.clickExperiences();
-        addAttachment("Experiences");
+        addAttachment("Two of four workplaces can be seen");
         int expected = 4;
         int actual = resumePage.quantityOfExperiences();
 
@@ -70,9 +69,8 @@ public class DataListingTest extends BaseTest {
 
         //Compare workplaces collected in a String array with firms.txt file
         resumePage.scrollToExperiencesButton();
-        addAttachment("Experiences");
         resumePage.clickExperiences();
-        addAttachment("Experiences");
+        addAttachment("Two of four workplaces can be seen");
         String[] expected = resumePage.readFile(fileName);
         String[] actual = resumePage.getFirmsOfExperience();
 
@@ -145,7 +143,7 @@ public class DataListingTest extends BaseTest {
         //Compare expected data given in JSON file with data collected into HashMap from ContactPage
         Map<String, String> expected = contactPage.jsonParser(fileName, keys, values);
         Map<String, String> actual = contactPage.getContactInfo();
-        addAttachment("Given contact information on ContactPage");
+        addAttachment("Contact information on ContactPage");
 
         Assertions.assertEquals(expected, actual);
     }

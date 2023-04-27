@@ -88,7 +88,7 @@ public class DataInputTest extends BaseTest {
         contactPage.sendMessage();
         contactPage.scrollWindow();
         Thread.sleep(2000);
-        addAttachment("Sending contact form is unsuccessful");
+        addAttachment("Sending message with contact form is unsuccessful");
         String expected = "Message was sent successfully";
         String actual = contactPage.getMessage();
 

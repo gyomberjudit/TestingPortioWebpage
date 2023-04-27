@@ -20,7 +20,7 @@ public class BlogLinkPage extends BasePage {
     }
 
     //Click on 'See All Posts' Button to navigate to all the posts
-    @Step("Navigate to BlogPage")
+    @Step("Click 'See All Posts' button")
     public void clickButtonSeeAllPosts() throws InterruptedException {
         Thread.sleep(3000);
         driver.findElement(BUTTON_SEE_ALL_POSTS).click();

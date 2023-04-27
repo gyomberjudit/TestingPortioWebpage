@@ -22,7 +22,7 @@ public class AboutPage extends BasePage {
     public void scrollToDownloadButton() throws InterruptedException {
         scrollToElement(BUTTON_DOWNLOAD_CV);
     }
-    @Step("Download the file from the website")
+    @Step("Click 'Download CV' button")
     public void clickDownloadCV() throws InterruptedException {
         Thread.sleep(2000);
         driver.findElement(BUTTON_DOWNLOAD_CV).click();

@@ -43,7 +43,7 @@ public class FooterPage extends BasePage {
     }
 
     //Checking if navigation to a new window was successful
-    @Step("Get child window's url")
+    @Step("Successful navigation to Facebook")
     public String getChildWindowUrl() {
         String parentWindow = driver.getWindowHandle();
         Set<String> windows = driver.getWindowHandles();
@@ -51,7 +51,7 @@ public class FooterPage extends BasePage {
         for (String childWindow : windows) {
             if (!parentWindow.equals(childWindow)) {
                 String childUrl = driver.switchTo().window(childWindow).getCurrentUrl();
-                Allure.addAttachment("Facebook child window", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+                Allure.addAttachment("Facebook in new window", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
                 url.append(childUrl);
                 driver.close();
             }

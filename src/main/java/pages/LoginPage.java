@@ -52,7 +52,6 @@ public class LoginPage extends BasePage {
     }
 
     //Checking if alert message of wrong login is visible
-    @Step("Check if warning message of wrong login is visible")
     public boolean isAlertMessageDisplayed() {
         driver.findElement(MESSAGE_ALERT);
         return wait.until(ExpectedConditions.visibilityOfElementLocated(MESSAGE_ALERT)).isDisplayed();

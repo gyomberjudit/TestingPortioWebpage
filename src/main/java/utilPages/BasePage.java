@@ -29,7 +29,7 @@ public class BasePage {
     }
 
     //global method for navigation
-    @Step("Navigate to HomePage")
+    @Step("Navigate to Portio website")
     public void navigate() {
         driver.navigate().to(url);
     }

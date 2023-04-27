@@ -25,7 +25,7 @@ public class TermsAndConditionsTest extends BaseTest {
 
         loginPage.acceptTerms();
         boolean loginButtonVisible = loginPage.isLoginButtonDisplayed();
-        addAttachment("Navigate to LoginPage after accepting terms");
+        addAttachment("Successful navigation to LoginPage after accepting terms");
 
         Assertions.assertTrue(loginButtonVisible);
 
@@ -46,7 +46,7 @@ public class TermsAndConditionsTest extends BaseTest {
 
         loginPage.clickOnCloseIcon();
         boolean loginButtonVisible = loginPage.isLoginButtonDisplayed();
-        addAttachment("Navigate to LoginPage after NOT accepting terms");
+        addAttachment("Successful navigation to LoginPage after NOT accepting terms");
 
         Assertions.assertFalse(loginButtonVisible);
 
