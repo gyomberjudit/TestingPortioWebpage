@@ -29,7 +29,7 @@ public class NavigationTest extends BaseTest {
         loginPage.inputPassword(password);
         loginPage.clickLoginButton();
         boolean loggedIn = homePage.isPortioLogoDisplayed();
-        addAttachment("User logged in");
+        addAttachment("User is logged in");
         Assertions.assertTrue(loggedIn);
 
         //navigating to ContactPage
@@ -59,7 +59,7 @@ public class NavigationTest extends BaseTest {
         loginPage.inputPassword(password);
         loginPage.clickLoginButton();
         boolean loggedIn = homePage.isPortioLogoDisplayed();
-        addAttachment("Successful login");
+        addAttachment("User is logged in");
         Assertions.assertTrue(loggedIn);
 
         //navigating to Privacy and Policy document
@@ -91,6 +91,7 @@ public class NavigationTest extends BaseTest {
         loginPage.clickLoginButton();
         boolean loggedIn = homePage.isPortioLogoDisplayed();
         Assertions.assertTrue(loggedIn);
+        addAttachment("User is logged in");
 
         //navigating to Facebbok
         footerPage.scrollToFacebookIcon();

@@ -36,6 +36,7 @@ public class DataModificationTest extends BaseTest {
         registerPage.clickButtonRegister2();
         boolean userRegistered = registerPage.userRegistered();
         Assertions.assertTrue(userRegistered);
+        addAttachment("User is registered");
 
         //logging in
         registerPage.clickLoginButton();
@@ -44,6 +45,7 @@ public class DataModificationTest extends BaseTest {
         loginPage.clickLoginButton();
         boolean loggedIn = homePage.isPortioLogoDisplayed();
         Assertions.assertTrue(loggedIn);
+        addAttachment("User is logged in");
 
         //setting profile
         homePage.clickProfile();
@@ -54,6 +56,7 @@ public class DataModificationTest extends BaseTest {
         String expectedMessage = "Profile Edited!";
         String actualMessage = profilePage.getProfileMessage();
         Assertions.assertEquals(expectedMessage, actualMessage);
+        addAttachment("Profile edited message");
 
         //checking if profile name has changed
         homePage.navigate();

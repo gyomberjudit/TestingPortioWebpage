@@ -32,7 +32,7 @@ public class BlogPage extends BasePage {
         }
         return false;
     }
-    @Step("3. Get the total size of blogs clicking on next arrow")
+    @Step("Get the total size of blogs clicking on next arrow")
     public int getTotalItems() {
         int totalItems = 0;
         try {
@@ -52,7 +52,7 @@ public class BlogPage extends BasePage {
     }
 
     //Write Blog's Titles to blogTitles file
-    @Step("2. Write the blogs' title to an existing file while paginating pages")
+    @Step("Write the blogs' title to an existing file while paginating pages")
     public void writeBlogTitlesFile(String file) {
         try {
             FileWriter writer = new FileWriter(file);
@@ -78,7 +78,7 @@ public class BlogPage extends BasePage {
     }
 
     //Read text from blogTitles file
-    @Step("3. Read the written file to compare it with the expected text.")
+    @Step("Read the written file to compare it with the expected text.")
     public String getFileData(String fileName) {
         StringBuilder data = new StringBuilder();
         try {

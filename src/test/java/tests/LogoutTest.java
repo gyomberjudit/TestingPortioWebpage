@@ -28,7 +28,7 @@ public class LogoutTest extends BaseTest {
         loginPage.inputPassword(password);
         loginPage.clickLoginButton();
         boolean loggedIn = homePage.isPortioLogoDisplayed();
-        addAttachment("The user is logged in");
+        addAttachment("User is logged in");
         Assertions.assertTrue(loggedIn);
 
         //logout

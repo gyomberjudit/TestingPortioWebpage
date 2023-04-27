@@ -18,8 +18,8 @@ public class TermsAndConditionsTest extends BaseTest {
     @Test
     public void testAcceptTerms() {
         loginPage.navigate();
-        addAttachment("Terms and Conditions text should be accepted before moving on");
         boolean textOfTermsVisible = loginPage.isTermsAndConditionsTextDisplayed();
+        addAttachment("Terms and Conditions text should be accepted before moving on");
 
         Assertions.assertTrue(textOfTermsVisible);
 
@@ -39,8 +39,8 @@ public class TermsAndConditionsTest extends BaseTest {
     @Test
     public void testNotAcceptTerms() {
         loginPage.navigate();
-        addAttachment("Terms and Conditions text should be accepted before moving on");
         boolean textOfTermsVisible = loginPage.isTermsAndConditionsTextDisplayed();
+        addAttachment("Terms and Conditions text should be accepted before moving on");
 
         Assertions.assertTrue(textOfTermsVisible);
 

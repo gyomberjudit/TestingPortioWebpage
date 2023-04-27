@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -25,42 +26,50 @@ public class HomePage extends BasePage {
 
 
     //Logging out from the webpage
+    @Step("Log out")
     public void clickLogoutButton() {
         driver.findElement(LINK_LOGOUT).click();
     }
 
     //Navigating to ProfilePage by clicking on Profile link
+    @Step("Navigate to ProfilePage")
     public void clickProfile() {
         driver.findElement(PROFILE_LINK);
         wait.until(ExpectedConditions.elementToBeClickable(PROFILE_LINK)).click();
     }
 
     //Navigating to ContactPage with 'Hire Me Now' button
+    @Step("Navigate to ContactPage")
     public void clickHireMeNowButton() {
         driver.findElement(HIRE_ME_NOW_BUTTON).click();
     }
 
     //Navigating to ContactPage with 'Contact Me' button
+    @Step("Navigate to ContactPage")
     public void clickContactMeButton() {
         driver.findElement(CONTACT_ME_BUTTON).click();
     }
 
     //Navigating to AboutPage by clicking on About link
+    @Step("Navigate to AboutPage")
     public void clickOnLinkAbout() {
         driver.findElement(LINK_ABOUT).click();
     }
 
     //Navigating to SkillsPage by clicking on Skills link
+    @Step("Navigate to SkillsPage")
     public void clickOnLinkSkills() {
         driver.findElement(LINK_SKILLS).click();
     }
 
     //Navigating to BlogPage by clicking on Blog link
+    @Step("Navigate to Blogs")
     public void clickOnLinkBlog() {
         driver.findElement(LINK_BLOG).click();
     }
 
     //Checking if HomePage is visible
+    @Step("Check navigation to HomePage")
     public boolean isPortioLogoDisplayed() {
         WebElement logo = driver.findElement(PORTIO_LOGO);
         try {
@@ -73,6 +82,7 @@ public class HomePage extends BasePage {
     }
 
     //Checking if Profile name displayed after setting profile
+    @Step("Check if profile name has changed")
     public String getProfileName() {
         return driver.findElement(PROFILE_TEXT).getText();
     }

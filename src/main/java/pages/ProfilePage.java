@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -21,15 +22,19 @@ public class ProfilePage extends BasePage {
 
 
     //Setting profile by giving credentials and saving them
+    @Step("Input name")
     public void inputName(String name) {
         driver.findElement(NAME_INPUT).sendKeys(name);
     }
+    @Step("Input bio")
     public void inputBio(String bio) {
         driver.findElement(BIO_INPUT).sendKeys(bio);
     }
+    @Step("Input phone")
     public void inputPhone(String phone) {
         driver.findElement(PHONE_INPUT).sendKeys(phone);
     }
+    @Step("Save profile")
     public void clickSaveButton() {
         driver.findElement(SAVE_BUTTON).click();
     }
@@ -40,16 +45,19 @@ public class ProfilePage extends BasePage {
     }
 
     //Deleting account by clicking on 'Delete Account' button
+    @Step("Delete account")
     public void deleteAccount() {
         driver.findElement(DELETE_BUTTON).click();
     }
 
     //Confirm deleting account by clicking on confirmation button
+    @Step("Confirm deletion")
     public void confirmDeletingAccount() {
         driver.findElement(CONFIRM_DELETE_BUTTON).click();
     }
 
     //Checking if confirmation message is visible during deleting
+    @Step("Check if deletion was successful")
     public boolean isConfirmMessageDisplayed() {
         return driver.findElement(CONFIRM_DELETE_BUTTON).isDisplayed();
     }

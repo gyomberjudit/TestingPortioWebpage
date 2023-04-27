@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,7 +19,8 @@ public class SkillsPage extends BasePage {
     }
 
 
-    //Get the types and percents of skills and store them in a HashMap
+    //Collect the types and percents of skills into a HashMap
+    @Step("Collect the types and percents of skills into a HashMap")
     public HashMap<String, String> getSkills() throws InterruptedException {
         List<WebElement> skills = driver.findElements(SKILLS);
 

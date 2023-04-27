@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -21,33 +22,41 @@ public class RegisterPage extends BasePage {
 
 
     //methods for registration
+    @Step("Navigate to RegisterPage")
     public void clickButtonRegister() {
         driver.findElement(BUTTON_REGISTER).click();
     }
+    @Step("Input username")
     public void inputUsername(String username) {
         driver.findElement(INPUT_USERNAME_REGISTER).sendKeys(username);
     }
+    @Step("Input password")
     public void inputPassword(String password) {
         driver.findElement(INPUT_PASSWORD_REGISTER).sendKeys(password);
     }
+    @Step("Input email")
     public void inputEmail(String email) {
         driver.findElement(INPUT_EMAIL_REGISTER).sendKeys(email);
     }
+    @Step("Registrate")
     public void clickButtonRegister2() {
         driver.findElement(BUTTON_REGISTER2).click();
     }
 
     //Navigating to LoginPage by clicking on Login button after registration
+    @Step("Navigate to LoginPage")
     public void clickLoginButton() {
         driver.findElement(BUTTON_LOGIN).click();
     }
 
     //Get the text of successful registration message
+    @Step("Check message")
     public String registeredMessage() {
         return driver.findElement(MESSAGE_USER_REGISTERED).getText();
     }
 
     //Checking if message of successful registration visible
+    @Step("Check if registration was successful")
     public boolean userRegistered() {
         return driver.findElement(MESSAGE_USER_REGISTERED).isDisplayed();
     }

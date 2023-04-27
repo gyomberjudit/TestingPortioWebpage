@@ -1,5 +1,6 @@
 package utilPages;
 
+import io.qameta.allure.Step;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -28,11 +29,13 @@ public class BasePage {
     }
 
     //global method for navigation
+    @Step("Navigate to Portio website")
     public void navigate() {
         driver.navigate().to(url);
     }
 
     //global method for accepting terms before entering the website
+    @Step("Accept terms")
     public void acceptTerms() {
         driver.findElement(BUTTON_ACCEPT_TERMS).click();
     }
@@ -46,6 +49,7 @@ public class BasePage {
     }
 
     //global JSON parser method
+    @Step("Parse JSON file to HashMap")
     public Map<String, String > jsonParser(String fileName, String keys, String values) throws IOException, ParseException {
         Map<String, String> map = new HashMap<>();
         JSONParser parser = new JSONParser();

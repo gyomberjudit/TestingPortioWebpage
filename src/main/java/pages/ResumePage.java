@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,20 +23,24 @@ public class ResumePage extends BasePage {
 
 
     //Clicking on Experiences button to get to know the workplaces
+    @Step("Navigate to ResumePage")
     public void scrollToExperiencesButton() throws InterruptedException {
         scrollToElement(BUTTON_EXPERIENCES);
     }
+    @Step("Click button Experiences")
     public void clickExperiences() {
         driver.findElement(BUTTON_EXPERIENCES).click();
     }
 
     //Get the number of workplaces
+    @Step("Get the number of workplaces")
     public int quantityOfExperiences() {
         List<WebElement> experiences = driver.findElements(EXPERIENCES_ITEMS);
         return experiences.size();
     }
 
     //Get the names of workplaces
+    @Step("Get the names of workplaces from website")
     public String[] getFirmsOfExperience() {
         List<WebElement> firms = driver.findElements(EXPERIENCES);
 
@@ -49,6 +54,7 @@ public class ResumePage extends BasePage {
     }
 
     //Method for reading the given firms.txt file to compare it with getFirmsOfExperience method
+    @Step("Get the names of workplaces from firms.txt file by file reading")
     public String[] readFile(String fileName) {
         List<String> firms = new ArrayList<>();
         try {

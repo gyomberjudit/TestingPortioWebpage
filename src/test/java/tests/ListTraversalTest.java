@@ -30,6 +30,7 @@ public class ListTraversalTest extends BaseTest {
         loginPage.clickLoginButton();
         boolean loggedIn = homePage.isPortioLogoDisplayed();
         Assertions.assertTrue(loggedIn);
+        addAttachment("User is logged in");
 
         //navigate to BlogPage
         homePage.clickOnLinkBlog();
@@ -72,6 +73,7 @@ public class ListTraversalTest extends BaseTest {
         loginPage.clickLoginButton();
         boolean loggedIn = homePage.isPortioLogoDisplayed();
         Assertions.assertTrue(loggedIn);
+        addAttachment("User is logged in");
 
         //navigate to BlogPage
         homePage.clickOnLinkBlog();
@@ -83,6 +85,7 @@ public class ListTraversalTest extends BaseTest {
 
         //write blog posts' titles to blogTitles.txt file and compare it - by reading the file - with the expected text block
         blogPage.writeBlogTitlesFile(file);
+        addAttachment("Blog titles on the second page");
         String expected = """              
                 Markdown Formatting Demo
                 Designer Conference at Florida 2020
@@ -95,7 +98,6 @@ public class ListTraversalTest extends BaseTest {
                 You must know this before becoming a designer
                 """;   //text block instead of concatenation
         String actual = blogPage.getFileData(file);
-        addAttachment("Blog titles on the second page");
 
         Assertions.assertEquals(Pages.BLOG_PAGE_TWO.getUrl(), driver.getCurrentUrl());
         Assertions.assertEquals(expected, actual);

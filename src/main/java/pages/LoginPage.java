@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,22 +22,27 @@ public class LoginPage extends BasePage {
 
 
     //Checking if text of 'Terms and Conditions' visible
+    @Step("Check if Terms and Conditions visible")
     public boolean isTermsAndConditionsTextDisplayed() {
         return driver.findElement(TEXT_TERMS_AND_CONDITIONS).isDisplayed();
     }
 
     //Close Accepting Terms by clicking on Close icon without accepting it
+    @Step("Not accept Terms and Conditions")
     public void clickOnCloseIcon() {
         driver.findElement(CLOSE_TERMS_ICON).click();
     }
 
     //methods for login
+    @Step("Input username")
     public void inputUsername(String username) {
         driver.findElement(INPUT_USERNAME_LOGIN).sendKeys(username);
     }
+    @Step("Input password")
     public void inputPassword(String password) {
         driver.findElement(INPUT_PASSWORD_LOGIN).sendKeys(password);
     }
+    @Step("Log in")
     public void clickLoginButton() {
         driver.findElement(BUTTON_LOGIN).click();
     }
@@ -48,12 +54,14 @@ public class LoginPage extends BasePage {
     }
 
     //Checking if alert message of wrong login is visible
+    @Step("Check if warning message of wrong login is visible")
     public boolean isAlertMessageDisplayed() {
         driver.findElement(MESSAGE_ALERT);
         return wait.until(ExpectedConditions.visibilityOfElementLocated(MESSAGE_ALERT)).isDisplayed();
     }
 
     //Checking if Login button visible
+    @Step("Check navigating to LoginPage")
     public boolean isLoginButtonDisplayed() {
         driver.findElement(BUTTON_LOGIN);
         return wait.until(ExpectedConditions.visibilityOfElementLocated(BUTTON_LOGIN)).isDisplayed();

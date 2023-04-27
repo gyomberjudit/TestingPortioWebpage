@@ -4,10 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26794f44-258f-49a9-b97f-0314055cd4a0" name="Changes" comment="scroll2">
+    <list default="true" id="26794f44-258f-49a9-b97f-0314055cd4a0" name="Changes" comment="refresh pom.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/AboutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/AboutPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/BlogLinkPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/BlogLinkPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/BlogPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/BlogPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/FooterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/FooterPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ProfilePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ProfilePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/RegisterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/RegisterPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ResumePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ResumePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utilPages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilPages/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testEnvironment/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testEnvironment/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/DataDeletionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DataDeletionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/DataInputTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DataInputTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/DataListingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DataListingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/DataModificationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DataModificationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/DataSavingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DataSavingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ListTraversalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ListTraversalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LogoutTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LogoutTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/NavigationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/NavigationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/RegistrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/RegistrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/SequentialDataInputTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SequentialDataInputTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/TermsAndConditionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TermsAndConditionsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +80,7 @@
       <recent name="testEnvironment" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DataSavingTest.testSavePicture2">
+  <component name="RunManager" selected="JUnit.tests in TestingPortioWebpage">
     <configuration name="DataInputTest.testContactForm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestingPortioWebpage" />
       <extension name="coverage">
@@ -157,10 +178,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.tests in TestingPortioWebpage" />
         <item itemvalue="JUnit.DataSavingTest.testSavePicture2" />
         <item itemvalue="JUnit.DataSavingTest.testSavePicture" />
         <item itemvalue="JUnit.DataInputTest.testContactForm" />
-        <item itemvalue="JUnit.tests in TestingPortioWebpage" />
         <item itemvalue="JUnit.ListTraversalTest" />
       </list>
     </recent_temporary>
@@ -173,27 +194,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680425033780</updated>
-    </task>
-    <task id="LOCAL-00093" summary="small corrections">
-      <created>1681829224112</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1681829224113</updated>
-    </task>
-    <task id="LOCAL-00094" summary="refresh WorkPage.java">
-      <created>1681829509926</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1681829509926</updated>
-    </task>
-    <task id="LOCAL-00095" summary="refresh WorkPageTest.java">
-      <created>1681829543660</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1681829543660</updated>
     </task>
     <task id="LOCAL-00096" summary="refresh SkillsPageTest.java">
       <created>1681829977954</created>
@@ -517,7 +517,28 @@
       <option name="project" value="LOCAL" />
       <updated>1682545916817</updated>
     </task>
-    <option name="localTasksCounter" value="142" />
+    <task id="LOCAL-00142" summary="steps">
+      <created>1682583929427</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1682583929427</updated>
+    </task>
+    <task id="LOCAL-00143" summary="refresh pom.xml">
+      <created>1682586347865</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1682586347865</updated>
+    </task>
+    <task id="LOCAL-00144" summary="refresh pom.xml">
+      <created>1682587883822</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1682587883822</updated>
+    </task>
+    <option name="localTasksCounter" value="145" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -532,8 +553,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refresh HomePage.java" />
-    <MESSAGE value="add annotations" />
     <MESSAGE value="delete getTags()" />
     <MESSAGE value="growing content" />
     <MESSAGE value="add wait for screenshot" />
@@ -557,7 +576,9 @@
     <MESSAGE value="scroll" />
     <MESSAGE value="ready template" />
     <MESSAGE value="scroll2" />
-    <option name="LAST_COMMIT_MESSAGE" value="scroll2" />
+    <MESSAGE value="steps" />
+    <MESSAGE value="refresh pom.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="refresh pom.xml" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TestingPortioWebpage$SkillsPageTest.ic" NAME="SkillsPageTest Coverage Results" MODIFIED="1681204969440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

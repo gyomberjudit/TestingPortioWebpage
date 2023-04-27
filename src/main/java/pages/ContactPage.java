@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -29,6 +30,7 @@ public class ContactPage extends BasePage {
 
 
     //Iterating through Contact information List, write the data into HashMap
+    @Step("Collect Contact information from the website into HashMap")
     public Map<String, String> getContactInfo() {
         List<WebElement> contactInfo = driver.findElements(CONTACT_INFO);
 
@@ -42,22 +44,27 @@ public class ContactPage extends BasePage {
     }
 
     //Give data and message while filling the Contact Form
+    @Step("Input name")
     public void inputName(String name) {
         driver.findElement(INPUT_NAME).sendKeys(name);
     }
+    @Step("Input email")
     public void inputEmail(String email) {
         driver.findElement(INPUT_EMAIL).sendKeys(email);
     }
+    @Step("Write message")
     public void inputMessage(String message) {
         driver.findElement(INPUT_MESSAGE).sendKeys(message);
     }
 
     //Check checkbox by clicking on the box
+    @Step("Check checkbox")
     public void checkCheckbox() {
         driver.findElement(CHECKBOX).click();
     }
 
     //Sending message by clicking on Send Message button
+    @Step("Send message")
     public void sendMessage() {
         driver.findElement(INPUT_SEND_MESSAGE).click();
     }
@@ -69,11 +76,13 @@ public class ContactPage extends BasePage {
     }
 
     //Checking if navigating to ContactPage is successful
+    @Step("Check navigation to ContactPage")
     public boolean isContactMeTextDisplayed() {
         return driver.findElement(CONTACT_ME_TEXT).isDisplayed();
     }
 
     //Checking if sending message was successful
+    @Step("Check if sending message was successful")
     public String getMessage() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(MESSAGE_STATUS)).getText();
     }

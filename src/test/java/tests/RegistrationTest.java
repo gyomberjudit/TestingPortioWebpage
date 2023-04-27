@@ -31,7 +31,7 @@ public class RegistrationTest extends BaseTest {
         registerPage.clickButtonRegister2();
         boolean userRegistered = registerPage.userRegistered();
         String actualMessage = registerPage.registeredMessage();
-        addAttachment("Success message after successful registration");
+        addAttachment("Successful registration - success message visible ");
 
         Assertions.assertTrue(userRegistered);
         Assertions.assertEquals(expectedMessage, actualMessage);

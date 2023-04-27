@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -21,12 +22,14 @@ public class AboutPage extends BasePage {
     public void scrollToDownloadButton() throws InterruptedException {
         scrollToElement(BUTTON_DOWNLOAD_CV);
     }
+    @Step("Download the file from the website")
     public void clickDownloadCV() throws InterruptedException {
         Thread.sleep(2000);
         driver.findElement(BUTTON_DOWNLOAD_CV).click();
     }
 
     //Check if downloading CV was successful
+    @Step("Check if download was successful")
     public boolean isFileExist(String filename) {
         String home = System.getProperty("user.home");
         String file_with_location = home + "\\Downloads\\" + filename;

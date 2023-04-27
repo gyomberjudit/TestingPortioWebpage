@@ -20,13 +20,14 @@ public class BlogLinkPage extends BasePage {
     }
 
     //Click on 'See All Posts' Button to navigate to all the posts
-    @Step("1. Navigate to BlogPage")
+    @Step("Navigate to BlogPage")
     public void clickButtonSeeAllPosts() throws InterruptedException {
         Thread.sleep(3000);
         driver.findElement(BUTTON_SEE_ALL_POSTS).click();
     }
 
     //Save one of the blogs' picture to image.jpg file
+    @Step("Save a picture to image.jpg file")
     public void savePicture(String fileName, By xpath, String format) {
         try {
             File file = new File(fileName);
@@ -41,6 +42,7 @@ public class BlogLinkPage extends BasePage {
     }
 
     //Create a new file image2.jpg and save one of the blogs' picture to it, or delete it if it exists
+    @Step("Create image2.jpg file and save a picture to it")
     public void savePicture2(String fileName, By xpath, String format) {
         try {
             File file = new File(fileName);
@@ -58,6 +60,7 @@ public class BlogLinkPage extends BasePage {
     }
 
     //Compare two picture for assertion of saving picture
+    @Step("Check if the saved and the downloaded pictures are the same")
     public double getDifferencePercentage(String savedImg, String downloadedImg) {
         BufferedImage imgA = null;
         BufferedImage imgB = null;
@@ -130,6 +133,7 @@ public class BlogLinkPage extends BasePage {
     }
 
     //Download image from Portio website to compare it with the saved file
+    @Step("Download the image to compare it with the saved one")
     public void downloadImage(String fileName, String targetUrl, String format) throws IOException {
         File file = new File(fileName);
         URL url = new URL(targetUrl);

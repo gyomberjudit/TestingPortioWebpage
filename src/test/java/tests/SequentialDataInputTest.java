@@ -33,8 +33,8 @@ public class SequentialDataInputTest extends BaseTest {
             loginPage.inputUsername(key);
             loginPage.inputPassword(map.get(key));
             loginPage.clickLoginButton();
-            addAttachment("Logged in with multiple different credentials");
             boolean loggedIn = homePage.isPortioLogoDisplayed();
+            addAttachment("Logged in with multiple different credentials");
 
             Assertions.assertTrue(loggedIn);
             loginPage.navigate();

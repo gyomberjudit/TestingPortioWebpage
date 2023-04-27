@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -21,6 +22,7 @@ public class FooterPage extends BasePage {
     public void scrollToPrivacyAndPolicyLink() throws InterruptedException {
         scrollToElement(LINK_PRIVACY_AND_POLICY);
     }
+    @Step("Navigate to Privacy and Policy document")
     public void clickPrivacyAndPolicyLink() throws InterruptedException {
         Thread.sleep(3000);
         driver.findElement(LINK_PRIVACY_AND_POLICY).click();
@@ -30,12 +32,14 @@ public class FooterPage extends BasePage {
     public void scrollToFacebookIcon() throws InterruptedException {
         scrollToElement(ICON_FACEBOOK);
     }
+    @Step("Navigate to Facebook")
     public void clickFacebokIcon() throws InterruptedException {
         Thread.sleep(3000);
         driver.findElement(ICON_FACEBOOK).click();
     }
 
     //Checking if navigation to a new window was successful
+    @Step("Get child window's url")
     public String getChildWindowUrl() {
         String parentWindow = driver.getWindowHandle();
         Set<String> windows = driver.getWindowHandles();
