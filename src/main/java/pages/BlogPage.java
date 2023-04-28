@@ -1,13 +1,10 @@
 package pages;
 
-import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilPages.BasePage;
 import utilPages.Pages;
-
-import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.*;
@@ -74,7 +71,6 @@ public class BlogPage extends BasePage {
                 numbers--;
             } while (numbers > 0);
             writer.write(titles);
-            Allure.addAttachment("Titles", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
             writer.close();
         } catch (Exception e) {
             e.printStackTrace();
