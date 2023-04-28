@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26794f44-258f-49a9-b97f-0314055cd4a0" name="Changes" comment="change scrollWindow">
+    <list default="true" id="26794f44-258f-49a9-b97f-0314055cd4a0" name="Changes" comment="last correction">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/BlogPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/BlogPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,13 +171,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680425033780</updated>
-    </task>
-    <task id="LOCAL-00109" summary="add annotations">
-      <created>1681833691438</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1681833691438</updated>
     </task>
     <task id="LOCAL-00110" summary="add annotations">
       <created>1681833702382</created>
@@ -516,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682635355762</updated>
     </task>
-    <option name="localTasksCounter" value="158" />
+    <task id="LOCAL-00158" summary="last correction">
+      <created>1682722316899</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1682722316899</updated>
+    </task>
+    <option name="localTasksCounter" value="159" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -531,7 +530,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="picture saving assertion" />
     <MESSAGE value="blog titles" />
     <MESSAGE value="img assertion and repeated login" />
     <MESSAGE value="refresh README.md" />
@@ -556,7 +554,8 @@
     <MESSAGE value="img screenshot" />
     <MESSAGE value="delete img screenshot" />
     <MESSAGE value="change scrollWindow" />
-    <option name="LAST_COMMIT_MESSAGE" value="change scrollWindow" />
+    <MESSAGE value="last correction" />
+    <option name="LAST_COMMIT_MESSAGE" value="last correction" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TestingPortioWebpage$SkillsPageTest.ic" NAME="SkillsPageTest Coverage Results" MODIFIED="1681204969440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
